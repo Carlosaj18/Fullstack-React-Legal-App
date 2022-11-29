@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-{ /* Comando - rfce */ }
+// { /* Comando - rfce */ }
 function ItemListContainer(props) {
   return (
     <div>

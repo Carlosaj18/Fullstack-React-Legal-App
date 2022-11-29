@@ -1,0 +1,28 @@
+body #root .container main .header .user .icons {
+    border-right: 2px solid #dfe0eb;
+    margin-right: 1rem;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  
+  body #root .container main .header .user .icons button {
+      background-color: transparent !important;
+      border: none !important;
+  }
+    
+  body #root .container main .header .user .icons i {
+    color: #c5c7cd;
+    font-size: 1.1rem;
+    padding: 0.35rem;
+    cursor: pointer;
+  }
+  
+  body #root .container main .header .user .icons i:last-child {
+    margin-right: 1.25rem;
+    margin-left: 0.75rem;
+  }
+  body #root .container main .header .user .icons i:hover {
+    color: #234F1E;;
+  }

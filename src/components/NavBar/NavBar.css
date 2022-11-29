@@ -1,0 +1,200 @@
+body #root .container main header {
+  display: grid;
+  grid-row: 1;
+  grid-column: 1/-1;
+  padding: 1rem 0;
+}
+
+body #root .container main .header {
+    display: grid;
+    grid-template-columns: 1fr 140px 10px;
+    padding: 1rem 0;
+  }
+
+body #root .container main .header .search-container {
+    display: flex;
+    width: 100%;
+}
+
+body #root .container main .header .search-container form {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+body #root .container main .header .search-container form input[type=text] {
+  padding: auto;
+  font-size: 1em;
+  width: 100%;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  font-size: 17px;
+  border-radius: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+body #root .container main .header .search-container form .search-icon {
+  color: #234F1E;
+  position: relative;
+}
+
+body #root .container main .header .search-container form .search-icon i{
+  position: absolute;
+  left: -25px;
+  top: -5px;
+}
+
+body #root .container main .header .search-container .filters {
+  width: 20%;
+  background-color: #234F1E !important;
+  border-radius: 10px;;
+  color: #fff;
+  padding: 6px;
+  padding: auto;
+  font-size: 1em;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  display: flex; 
+  gap: 0.5em;
+  justify-content: center;
+  align-items: center;
+}
+
+body #root .container main .header .search-container button {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+body #root .container main .header .search-container button i {
+  background-color: transparent !important;
+  border: none !important;
+  font-size: large;
+}
+
+body #root .container main .header .user {
+    grid-column-start: 2;
+    position: relative;
+  }
+  
+  body #root .container main .header .user .icons {
+    border-right: 2px solid #dfe0eb;
+    margin-right: 1.75rem;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  
+  body #root .container main .header .user .icons button {
+      background-color: transparent !important;
+      border: none !important;
+  }
+    
+  body #root .container main .header .user .icons i {
+    color: #c5c7cd;
+    font-size: 1.1rem;
+    padding: 0.55rem;
+    cursor: pointer;
+    padding: auto;
+  }
+  
+  body #root .container main .header .user .icons i:last-child {
+    margin-right: 1rem;
+    margin-left: 0.75rem;
+  }
+  body #root .container main .header .user .icons i:hover {
+    color: #234F1E;;
+  }
+  body #root .container main .header .user .icons .fa-bell {
+    position: absolute;
+    top: 1;
+
+  }
+  body #root .container main .header .user .icons .fa-bell::after {
+    content: "";
+    position: absolute;
+    top: 0.25rem;
+    left: 0.925rem;
+    width: 6px;
+    height: 6px;
+    background: #234F1E;
+    border-radius: 50%;
+    border: 2px solid #f7f8fc;
+  }
+  body #root .container main .header .user .name {
+    font-size: 0.875rem;
+    color: #234F1E;;
+    font-weight: 600;
+  }
+  body #root .container main .header .user .user-img {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 2px solid #dfe0eb;
+    margin-left: 0.6rem;
+  }
+  body #root .container main .header .user .user-img img {
+    width: 43px;
+    border-radius: 50%;
+    transition: box-shadow 500ms ease;
+    cursor: pointer;
+  }
+  body #root .container main .header .user .user-img img:hover {
+    box-shadow: 0 0 8px 0 #234F1E;
+  }
+
+  body #root .container main .header .button-notification {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50%;
+    border: none;
+  }
+
+  body #root .container main .header .button-notification i:hover {
+    color: #234F1E;
+  }
+
+  body #root .container main .header > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.25rem 1.25rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  @media(max-width: 864px){
+    body #root .container main .header .search-container .filters {
+      display: none;
+    }
+    body #root .container main .header .search-container form {
+      width: 100%;
+    }
+  }
+
+  @media(max-width: 680px){ 
+    body #root .container main .header .search-container form {
+      display: none;
+    }
+
+    body #root .container main .header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 1rem 0;
+      display: flex;
+    }
+  }
+
+  @media (max-width: 580px) {
+    body #root .container main .header .user {
+      justify-content: center;
+    }
+  }
