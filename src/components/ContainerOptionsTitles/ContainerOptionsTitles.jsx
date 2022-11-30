@@ -5,13 +5,16 @@ import './ContainerOptionsTitles.css';
 
 function ContainerOptionsTitles(props) {
   return (
-    <div className="container-option-items">
-        <h3 className="subtitle">{props.subtitle}</h3>
-        <button className="btn-more">
-          <h3>See More </h3>
-          <i><FontAwesomeIcon icon={faChevronDown} /></i>
-        </button>
-      </div>
+    <>
+      <div className="container-option-items">
+          <h3 className="subtitle">{props.subtitle}</h3>
+          <button className="btn-more">
+            <h3>See More </h3>
+            <i><FontAwesomeIcon icon={faChevronDown} /></i>
+          </button>
+        </div>
+        {props.children}
+    </>
   )
 }
 

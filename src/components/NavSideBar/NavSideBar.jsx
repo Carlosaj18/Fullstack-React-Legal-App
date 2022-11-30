@@ -12,7 +12,6 @@ import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { faChartLine} from "@fortawesome/free-solid-svg-icons";
 import { faRightFromBracket} from "@fortawesome/free-solid-svg-icons";
 
-
 let icons = [faHouse, faFile, faFileSignature, faFileContract, faCloudArrowUp, faChartLine];
 
 function SideBar(props) {

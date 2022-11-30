@@ -9,8 +9,9 @@ import imageGuide from '../../images/guide-sign.jpg';
 function SideBar() {
   return (
     <div class="sidebar">
-      <ContainerAnunciosTitles   subtitle="Recommendations" />
-      <ContainerBlog />
+      <ContainerAnunciosTitles   subtitle="Recommendations">
+        <ContainerBlog />
+      </ContainerAnunciosTitles>
       <div className="image-container">
         <img src={imageGuide} alt="logo" />
       </div>

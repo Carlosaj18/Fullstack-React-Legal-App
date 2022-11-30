@@ -1,8 +1,9 @@
 import React from 'react'
-import imageDocument from '../../images/document.jpg';
+import imageDocument from '%PUBLIC_URL%/assets/document.jpg';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileSignature } from "@fortawesome/free-solid-svg-icons";
 import './Card.css';
+
 
 let latestDocuments = [
     {

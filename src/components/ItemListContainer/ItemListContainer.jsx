@@ -9,10 +9,12 @@ function ItemListContainer() {
   return (
     <div className="container-items">
       <div className="container-latest">
-        <ContainerOptionsTitles subtitle="Latest documents" />
-        < ContainerCards />
-        <ContainerOptionsTitles subtitle="Our services" />
-        < ContainerServices />
+        <ContainerOptionsTitles subtitle="Latest documents">
+          < ContainerCards />
+        </ContainerOptionsTitles>
+        <ContainerOptionsTitles subtitle="Our services">
+          <ContainerServices />
+        </ContainerOptionsTitles>
       </div>
     </div>
   );
