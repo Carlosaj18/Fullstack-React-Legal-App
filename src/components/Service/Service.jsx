@@ -4,7 +4,8 @@ import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import '../Service/Service.css';
 
 
-//style={{backgroundImage: `url(${service.image})`}}
+// style={{backgroundImage: `url(${service.image})`}} 
+// ¿Como se puede pasar imagenes al background de manera dinamica?
 
 let services = [
   {
