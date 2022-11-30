@@ -3,18 +3,17 @@ import './SideBar.css';
 import ContainerAnunciosTitles from '../ContainerAnunciosTitles/ContainerAnunciosTitles'
 import '../ContainerOptionsTitles/ContainerOptionsTitles.css';
 import ContainerBlog from '../ContainerBlog/ContainerBlog';
+import imageGuide from '../../images/guide-sign.jpg';
 
-let styles = {
-    gridTemplateRows: 'auto',
-    display: 'flex',
-    flexDirection: 'column'
-}
 
 function SideBar() {
   return (
     <div class="sidebar">
-      <ContainerAnunciosTitles  sytle={styles} subtitle="Recommendations" />
+      <ContainerAnunciosTitles   subtitle="Recommendations" />
       <ContainerBlog />
+      <div className="image-container">
+        <img src={imageGuide} alt="logo" />
+      </div>
     </div>
   )
 }

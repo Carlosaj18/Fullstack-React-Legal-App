@@ -1,0 +1,93 @@
+body #root .container main .container-blog .blog {
+    width: 320px;
+    min-width: 260px;
+    height: 140px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+}
+
+  body #root .container main .container-blog .blog .card-background {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    background-image: url(../../images/update-document.jpg);
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 40%;
+  }
+
+  body #root .container main .container-blog .blog .info-card {
+    background: #fff;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: start;
+    gap: 0.5em;
+    padding: 10px;
+  }
+
+  body #root .container main .container-blog .blog h3 {
+    font-size: 1.2em;
+    color: #234F1E;
+    gap: 0 !important;
+    margin: 0 !important;
+  }
+
+  body #root .container main .container-blog .blog p {
+    font-size: 0.8em;
+    color: #234F1E;
+    gap: 0 !important;
+    margin: 0 !important;
+  }
+
+
+  @media (max-width: 1316px){
+    body #root .container main .container-blog .blog {
+        width: 300px;
+        height: 140px;
+    }
+
+    body #root .container main .container-blog .blog h3 {
+        font-size: 1em;
+    }
+
+    body #root .container main .container-blog .blog p {
+        font-size: 0.7em;
+      }
+  }
+
+  @media (max-width: 1268px){
+    body #root .container main .container-blog .blog {
+        width: 280px;
+        height: 120px;
+    }
+
+    body #root .container main .container-blog .blog h3 {
+        font-size: 0.8em;
+    }
+
+    body #root .container main .container-blog .blog p {
+        font-size: 0.6em;
+      }
+  }
+
+  @media (max-width: 1253px){
+    body #root .container main .container-blog .blog {
+      width: 320px;
+      min-width: 260px;
+      height: 140px;
+  }
+
+  body #root .container main .container-blog .blog h3 {
+    font-size: 1.2em;
+  }
+
+  body #root .container main .container-blog .blog p {
+    font-size: 0.8em;
+  }
+}

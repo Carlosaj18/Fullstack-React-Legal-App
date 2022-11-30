@@ -2,3 +2,18 @@
     width: 100%;
 }
 
+body #root .container main .sidebar .image-container{
+    padding: 1rem;
+    padding-bottom: 1.75rem;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+body #root .container main .sidebar .image-container img {
+    width: 70%;
+    border-radius: 10%;
+    margin-left: 1.2em;
+}

@@ -1,0 +1,24 @@
+body #root .container main .sidebar {
+    display: flex; 
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+body #root .container main .sidebar .container-blog  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    flex-direction: column;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1253px){
+    body #root .container main .sidebar .container-blog {
+        flex-direction: row;
+    }
+
+    
+}

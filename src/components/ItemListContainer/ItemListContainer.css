@@ -4,6 +4,7 @@ body #root .container main .container-items .container-cards {
     flex-direction: row;
     gap: 4em;
     padding: 10px;
+    justify-content: center;
 }
 
 

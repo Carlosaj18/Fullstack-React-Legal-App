@@ -1,12 +1,14 @@
 import React from 'react';
-import Service from '../Service/Service';
+import Blog from '../Blog/Blog';
+import './ContainerBlog.css';
 
-function ContainerServices() {
+function ContainerBlog() {
   return (
-    <div className="container-services">
-      < Service image="update-document.jpg" title="Document Updated" description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."/>
+    <div className="container-blog">
+      < Blog image="update-document.jpg" title="Document Updated" description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."/>
+      < Blog image="update-document.jpg" title="Document Updated" description="Lorem Ipsum is simply dummy text of the printing and typesetting industry."/>
     </div>
   )
 }
 
-export default ContainerServices
+export default ContainerBlog

@@ -3,17 +3,18 @@
   margin: 0;
   background-color: #e6e7eb;
   min-height: 100vh;
-  height: 100%;
+  height: fit-content;
   grid-template-columns: clamp(220px, 25%, 280px) 1fr;
 }
 
 .container main {
   display: grid;
   grid-column-start: 2;
-  grid-template-rows: 1fr 1fr auto 1fr auto;
+  grid-template-rows: 1fr 100px auto 1fr auto;
   grid-template-columns: repeat(12, 1fr);
   padding: 0 1.5rem 1.5rem;
   max-height: 100%;
+  height: fit-content;
   resize: both;
   overflow: auto;
 }
@@ -42,7 +43,8 @@ body #root .container main .container-title {
 
 body #root .container main .container-items {
   display: grid;
-  grid-row: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
   grid-column: 1/9;
   grid-template-columns: 1fr; 
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -55,7 +57,7 @@ body #root .container main .sidebar {
   background-color: #e6e7eb;
   display: grid;
   grid-row-start: 2;
-  grid-row-end: 4;
+  grid-row-end: -1;
   grid-column: 9/-1;
   grid-template-rows: auto auto;
   gap: 1rem;
@@ -66,4 +68,25 @@ body #root .container main .sidebar {
   .container {
     grid-template-columns: auto;
   }
+}
+
+@media (max-width: 1253px){
+  .container {
+    grid-template-columns: auto;
+  }
+
+  body #root .container main .sidebar {
+    display: grid;
+    grid-row: -1;
+    grid-column: 1/-1;
+  }
+
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  body #root .container main .container-items {
+    grid-column: 1/-1;
+  }
+
 }
