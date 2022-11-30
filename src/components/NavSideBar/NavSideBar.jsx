@@ -12,7 +12,10 @@ import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { faChartLine} from "@fortawesome/free-solid-svg-icons";
 import { faRightFromBracket} from "@fortawesome/free-solid-svg-icons";
 
-function SideBar() {
+
+let icons = [faHouse, faFile, faFileSignature, faFileContract, faCloudArrowUp, faChartLine];
+
+function SideBar(props) {
   return (
     <div className="nav-side-bar">
       <div className="logo-container">
@@ -21,32 +24,12 @@ function SideBar() {
       </div>
       <nav className="sidebar-nav">
         <ul>
-          <li className="selected">
-            <i><FontAwesomeIcon icon={faHouse}/></i>
-            <button className="button section">Home</button>
-          </li>
-          <li>
-            <i><FontAwesomeIcon icon={faFile}/></i>
-            <button className="button allUsers">My documents </button>
-          </li>
-          <li>
-            <i><FontAwesomeIcon icon={faFileSignature}/></i>
-            <button>
-              My signatures
-            </button>
-          </li>
-          <li>
-            <i><FontAwesomeIcon icon={faFileContract} /></i>
-            <button className="button findUser">Mt templates</button>
-          </li>
-          <li>
-            <i><FontAwesomeIcon icon={faCloudArrowUp} /></i>
-            <button className="button button-favoritos">Law upgrade</button>
-          </li>
-          <li>
-            <i><FontAwesomeIcon icon={faChartLine} /></i>
-            <button className="button button-dashboard">Dashboard</button>
-          </li>
+          {props.items.map((item, i) => 
+            <li key={item+i} className="selected">
+              <i><FontAwesomeIcon icon={icons[i]}/></i>
+              <button className="button">{item}</button>
+            </li> 
+          )}
         </ul>
         <div className="image-container">
         <img src={imageGuide} alt="logo" />

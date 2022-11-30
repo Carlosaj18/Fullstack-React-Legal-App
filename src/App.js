@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="container">
       <Hamburger />
-      < NavSideBar />
+      < NavSideBar items={['Home', 'My documents', 'My signatures', 'My templates', 'Law upgrade', 'Dashboard']}/>
       <main>
         <header>
           < NavBar />
