@@ -1,0 +1,50 @@
+.container-option-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    height: fit-content;
+    width: 100%;
+}
+
+ .container-option-items .subtitle {
+    color: #234F1E;
+    padding: 1.5rem 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    height: fit-content;
+}
+
+ .container-option-items .btn-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6em;
+    border: none;
+    background-color: transparent;
+    height: fit-content;
+}
+
+.container-option-items .btn-more h3 {
+    color: #234F1E;
+}
+
+
+ .container-option-items i {
+    font-size: large;
+    color: #234F1E;
+}
+
+@media (max-width: 1085px) {
+    .anuncios {
+        grid-template-rows: auto ;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        justify-content: center;
+        align-items: center;
+      }
+}

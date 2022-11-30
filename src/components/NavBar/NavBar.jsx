@@ -14,7 +14,6 @@ function NavBar() {
         <div className="search-container">
             <form action="#">
               <input
-                className="input"
                 type="text"
                 placeholder="Search documents..."
                 name="name"

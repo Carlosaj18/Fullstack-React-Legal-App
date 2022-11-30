@@ -1,20 +1,23 @@
 import './App.css';
 import Hamburger from './components/Hamburger/Hamburger';
-import SideBar from './components/SideBar/SideBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import NavSideBar from './components/NavSideBar/NavSideBar';
 import NavBar from './components/NavBar/NavBar';
+import HeaderContainer from './components/HeaderContainer/HeaderContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import SideBar from './components/SideBar/SideBar';
 
 function App() {
   return (
     <div className="container">
       <Hamburger />
-      <SideBar />
+      < NavSideBar />
       <main>
         <header>
-          <NavBar />
+          < NavBar />
         </header>
-        { /* Pasar la Prop */ }
-        <ItemListContainer title=""/>
+        < HeaderContainer title="Hi, Carlos"/>
+        < ItemListContainer/>
+        < SideBar />
       </main>
     </div>
   );

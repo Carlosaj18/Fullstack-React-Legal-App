@@ -1,0 +1,6 @@
+body #root .container main .container-title h1 {
+    border-radius: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    padding: 1.5rem 0;
+  }

@@ -1,0 +1,53 @@
+body #root .container main .container-services .service {
+    width: 220px;
+    min-width: 220px;
+    height: 220px;
+    border-radius: 25px;
+}
+
+  body #root .container main .container-services .service .card-background {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    background-image: url(../../images/update-document.jpg);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 40%;
+  }
+
+  body #root .container main .container-services .service .info-card {
+    background: #fff;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: start;
+    gap: 0.5em;
+    padding: 10px;
+  }
+
+  body #root .container main .container-services .service h3 {
+    font-size: 1.2em;
+    color: #234F1E;
+    gap: 0 !important;
+    margin: 0 !important;
+  }
+
+  body #root .container main .container-services .service p {
+    font-size: 0.8em;
+    color: #234F1E;
+    gap: 0 !important;
+    margin: 0 !important;
+  }
+
+  body #root .container main .container-services .service button {
+    background-color: #234F1E;
+    width: 100%;
+    border-radius: 25px;
+    height: 40px;
+    color: #fff;
+    padding: 5px;
+    font-size: 1em;
+  }

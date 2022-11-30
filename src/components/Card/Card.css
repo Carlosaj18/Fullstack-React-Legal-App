@@ -1,0 +1,77 @@
+body #root .container main .container-items .card {
+    min-width: 220px;
+    width: 220px;
+    height: 220px;
+    border-radius: 25px;
+
+}
+
+body #root .container main .container-items .card .logo-container-service {
+    padding: 1rem;
+    padding-bottom: 1.75rem;
+    position: relative;
+    width: 80%;
+} 
+
+body #root .container main .container-items .card .logo-container-service {
+    padding: 1rem;
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+body #root .container main .container-items .card .logo-container-service img {
+    width: 120px;
+  }
+
+  body #root .container main .container-items .card .card-background {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    background-color: rgb(211, 211, 211);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 60%;
+  }
+
+  body #root .container main .container-items .card .info-card {
+    background: #fff;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    height: 30%;
+    display: flex;
+    justify-content:center;
+    align-items: start;
+    gap: 2em;
+    padding: 10px;
+  }
+
+  body #root .container main .container-items .card .icon-document {
+    color: #234F1E;
+    font-size: 2.5em;
+  }
+
+  body #root .container main .container-items .card h3 {
+    font-size: 1.2em;
+    color: #234F1E;
+    gap: 0 !important;
+    margin: 0 !important;
+  }
+
+  body #root .container main .container-items .card p {
+    font-size: 0.8em;
+    color: #234F1E;
+    gap: 0 !important;
+    margin: 0 !important;
+  }
+
+  body #root .container main .container-items .card .info-description {
+    display: flex;
+    flex-direction: column;
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 20px
+  }
