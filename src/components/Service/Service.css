@@ -5,6 +5,10 @@ body #root .container main .container-services .service {
     border-radius: 25px;
 }
 
+body #root .container main .container-services .service:hover {
+  transform: scale(1.1);
+}
+
   body #root .container main .container-services .service .card-background {
     display: flex;
     justify-content:center;

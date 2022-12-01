@@ -1,9 +1,8 @@
-import React from 'react'
-import imageDocument from '%PUBLIC_URL%/assets/document.jpg';
+import React, { Component }  from 'react'
+import imageDocument from '../../images/document.jpg';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileSignature } from "@fortawesome/free-solid-svg-icons";
 import './Card.css';
-
 
 let latestDocuments = [
     {
@@ -26,27 +25,29 @@ let latestDocuments = [
     }, 
   ];
 
-function Card() {
-  return (
-    <>
-        { latestDocuments.map((document, i) =>
-        <div className="card" key={i}> 
-            <div className="card-background">
-                <div className="logo-container-service">
-                    <img src={imageDocument} alt="logo" />
-                </div>
-            </div>
-            <div className="info-card">
-                <i className="icon-document"><FontAwesomeIcon icon={faFileSignature}/></i>
-                <div className="info-description">
-                    <h3>{document.title}</h3>
-                    <p>Creado el {document.date}</p>
-                    <p>Firma {document.signatures}</p>
-                </div>
-            </div> 
-        </div>)}
-    </>
-  )
+class Card extends Component {
+    rendedr() {
+        return (
+            <>
+                { latestDocuments.map((document, i) =>
+                <div className="card" key={i}> 
+                    <div className="card-background">
+                        <div className="logo-container-service">
+                            <img src={imageDocument} alt="logo" />
+                        </div>
+                    </div>
+                    <div className="info-card">
+                        <i className="icon-document"><FontAwesomeIcon icon={faFileSignature}/></i>
+                        <div className="info-description">
+                            <h3>{document.title}</h3>
+                            <p>Creado el {document.date}</p>
+                            <p>Firma {document.signatures}</p>
+                        </div>
+                    </div> 
+                </div>)}
+            </>
+      )
+    }
 }
 
 export default Card;

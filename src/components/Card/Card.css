@@ -3,7 +3,10 @@ body #root .container main .container-items .card {
     width: 220px;
     height: 220px;
     border-radius: 25px;
+}
 
+body #root .container main .container-items .card:hover {
+  transform: scale(1.1);
 }
 
 body #root .container main .container-items .card .logo-container-service {

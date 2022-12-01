@@ -8,6 +8,10 @@ body #root .container main .container-blog .blog {
     flex-direction: row;
 }
 
+body #root .container main .container-blog .blog:hover {
+  transform: scale(1.1);
+}
+
   body #root .container main .container-blog .blog .card-background {
     display: flex;
     justify-content:center;
