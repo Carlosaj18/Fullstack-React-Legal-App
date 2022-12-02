@@ -47,7 +47,7 @@ body #root .container main .container-items .card .logo-container-service img {
     display: flex;
     justify-content:center;
     align-items: start;
-    gap: 2em;
+    gap: 1em;
     padding: 10px;
   }
 

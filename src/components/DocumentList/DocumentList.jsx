@@ -8,7 +8,7 @@ function DocumentList(props) {
         return (
           <Document
             title={item.title}
-            date={item.date}
+            date={props.date}
             signatures={item.signatures}
             key={item.id}
           />
