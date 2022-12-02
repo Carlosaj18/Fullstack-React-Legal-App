@@ -1,53 +1,26 @@
-import React, { Component }  from 'react'
-import imageDocument from '../../images/document.jpg';
+import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileSignature } from "@fortawesome/free-solid-svg-icons";
 import './Card.css';
 
-let latestDocuments = [
-    {
-      id: 1, 
-      title: "Archivo #1",
-      date: "22/11/22",
-      signatures: "1/3",
-    }, 
-    {
-      id: 2, 
-      title: "Archivo #2",
-      date: "22/11/22",
-      signatures: "2/3"
-    }, 
-    {
-      id: 3, 
-      title: "Archivo #3",
-      date: "22/11/22",
-      signatures: "3/3"
-    }, 
-  ];
-
-class Card extends Component {
-    rendedr() {
-        return (
-            <>
-                { latestDocuments.map((document, i) =>
-                <div className="card" key={i}> 
-                    <div className="card-background">
-                        <div className="logo-container-service">
-                            <img src={imageDocument} alt="logo" />
-                        </div>
-                    </div>
-                    <div className="info-card">
-                        <i className="icon-document"><FontAwesomeIcon icon={faFileSignature}/></i>
-                        <div className="info-description">
-                            <h3>{document.title}</h3>
-                            <p>Creado el {document.date}</p>
-                            <p>Firma {document.signatures}</p>
-                        </div>
-                    </div> 
-                </div>)}
-            </>
-      )
-    }
+function Card(props) {
+  return (
+    <div className="card"> 
+        <div className="card-background">
+            <div className="logo-container-service">
+                <img src={process.env.PUBLIC_URL + "assets/document.jpg"} alt="logo" />
+            </div>
+        </div>
+        <div className="info-card">
+            <i className="icon-document"><FontAwesomeIcon icon={faFileSignature}/></i>
+            <div className="info-description">
+                <h3>{props.title}</h3>
+                <p>Creado el {props.date}</p>
+                <p>Firma {props.signatures}</p>
+            </div>
+        </div> 
+    </div>
+  )
 }
 
 export default Card;
