@@ -9,6 +9,7 @@ function serviceList(props) {
           <Service
             title={item.title}
             description={item.description}
+            image={item.image}
             key={item.id}
           />
         );
