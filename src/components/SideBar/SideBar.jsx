@@ -8,7 +8,7 @@ import imageGuide from '../../images/guide-sign.jpg';
 
 function SideBar() {
   return (
-    <div class="sidebar">
+    <div className="sidebar">
       <ContainerAnunciosTitles   subtitle="Recommendations">
         <ContainerBlog />
       </ContainerAnunciosTitles>

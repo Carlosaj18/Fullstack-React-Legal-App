@@ -1,22 +1,24 @@
-import React from 'react';
-import Service from '../Service/Service';
-import '../ContainerServices/ContainerServices.css';
-import services from '../data/services';
+import React, { useState, useEffect } from "react";
+import "../ContainerServices/ContainerServices.css";
+import APICallServices from "../services/mockServices";
+import ServiceList from '../ServiceList/ServiceList'
 
 function ContainerServices() {
+  //console.log("%cRender/Updated", "color:green");
+  // 2. Creamos un estado para los servicios
+  const [service, setService] = useState([]);
+
+  // 3. Creamos un efecto de montaje
+  useEffect(() => {
+    // 4. Llamo a la Promesa y guardo el resultado en un estado
+    APICallServices().then((response) => {
+      setService(response);
+    });
+  }, []);
+
   return (
-    <div className="container-services">
-      {services.map((item, i) => {
-        return (
-          <Service 
-            title={item.title}
-            description={item.description}
-            key={i}
-          />
-        );
-      })}
-    </div>
-  )
+    <ServiceList service={service} />
+  );
 }
 
-export default ContainerServices
+export default ContainerServices;

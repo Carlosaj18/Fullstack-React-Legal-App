@@ -1,8 +1,8 @@
 import React from "react";
-import ContainerOptionsTitles from '../ContainerOptionsTitles/ContainerOptionsTitles';
-import ContainerCards from '../ContainerCards/ContainerCards';
-import ContainerServices from '../ContainerServices/ContainerServices';
-import '../ItemListContainer/ItemListContainer.css';
+import ContainerOptionsTitles from "../ContainerOptionsTitles/ContainerOptionsTitles";
+import ContainerDocuments from "../ContainerDocuments/ContainerDocuments";
+import ContainerServices from "../ContainerServices/ContainerServices";
+import "../ItemListContainer/ItemListContainer.css";
 
 // { /* Comando - rfce */ }
 function ItemListContainer() {
@@ -10,7 +10,7 @@ function ItemListContainer() {
     <div className="container-items">
       <div className="container-latest">
         <ContainerOptionsTitles subtitle="Latest documents">
-          < ContainerCards />
+          <ContainerDocuments />
         </ContainerOptionsTitles>
         <ContainerOptionsTitles subtitle="Our services">
           <ContainerServices />

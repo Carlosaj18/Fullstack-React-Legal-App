@@ -1,9 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileSignature } from "@fortawesome/free-solid-svg-icons";
-import './Card.css';
+import './Document.css';
 
-function Card(props) {
+function Document(props) {
   return (
     <div className="card"> 
         <div className="card-background">
@@ -23,4 +23,4 @@ function Card(props) {
   )
 }
 
-export default Card;
+export default Document;
