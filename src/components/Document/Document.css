@@ -3,10 +3,17 @@ body #root .container main .container-items .card {
     width: 220px;
     height: 220px;
     border-radius: 25px;
+    position: relative;
+    color: black;
+    box-shadow: 0px 0px 2px #234F1E;
+    overflow: hidden;  
+    transition: all 0.20s ease-in;
+    cursor: pointer;
 }
 
 body #root .container main .container-items .card:hover {
   transform: scale(1.1);
+  transform: translateY(-10px);
 }
 
 body #root .container main .container-items .card .logo-container-service {
@@ -14,6 +21,7 @@ body #root .container main .container-items .card .logo-container-service {
     padding-bottom: 1.75rem;
     position: relative;
     width: 80%;
+    object-fit: cover;
 } 
 
 body #root .container main .container-items .card .logo-container-service {

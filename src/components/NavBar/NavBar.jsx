@@ -9,10 +9,16 @@ import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
 
 function NavBar() {
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log('You clicked submit.');
+  }
+
   return (
     <div className="header">
         <div className="search-container">
-            <form action="#">
+            <form action="#" onSubmit={()=> handleSubmit()}>
               <input
                 type="text"
                 placeholder="Search documents..."

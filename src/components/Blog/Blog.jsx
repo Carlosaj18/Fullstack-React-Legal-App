@@ -9,7 +9,7 @@ function Blog(props) {
             <h3>{props.title}</h3> 
             <p>Creado el {props.description}</p>
         </div>
-        <div className="card-background"></div>
+        <div className="card-background" style={{backgroundImage:`url('${props.image}')`}}></div>
     </div>
   )
 }

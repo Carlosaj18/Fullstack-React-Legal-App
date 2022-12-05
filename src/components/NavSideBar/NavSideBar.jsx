@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import './NavSideBar.css';
 import imageLogo from '../../images/legalApp-logo.png';
 import imageGuide from '../../images/imageGuide.jpg';
@@ -15,6 +15,11 @@ import { faRightFromBracket} from "@fortawesome/free-solid-svg-icons";
 let icons = [faHouse, faFile, faFileSignature, faFileContract, faCloudArrowUp, faChartLine];
 
 function SideBar(props) {
+
+  const lanzarAlerta = () => {
+    alert("Do you want to logout your account?")
+  }
+
   return (
     <div className="nav-side-bar">
       <div className="logo-container">
@@ -24,9 +29,9 @@ function SideBar(props) {
       <nav className="sidebar-nav">
         <ul>
           {props.items.map((item, i) => 
-            <li key={item+i} className="selected">
+            <li key={item} className="selected">
               <i><FontAwesomeIcon icon={icons[i]}/></i>
-              <button className="button">{item}</button>
+              <button onClick={ () => console.log(item)} className="button">{item}</button>
             </li> 
           )}
         </ul>
@@ -36,7 +41,7 @@ function SideBar(props) {
         <ul>
           <li className="logout">
           <i><FontAwesomeIcon icon={faRightFromBracket} /></i>
-            <button>
+            <button onMouseOver={ () => lanzarAlerta() }>
               Logout
             </button>
           </li>

@@ -16,9 +16,6 @@ function ContainerCards() {
     setDate(hora);
   }, []);
 
-
-  
-
   return <DocumentList latestDocuments={document} date={date}/>;
 }
 

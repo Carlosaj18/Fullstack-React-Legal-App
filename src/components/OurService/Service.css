@@ -13,7 +13,6 @@ body #root .container main .container-services .service:hover {
     display: flex;
     justify-content:center;
     align-items:center;
-    background-image: url(../../images/update-document.jpg);
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     height: 40%;
