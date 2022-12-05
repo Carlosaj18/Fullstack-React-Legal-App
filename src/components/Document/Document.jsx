@@ -8,8 +8,8 @@ function Document(props) {
   return (
     <div className="card">
       <div className="card-background">
-        <ToggleButton icon="♥" />
         <div className="logo-container-service">
+        <ToggleButton icon="♥" />
           <img
             src={process.env.PUBLIC_URL + "assets/document.jpg"}
             alt="logo"

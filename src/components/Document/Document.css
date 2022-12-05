@@ -8,7 +8,6 @@ body #root .container main .container-items .card {
     box-shadow: 0px 0px 2px #234F1E;
     overflow: hidden;  
     transition: all 0.20s ease-in;
-    cursor: pointer;
 }
 
 body #root .container main .container-items .card:hover {
@@ -45,6 +44,12 @@ body #root .container main .container-items .card .logo-container-service img {
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     height: 60%;
+    position: relative;
+    color: black;
+    box-shadow: 0px 0px 2px #234F1E;
+    overflow: hidden;  
+    transition: all 0.20s ease-in;
+    cursor: pointer;
   }
 
   body #root .container main .container-items .card .info-card {

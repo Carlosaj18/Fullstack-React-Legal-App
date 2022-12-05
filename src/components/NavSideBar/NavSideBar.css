@@ -27,6 +27,7 @@ body #root .container .nav-side-bar {
   body #root .container .nav-side-bar .logo-container > i:hover {
     color: #8f5f5f;
     transform: scale(1.075);
+    
   }
   body #root .container .nav-side-bar .logo-container .close-btn {
     position: absolute;
@@ -81,12 +82,15 @@ body #root .container .nav-side-bar {
     background-color: transparent !important;
     border: none !important;
     font-size: 1.1rem;
+    overflow: hidden;  
+    transition: all 0.20s ease-in;
   }
   body #root .container .nav-side-bar .sidebar-nav ul li button:hover {
     background: #234F1E;
     color: #234F1E;
     border-left: 4px solid #dde2ff;
     padding-left: calc(1.1rem - 4px);
+    transform: translateX(5px);
   }
   body #root .container .nav-side-bar .sidebar-nav ul li:hover > i {
     color: #efb810;

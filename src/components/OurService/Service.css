@@ -3,10 +3,13 @@ body #root .container main .container-services .service {
     min-width: 220px;
     height: 220px;
     border-radius: 25px;
+    overflow: hidden;  
+    transition: all 0.20s ease-in;
 }
 
 body #root .container main .container-services .service:hover {
   transform: scale(1.1);
+  transform: translateY(-10px);
 }
 
   body #root .container main .container-services .service .card-background {

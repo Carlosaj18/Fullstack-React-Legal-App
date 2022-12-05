@@ -6,10 +6,13 @@ body #root .container main .container-blog .blog {
     display: flex;
     justify-content: start;
     flex-direction: row;
+    overflow: hidden;  
+    transition: all 0.20s ease-in;
 }
 
 body #root .container main .container-blog .blog:hover {
   transform: scale(1.1);
+  transform: translateY(-10px);
 }
 
   body #root .container main .container-blog .blog .card-background {
