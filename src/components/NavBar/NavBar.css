@@ -24,6 +24,10 @@ body #root .container main .header .search-container form input[type=text] {
   border-radius: 10px;
 }
 
+body #root .container main .header .search-container form input:focus {
+  border: #234F1E;
+}
+
 body #root .container main .header .search-container form .search-icon {
   color: #234F1E;
   position: relative;
