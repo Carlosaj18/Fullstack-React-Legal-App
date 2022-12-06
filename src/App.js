@@ -5,6 +5,7 @@ import NavBar from './components/NavBar/NavBar';
 import HeaderContainer from './components/HeaderContainer/HeaderContainer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import SideBar from './components/SideBar/SideBar';
+import DocumentDetailContainer from './components/DocumentDetailContainer/DocumentDetailContainer';
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
           < NavBar />
         </header>
         < HeaderContainer title="Hi, Carlos"/>
-        < ItemListContainer/>
+        {/* < ItemListContainer/> */}
+        < DocumentDetailContainer />
+        {/* < DocumentDetailContainer /> */}
         < SideBar />
       </main>
     </div>

@@ -17,6 +17,7 @@
   height: fit-content;
   resize: both;
   overflow: auto;
+  border: 3px solid red;
 }
 
 body #root .container main header {
