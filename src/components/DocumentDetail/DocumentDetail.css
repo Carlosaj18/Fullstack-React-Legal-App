@@ -1,0 +1,93 @@
+body #root .container main .container-documents .card {
+    min-width: 220px;
+    width: 620px;
+    height: 620px;
+    border-radius: 25px;
+    position: relative;
+    color: black;
+    box-shadow: 0px 0px 2px #234F1E;
+    overflow: hidden;  
+    transition: all 0.20s ease-in;
+}
+
+body #root .container main .container-documents .card:hover {
+  transform: scale(1.1);
+  transform: translateY(-10px);
+}
+
+body #root .container main .container-documents .card .logo-container-service {
+    padding: 1rem;
+    padding-bottom: 1.75rem;
+    position: relative;
+    width: 80%;
+    object-fit: cover;
+} 
+
+body #root .container main .container-documents .card .logo-container-service {
+    padding: 1rem;
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+body #root .container main .container-documents .card .logo-container-service img {
+    width: 120px;
+  }
+
+  body #root .container main .container-documents .card .card-background {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    background-color: rgb(211, 211, 211);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 60%;
+    position: relative;
+    color: black;
+    box-shadow: 0px 0px 2px #234F1E;
+    overflow: hidden;  
+    transition: all 0.20s ease-in;
+    cursor: pointer;
+  }
+
+  body #root .container main .container-documents .card .info-card {
+    background: #fff;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    height: 30%;
+    display: flex;
+    justify-content:center;
+    align-items: start;
+    gap: 1em;
+    padding: 10px;
+  }
+
+  body #root .container main .container-documents .card .icon-document {
+    color: #234F1E;
+    font-size: 2.5em;
+  }
+
+  body #root .container main .container-documents .card h3 {
+    font-size: 1.2em;
+    color: #234F1E;
+    gap: 0 !important;
+    margin: 0 !important;
+  }
+
+  body #root .container main .container-documents .card p {
+    font-size: 0.8em;
+    color: #234F1E;
+    gap: 0 !important;
+    margin: 0 !important;
+  }
+
+  body #root .container main .container-documents .card .info-description {
+    display: flex;
+    flex-direction: column;
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 20px
+  }

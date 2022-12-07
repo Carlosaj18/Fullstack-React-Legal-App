@@ -1,10 +1,16 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileSignature } from "@fortawesome/free-solid-svg-icons";
-import '../Document/Document.css';
+import './DocumentDetail.css';
 import ToggleButton from "../ToggleButton/ToggleButton";
 
 function DocumentDetail(props) {
+
+  let style ={ 
+    top: '-142px;',
+    right: '-43px;'
+  }
+
   return (
     <div className="card">
       <div className="card-background">

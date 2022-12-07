@@ -9,7 +9,7 @@ function Document(props) {
     <div className="card">
       <div className="card-background">
         <div className="logo-container-service">
-        <ToggleButton icon="♥" />
+          <ToggleButton icon="♥" />
           <img
             src={process.env.PUBLIC_URL + "assets/document.jpg"}
             alt="logo"

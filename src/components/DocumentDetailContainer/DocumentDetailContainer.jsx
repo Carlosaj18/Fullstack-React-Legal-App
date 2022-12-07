@@ -17,7 +17,9 @@ function DocumentDetailContainer() {
     setDate(hora);
   }, []);
 
-  return <DocumentDetail document={document} date={date} />;
+  return <div className="container-documents">
+          <DocumentDetail document={document} date={date}/>;
+        </div>
 }
 
 export default DocumentDetailContainer;

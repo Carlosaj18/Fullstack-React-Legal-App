@@ -24,7 +24,7 @@ function App() {
           ]}
         />
         <main>
-          <header>
+          <header >
             <NavBar />
           </header>
           <HeaderContainer title="Hi, Carlos" />
