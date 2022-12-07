@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import './NavSideBar.css';
 import imageLogo from '../../images/legalApp-logo.png';
 import imageGuide from '../../images/imageGuide.jpg';
@@ -28,12 +29,30 @@ function SideBar(props) {
       </div>
       <nav className="sidebar-nav">
         <ul>
-          {props.items.map((item, i) => 
-            <li key={item} className="selected">
-              <i><FontAwesomeIcon icon={icons[i]}/></i>
-              <button onClick={ () => console.log(item)} className="button">{item}</button>
+            <li className="selected">
+              <i><FontAwesomeIcon icon={faHouse}/></i>
+              <button onClick={ () => console.log("Home")} className="button"><Link to="/">Home</Link></button>
             </li> 
-          )}
+            <li className="selected">
+              <i><FontAwesomeIcon icon={faFile}/></i>
+              <button onClick={ () => console.log("My documents")} className="button"><Link to="document/detail">My documents</Link></button>
+            </li> 
+            <li className="selected">
+              <i><FontAwesomeIcon icon={faFileSignature}/></i>
+              <button onClick={ () => console.log("My signatures")} className="button"><Link to="/">My signatures</Link></button>
+            </li> 
+            <li className="selected">
+              <i><FontAwesomeIcon icon={faFileContract}/></i>
+              <button onClick={ () => console.log("My templates")} className="button"><Link to="/">My templates</Link></button>
+            </li> 
+            <li className="selected">
+              <i><FontAwesomeIcon icon={faCloudArrowUp}/></i>
+              <button onClick={ () => console.log("Law upgrade")} className="button"><Link to="/">Law upgrade</Link></button>
+            </li> 
+            <li className="selected">
+              <i><FontAwesomeIcon icon={faChartLine}/></i>
+              <button onClick={ () => console.log("Dashboard")} className="button"><Link to="/">Dashboard</Link></button>
+            </li> 
         </ul>
         <div className="image-container">
         <img src={imageGuide} alt="logo" />

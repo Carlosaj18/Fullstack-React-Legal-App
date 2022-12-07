@@ -85,6 +85,18 @@ body #root .container .nav-side-bar {
     overflow: hidden;  
     transition: all 0.20s ease-in;
   }
+
+  body #root .container .nav-side-bar .sidebar-nav ul li button a {
+    text-decoration: none;
+    color: #234F1E;
+    background-color: transparent !important;
+    border: none !important;
+    font-size: 1.1rem;
+    overflow: hidden;  
+    transition: all 0.20s ease-in;
+    text-decoration: none;
+  }
+
   body #root .container .nav-side-bar .sidebar-nav ul li button:hover {
     background: #234F1E;
     color: #234F1E;
