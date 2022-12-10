@@ -5,7 +5,9 @@ import { APICallDocumentsCategory } from "../services/mockDocuments";
 import DocumentList from "../DocumentList/DocumentList";
 import { useParams } from "react-router-dom";
 
-function ContainerCards() {
+function ContainerDocuments(props) {
+
+  console.log(props.categoryId);
   const [document, setDocument] = useState([]);
   const [date, setDate] = useState();
 
@@ -34,4 +36,4 @@ function ContainerCards() {
   return <DocumentList latestDocuments={document} date={date} />;
 }
 
-export default ContainerCards;
+export default ContainerDocuments;
