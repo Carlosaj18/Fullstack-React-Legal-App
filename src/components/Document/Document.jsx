@@ -13,10 +13,7 @@ function Document(props) {
       <div className="card-background">
         <div className="logo-container-service">
           <ToggleButton icon="♥" />
-          <img
-            src={props.image}
-            alt="logo"
-          />
+          <img src={props.image} alt="logo" />
         </div>
       </div>
       <div className="info-card">

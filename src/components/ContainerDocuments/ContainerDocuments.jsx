@@ -9,6 +9,7 @@ function ContainerCards() {
   const [document, setDocument] = useState([]);
   const [date, setDate] = useState();
 
+  // Como se añade ese parametro a la URL
   let categoryId = useParams().categoryId;
 
   useEffect(() => {
