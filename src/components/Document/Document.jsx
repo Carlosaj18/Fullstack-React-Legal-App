@@ -3,22 +3,28 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileSignature } from "@fortawesome/free-solid-svg-icons";
 import "./Document.css";
 import ToggleButton from "../ToggleButton/ToggleButton";
+import { Link } from "react-router-dom";
 
 function Document(props) {
+  let urlDetail = `/document/detail/${props.id}`;
+
   return (
     <div className="card">
       <div className="card-background">
         <div className="logo-container-service">
           <ToggleButton icon="♥" />
           <img
-            src={process.env.PUBLIC_URL + "assets/document.jpg"}
+            src={props.image}
             alt="logo"
           />
         </div>
       </div>
       <div className="info-card">
         <i className="icon-document">
-          <FontAwesomeIcon icon={faFileSignature} />
+          <Link to={urlDetail}>
+            {" "}
+            <FontAwesomeIcon icon={faFileSignature} />
+          </Link>
         </i>
         <div className="info-description">
           <h3>{props.title}</h3>

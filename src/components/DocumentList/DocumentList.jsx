@@ -7,9 +7,11 @@ function DocumentList(props) {
       {props.latestDocuments.map((item) => {
         return (
           <Document
+            id={item.id}
             title={item.title}
             date={props.date}
             signatures={item.signatures}
+            image={item.image}
             key={item.id}
           />
         );

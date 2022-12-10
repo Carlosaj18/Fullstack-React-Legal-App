@@ -7,6 +7,7 @@ function serviceList(props) {
       {props.service.map((item) => {
         return (
           <Service
+            id={item.id}
             title={item.title}
             description={item.description}
             image={item.image}

@@ -8,11 +8,22 @@ body #root .container main .container-items .card {
     box-shadow: 0px 0px 2px #234F1E;
     overflow: hidden;  
     transition: all 0.20s ease-in;
+
 }
 
 body #root .container main .container-items .card:hover {
   transform: scale(1.1);
   transform: translateY(-10px);
+  height: 270px;
+}
+
+body #root .container main .container-items .card:hover p {
+  display: flex;
+  height: fit-content;
+}
+
+body #root .container main .container-items .card:hover h3 {
+  font-size: 1em;
 }
 
 body #root .container main .container-items .card .logo-container-service {
@@ -56,17 +67,19 @@ body #root .container main .container-items .card .logo-container-service img {
     background: #fff;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    height: 30%;
+    height: 40%;
     display: flex;
     justify-content:center;
     align-items: start;
     gap: 1em;
     padding: 10px;
+    text-decoration: none !important;
   }
 
-  body #root .container main .container-items .card .icon-document {
+  body #root .container main .container-items .card .icon-document a {
     color: #234F1E;
     font-size: 2.5em;
+    text-decoration: none;
   }
 
   body #root .container main .container-items .card h3 {
@@ -74,6 +87,7 @@ body #root .container main .container-items .card .logo-container-service img {
     color: #234F1E;
     gap: 0 !important;
     margin: 0 !important;
+    text-decoration: none;
   }
 
   body #root .container main .container-items .card p {
@@ -81,6 +95,8 @@ body #root .container main .container-items .card .logo-container-service img {
     color: #234F1E;
     gap: 0 !important;
     margin: 0 !important;
+    text-decoration: none;
+    display: none;
   }
 
   body #root .container main .container-items .card .info-description {
@@ -89,5 +105,6 @@ body #root .container main .container-items .card .logo-container-service img {
     gap: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
-    height: 20px
+    height: 20px;
+    text-decoration: none;
   }
