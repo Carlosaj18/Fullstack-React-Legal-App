@@ -13,7 +13,7 @@ let latestDocuments = [
     id: 2,
     title: "NDA",
     date: "22/11/22",
-    category: "Agreements",
+    category: "Agreement",
     categoryId: 2,
     signatures: "2/3",
     image: "/assets/document.jpg",

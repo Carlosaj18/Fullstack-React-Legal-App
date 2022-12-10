@@ -6,33 +6,42 @@ import DocumentList from "../DocumentList/DocumentList";
 import { useParams } from "react-router-dom";
 
 function ContainerDocuments(props) {
-
-  console.log(props.categoryId);
+  const [category, setCategory] = useState("");
   const [document, setDocument] = useState([]);
   const [date, setDate] = useState();
 
+  function categoryId(value) {
+    if (value === "Contract") {
+      setCategory(1);
+    } else if (value === "Agreement") {
+      setCategory(2);
+    } else {
+      setCategory(undefined);
+    }
+  }
+
   // Como se añade ese parametro a la URL
-  let categoryId = useParams().categoryId;
+  //let categoryId = useParams().categoryId;
 
   useEffect(() => {
-    if (categoryId === undefined) {
+    console.log("Category ", category);
+    if (category === undefined || category === null) {
       APICallDocuments()
         .then((response) => {
           setDocument(response);
         })
         .catch((error) => alert(error));
-
       let hora = new Date().toLocaleTimeString();
       setDate(hora);
     } else {
-      APICallDocumentsCategory(categoryId)
+      APICallDocumentsCategory(categoryId(props.categoryId))
         .then((response) => {
+          console.log(response);
           setDocument(response);
         })
-        .catch((error) => alert(error));
+        .catch((error) => console.error(error));
     }
-  }, []);
-
+  }, [category] || [document]);
   return <DocumentList latestDocuments={document} date={date} />;
 }
 
