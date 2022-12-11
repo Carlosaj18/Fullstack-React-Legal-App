@@ -1,10 +1,21 @@
 /* --------------------- BAKEND ------------------- */
 import documents from "../data/latestDocuments";
+let newArry; 
 
 const APICallDocuments = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(documents);
+            newArry = documents.slice(0,3)
+            resolve(newArry);
+        }, 1000)
+    })
+}
+
+export const APICallDocumentsMore = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            newArry = documents.slice(0,6)
+            resolve(newArry);
         }, 1000)
     })
 }

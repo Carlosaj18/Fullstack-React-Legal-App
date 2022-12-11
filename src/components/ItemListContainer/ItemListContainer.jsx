@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ContainerOptionsTitles from "../ContainerOptionsTitles/ContainerOptionsTitles";
 import ContainerDocuments from "../ContainerDocuments/ContainerDocuments";
 import ContainerServices from "../ContainerServices/ContainerServices";
@@ -6,11 +6,18 @@ import "../ItemListContainer/ItemListContainer.css";
 
 // { /* Comando - rfce */ }
 function ItemListContainer(props) {
+
+  const [data, setData] = useState("");
+
+  const childToParent = (childdata) => {
+    setData(childdata);
+  };
+
   return (
     <div className="container-items">
       <div className="container-latest">
-        <ContainerOptionsTitles subtitle="Latest documents">
-          <ContainerDocuments documentTitle={props.data}/>
+        <ContainerOptionsTitles childToParent={childToParent} subtitle="Latest documents">
+          <ContainerDocuments documentTitle={props.data} moreDocuments={data}/>
         </ContainerOptionsTitles>
         <ContainerOptionsTitles subtitle="Our services">
           <ContainerServices />

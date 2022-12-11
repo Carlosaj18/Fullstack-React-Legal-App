@@ -29,6 +29,36 @@ let latestDocuments = [
     image: "/assets/document.jpg",
     myDocument: false,
   },
+  {
+    id: 4,
+    title: "Contrato Laboral",
+    date: "22/11/22",
+    category: "Contract",
+    categoryId: 1,
+    signatures: "1/3",
+    image: "/assets/document.jpg",
+    myDocument: true,
+  },
+  {
+    id: 5,
+    title: "Privacy Policy",
+    date: "22/11/22",
+    category: "Agreement",
+    categoryId: 2,
+    signatures: "2/3",
+    image: "/assets/document.jpg",
+    myDocument: false,
+  },
+  {
+    id: 6,
+    title: "Contrato de Mandato",
+    date: "22/11/22",
+    category: "Template",
+    categoryId: 3,
+    signatures: "3/3",
+    image: "/assets/document.jpg",
+    myDocument: false,
+  },
 ];
 
 export default latestDocuments;
