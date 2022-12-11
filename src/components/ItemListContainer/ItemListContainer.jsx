@@ -5,12 +5,12 @@ import ContainerServices from "../ContainerServices/ContainerServices";
 import "../ItemListContainer/ItemListContainer.css";
 
 // { /* Comando - rfce */ }
-function ItemListContainer() {
+function ItemListContainer(props) {
   return (
     <div className="container-items">
       <div className="container-latest">
         <ContainerOptionsTitles subtitle="Latest documents">
-          <ContainerDocuments />
+          <ContainerDocuments documentTitle={props.data}/>
         </ContainerOptionsTitles>
         <ContainerOptionsTitles subtitle="Our services">
           <ContainerServices />

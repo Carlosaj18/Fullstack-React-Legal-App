@@ -3,7 +3,7 @@
     width: 100%;
 }
 
-.search-container div {
+.search-container form {
   width: 70%;
   display: flex;
   justify-content: center;
@@ -11,7 +11,7 @@
   position: relative;
 }
 
-.search-container div input[type=text] {
+.search-container form input[type=text] {
   padding: auto;
   font-size: 1em;
   width: 100%;
@@ -20,23 +20,23 @@
   margin-top: 8px;
   font-size: 17px;
   border-radius: 10px;
-  position: relative;
-  border: 3px solid blue;
+  margin-bottom: 1em;
 }
 
-.search-container div input:focus {
+.search-container form input:focus {
   border: #234F1E;
 }
 
-.search-container div .search-icon {
+.search-container form .search-icon {
   color: #234F1E;
-  position: absolute;
-  left: 486px;
-  top: 16px;
+  position: relative;
   border-color: transparent;
   background-color: transparent;
 }
 
 .search-container div .search-icon i{
   font-size: large; 
+  position: absolute;
+  left: 486px;
+  top: 16px;
 }
