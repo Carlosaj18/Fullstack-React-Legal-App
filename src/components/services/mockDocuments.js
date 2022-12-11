@@ -21,6 +21,18 @@ export const APICallDocumentsCategory = (category) => {
     })
 }
 
+export const APICallDocumentsCategoryId = (categoryId) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let documentFound = documents.filter(documentArray => documentArray.categoryId === parseInt(categoryId));
+            if(documentFound.length > 0)
+                resolve(documentFound);
+            else 
+                reject("Document category not found")
+        }, 1000)
+    })
+}
+
 export const APICallDocumentsTitle = (title) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {

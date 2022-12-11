@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../Document/Document.css";
 import APICallDocuments from "../services/mockDocuments";
-import { APICallDocumentsCategory,  APICallDocumentsTitle } from "../services/mockDocuments";
+import { APICallDocumentsCategory, APICallDocumentsCategoryId,  APICallDocumentsTitle } from "../services/mockDocuments";
 import DocumentList from "../DocumentList/DocumentList";
+import {useParams} from 'react-router-dom'
 
 function ContainerDocuments(props) {
 
@@ -11,7 +12,7 @@ function ContainerDocuments(props) {
   const [date, setDate] = useState();
 
   // Como se añade ese parametro a la URL
-  //let categoryId = useParams().categoryId;
+  let categoryId = useParams().categoryId;
 
   useEffect(() => {
     {/** console.log("App Mount"); */}
@@ -25,7 +26,13 @@ function ContainerDocuments(props) {
           setDocument(response);
         })
         .catch((error) => console.error(error));
-    } else if (props.documentTitle){
+    } else if (categoryId) {
+      APICallDocumentsCategoryId(categoryId)
+        .then((response) => {
+          setDocument(response);
+        })
+        .catch((error) => console.error(error));
+    }  else if (props.documentTitle){
       APICallDocumentsTitle(props.documentTitle)
         .then((response) => {
           console.log(response);
@@ -43,7 +50,7 @@ function ContainerDocuments(props) {
     {/** return () => {
       console.log("Will Unmounted")
     } */}
-  }, [props.categoryId, props.documentTitle]);
+  }, [props.categoryId, props.documentTitle, categoryId]);
 
   {/** console.log("Will Render"); */}
 

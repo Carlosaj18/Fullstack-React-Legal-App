@@ -29,15 +29,9 @@ function App() {
           <HeaderContainer title="Hi, Carlos" />
           <Routes>
             <Route path="/" element={<ItemListContainer data={data}/>} />
-            <Route
-              path="/document/detail/:id"
-              element={<DocumentDetailContainer />}
-            />
-            <Route
-              path="/document/category"
-              element={<ItemCategoryContainer />}
-            />
-            {/**  <Route path="/document/category/:categoryId" element={<ItemCategoryContainer />} /> */}
+            <Route path="/document/detail/:id" element={<DocumentDetailContainer />} />
+            <Route path="/document/category" element={<ItemCategoryContainer />} />
+            <Route path="/document/category/:categoryId" element={<ItemCategoryContainer />} /> 
             <Route path="*" element={<h1>404: Recurso no encontrado</h1>} />
           </Routes>
           <SideBar />

@@ -66,7 +66,7 @@ function SideBar(props) {
               onClick={() => console.log("My signatures")}
               className="button"
             >
-              <Link to="/">My signatures</Link>
+              <Link to="/document/category/1">Contracts {/** My signatures */}</Link>
             </button>
           </li>
           <li className="selected">
@@ -77,7 +77,7 @@ function SideBar(props) {
               onClick={() => console.log("My templates")}
               className="button"
             >
-              <Link to="/">My templates</Link>
+              <Link to="/document/category/2">Agreements {/** My templates */} </Link>
             </button>
           </li>
           <li className="selected">
@@ -88,7 +88,7 @@ function SideBar(props) {
               onClick={() => console.log("Law upgrade")}
               className="button"
             >
-              <Link to="/">Law upgrade</Link>
+              <Link to="/document/category/3">Template{/** Law upgrade */}</Link>
             </button>
           </li>
           <li className="selected">
