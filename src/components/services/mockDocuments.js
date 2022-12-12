@@ -72,17 +72,18 @@ export const APICallSingleDocuments = (idURL) => {
 export const APICallDocumentsCheckBox = (searchCheckBox) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      searchCheckBox
-        .filter((checkBox) => {
-          return checkBox !== undefined;
-        })
-        .map((checkBox) => {
-          let documentFound = documents.filter((documentFound) => {
-            return documentFound.category === checkBox;
-          });
-          if (documentFound) resolve(documentFound);
-          else reject("Document not found");
+      let arrayOptions = [];
+      let filterCombo = searchCheckBox.filter((checkBox) => {
+        return checkBox !== undefined;
+      });
+      console.log(filterCombo);
+      filterCombo.forEach((element) => {
+        let array = documents.filter((document) => {
+          return document.category === element;
         });
+        arrayOptions.push(array);
+      });
+      console.log(arrayOptions)
     }, 1000);
   });
 };
