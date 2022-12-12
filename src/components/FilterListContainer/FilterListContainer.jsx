@@ -1,21 +1,50 @@
-import React, {useState, useRef}  from "react";
+import React, { useState } from "react";
 import "./FilterListContainer.css";
 
-function FilterListContainer() {
+function FilterListContainer({ childToParentCheckBox }) {
+  let optionCheckBox = [
+    "firmado",
+    "sinFirma",
+    "contratos",
+    "acuerdos",
+    "due-diligence",
+    "minutas",
+    "templates",
+    "pre-contractual",
+    "contractual",
+    "post-contractual",
+    "derecho-laboral",
+    "derecho-comercial",
+    "derecho-constitucional",
+    "derecho-administrativo",
+    "derecho-procesal",
+    "derecho-tributario",
+    "derecho-internacional-publico",
+    "derecho-civil",
+    "derecho-mercantil",
+    "derecho-internacional-privado",
+  ];
 
-    const [isSignd, setIsSignd] = useState(false);
-    const ref = useRef(null);
+  const [checkedState, setCheckedState] = useState(new Array(19).fill(false));
+  const [valueCheck, setValueCheck] = useState([]);
 
-    const handleChange = event => {
-      if (event.target.checked) {
-        console.log('✅ Checkbox is checked');
-      } else {
-        console.log('⛔️ Checkbox is NOT checked');
+  const handleOnChange = (position) => {
+    const updatedCheckedState = checkedState.map(
+      (item, index) => (index === position ? !item : item)
+      // Así, si el valor es true entonces será convertido a false usando !item y viceversa.
+      // i el index no es igual al proveído por el parámetro position, entonces no estamos invirtiendo su valor y devolveremos su valor tal cual se encuentre:
+    );
+
+    setCheckedState(updatedCheckedState);
+
+    const valueArray = updatedCheckedState.map((currentState, index) => {
+      if (currentState === true) {
+        return optionCheckBox[index];
       }
-      setIsSignd(current => !current);
-    };
-
-    console.log(ref.current.value);
+    });
+    setValueCheck(valueArray);
+    childToParentCheckBox(valueArray);
+  };
 
   return (
     <div className="filter-section">
@@ -24,7 +53,14 @@ function FilterListContainer() {
         <label className="container-checkbox" for="firmado">
           {" "}
           Firmado
-          <input ref={ref} type="checkbox" id="firmado" name="firmado" value="firmado" onChange={(e)=> handleChange(e) } />
+          <input
+            type="checkbox"
+            id="firmado"
+            name="firmado"
+            value="firmado"
+            checked={checkedState[0]}
+            onChange={() => handleOnChange(0)}
+          />
           <span className="checkmark"></span>
         </label>
         <br />
@@ -37,6 +73,8 @@ function FilterListContainer() {
             id="sinFirma"
             name="sinFirma"
             value="sinFirma"
+            checked={checkedState[1]}
+            onChange={() => handleOnChange(1)}
           />
           <span className="checkmark"></span>{" "}
         </label>
@@ -52,6 +90,8 @@ function FilterListContainer() {
             id="contratos"
             name="contratos"
             value="contratos"
+            checked={checkedState[2]}
+            onChange={() => handleOnChange(2)}
           />
           <span className="checkmark"></span>
         </label>
@@ -64,6 +104,8 @@ function FilterListContainer() {
             id="acuerdos"
             name="acuerdos"
             value="acuerdos"
+            checked={checkedState[3]}
+            onChange={() => handleOnChange(3)}
           />
           <span className="checkmark"></span>
         </label>
@@ -76,6 +118,8 @@ function FilterListContainer() {
             id="due-diligence"
             name="due-diligence"
             value="due-diligence"
+            checked={checkedState[4]}
+            onChange={() => handleOnChange(4)}
           />
           <span className="checkmark"></span>
         </label>
@@ -83,7 +127,14 @@ function FilterListContainer() {
         <label className="container-checkbox" for="minutas">
           {" "}
           Minutas
-          <input type="checkbox" id="minutas" name="minutas" value="minutas" />
+          <input
+            type="checkbox"
+            id="minutas"
+            name="minutas"
+            value="minutas"
+            checked={checkedState[5]}
+            onChange={() => handleOnChange(5)}
+          />
           <span className="checkmark"></span>
         </label>
         <br />
@@ -95,6 +146,8 @@ function FilterListContainer() {
             id="templates"
             name="templates"
             value="templates"
+            checked={checkedState[6]}
+            onChange={() => handleOnChange(6)}
           />
           <span className="checkmark"></span>
         </label>
@@ -110,6 +163,8 @@ function FilterListContainer() {
             id="pre-contractual"
             name="pre-contractual"
             value="pre-contractual"
+            checked={checkedState[7]}
+            onChange={() => handleOnChange(7)}
           />
           <span className="checkmark"></span>
         </label>
@@ -119,9 +174,11 @@ function FilterListContainer() {
           Contractual
           <input
             type="checkbox"
-            id="contractuasl"
-            name="contractuasl"
-            value="contractuasl"
+            id="contractual"
+            name="contractual"
+            value="contractual"
+            checked={checkedState[8]}
+            onChange={() => handleOnChange(8)}
           />
           <span className="checkmark"></span>
         </label>
@@ -134,6 +191,8 @@ function FilterListContainer() {
             id="post-contractual"
             name="post-contractual"
             value="post-contractual"
+            checked={checkedState[9]}
+            onChange={() => handleOnChange(9)}
           />
           <span className="checkmark"></span>
         </label>
@@ -144,7 +203,14 @@ function FilterListContainer() {
         <label className="container-checkbox" for="solved">
           {" "}
           Derecho Laboral
-          <input type="checkbox" id="solved" name="solved" value="solved" />
+          <input
+            type="checkbox"
+            id="derecho-laboral"
+            name="derecho-laboral"
+            value="derecho-laboral"
+            checked={checkedState[10]}
+            onChange={() => handleOnChange(10)}
+          />
           <span className="checkmark"></span>
         </label>
         <br />{" "}
@@ -156,6 +222,8 @@ function FilterListContainer() {
             id="derecho-comercial"
             name="derecho-comercial"
             value="derecho-comercial"
+            checked={checkedState[11]}
+            onChange={() => handleOnChange(11)}
           />
           <span className="checkmark"></span>
         </label>
@@ -163,56 +231,118 @@ function FilterListContainer() {
         <label className="container-checkbox" for="derecho-constitucional">
           {" "}
           Derecho Constitucional
-          <input type="checkbox" id="derecho-constitucional" name="derecho-constitucional" value="derecho-constitucional" />
+          <input
+            type="checkbox"
+            id="derecho-constitucional"
+            name="derecho-constitucional"
+            value="derecho-constitucional"
+            checked={checkedState[12]}
+            onChange={() => handleOnChange(12)}
+          />
           <span className="checkmark"></span>
         </label>
         <br />{" "}
         <label className="container-checkbox" for="derecho-administrativo">
           {" "}
           Derecho Administrativo
-          <input type="checkbox" id="derecho-administrativo" name="derecho-administrativo" value="derecho-administrativo" />
+          <input
+            type="checkbox"
+            id="derecho-administrativo"
+            name="derecho-administrativo"
+            value="derecho-administrativo"
+            checked={checkedState[13]}
+            onChange={() => handleOnChange(13)}
+          />
           <span className="checkmark"></span>
         </label>
         <br />{" "}
         <label className="container-checkbox" for="derecho-procesal">
           {" "}
           Derecho Procesal
-          <input type="checkbox" id="derecho-procesal" name="derecho-procesal" value="derecho-procesal" />
+          <input
+            type="checkbox"
+            id="derecho-procesal"
+            name="derecho-procesal"
+            value="derecho-procesal"
+            checked={checkedState[14]}
+            onChange={() => handleOnChange(14)}
+          />
           <span className="checkmark"></span>
         </label>
         <br />{" "}
         <label className="container-checkbox" for="derecho-tributario">
           {" "}
           Derecho Tributario o Fiscal
-          <input type="checkbox" id="derecho-tributario" name="derecho-tributario" value="derecho-tributario" />
+          <input
+            type="checkbox"
+            id="derecho-tributario"
+            name="derecho-tributario"
+            value="derecho-tributario"
+            checked={checkedState[15]}
+            onChange={() => handleOnChange(15)}
+          />
           <span className="checkmark"></span>
         </label>
         <br />{" "}
-        <label className="container-checkbox" for="derecho-internacional-publico">
+        <label
+          className="container-checkbox"
+          for="derecho-internacional-publico"
+        >
           {" "}
           Derecho Internacional Público
-          <input type="checkbox" id="derecho-internacional-publico" name="derecho-internacional-publico" value="derecho-internacional-publico" />
+          <input
+            type="checkbox"
+            id="derecho-internacional-publico"
+            name="derecho-internacional-publico"
+            value="derecho-internacional-publico"
+            checked={checkedState[16]}
+            onChange={() => handleOnChange(16)}
+          />
           <span className="checkmark"></span>
         </label>
         <br />{" "}
         <label className="container-checkbox" for="derecho-civil">
           {" "}
           Derecho Civil
-          <input type="checkbox" id="derecho-civil" name="derecho-civil" value="derecho-civil" />
+          <input
+            type="checkbox"
+            id="derecho-civil"
+            name="derecho-civil"
+            value="derecho-civil"
+            checked={checkedState[17]}
+            onChange={() => handleOnChange(17)}
+          />
           <span className="checkmark"></span>
         </label>
         <br />{" "}
         <label className="container-checkbox" for="derecho-mercantil">
           {" "}
           Derecho Mercantil
-          <input type="checkbox" id="derecho-mercantil" name="derecho-mercantil" value="derecho-mercantil" />
+          <input
+            type="checkbox"
+            id="derecho-mercantil"
+            name="derecho-mercantil"
+            value="derecho-mercantil"
+            checked={checkedState[18]}
+            onChange={() => handleOnChange(18)}
+          />
           <span className="checkmark"></span>
         </label>
         <br />{" "}
-        <label className="container-checkbox" for="derecho-internacional-privado">
+        <label
+          className="container-checkbox"
+          for="derecho-internacional-privado"
+        >
           {" "}
           Derecho Internacional Privado
-          <input type="checkbox" id="derecho-internacional-privado" name="derecho-internacional-privado" value="derecho-internacional-privado" />
+          <input
+            type="checkbox"
+            id="derecho-internacional-privado"
+            name="derecho-internacional-privado"
+            value="derecho-internacional-privado"
+            checked={checkedState[19]}
+            onChange={() => handleOnChange(19)}
+          />
           <span className="checkmark"></span>
         </label>
         <br />

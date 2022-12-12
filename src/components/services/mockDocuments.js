@@ -69,4 +69,22 @@ export const APICallSingleDocuments = (idURL) => {
   });
 };
 
+export const APICallDocumentsCheckBox = (searchCheckBox) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      searchCheckBox
+        .filter((checkBox) => {
+          return checkBox !== undefined;
+        })
+        .map((checkBox) => {
+          let documentFound = documents.filter((documentFound) => {
+            return documentFound.category === checkBox;
+          });
+          if (documentFound) resolve(documentFound);
+          else reject("Document not found");
+        });
+    }, 1000);
+  });
+};
+
 export default APICallDocuments;

@@ -10,34 +10,46 @@ import { Link } from "react-router-dom";
 function Service(props) {
   let urlDetail = `/service/detail/${props.id}`;
   const [description, setDescription] = useState(props.description);
+  const [active, setActive] = useState(false);
 
-  /*useEffect(() => {
-    let textLength = description.length; // 74
-    let text = "";
-    let contador = 0;
-    if (textLength < 50) {
-      text = description;
-    } else {
-      for (let i = 0; i < textLength; i++) {
-        if (contador < 50) {
-          text += props.description[i];
-        }
-        text += text + "...";
-        contador++;
-      }
-      setDescription(text);
+  useEffect(() => {
+    // Cuando es un dato asincróno al render del componente se usa UseEfect
+    hadleDataDescription();
+  }, []);
+
+  function hadleDataDescription() {
+    let sliceString = description.slice(0, 40);
+    let newString = sliceString + "...";
+    setDescription(newString);
+  }
+
+  function handleMouseEnterCard() {
+    setActive(!active);
+    if (!active) {
+      setDescription(props.description);
     }
-  }, []);*/
+  }
+
+  function handleMouseLeaveCard() {
+    setActive(!active);
+    if (active) {
+      hadleDataDescription();
+    }
+  }
 
   return (
-    <div className="service">
+    <div
+      className="service"
+      onMouseEnter={() => handleMouseEnterCard()}
+      onMouseLeave={() => handleMouseLeaveCard()}
+    >
       <div
         className="card-background"
         style={{ backgroundImage: `url('${props.image}')` }}
       ></div>
       <div className="info-card">
         <h3>{props.title}</h3>
-        <p>{props.description}</p>
+        <p>{description}</p>
         <button>
           <Link to={urlDetail}>
             Let's go! <FontAwesomeIcon icon={faArrowRightLong} />

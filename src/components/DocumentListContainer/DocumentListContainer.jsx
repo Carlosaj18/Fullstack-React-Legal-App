@@ -7,7 +7,6 @@ function DocumentListContainer(props) {
   const [moreDocuments, setMoreDocuments] = useState("");
 
   const childToParentMoreElements = (childdata) => {
-    console.log(childdata);
     setMoreDocuments(childdata);
   };
 
@@ -21,6 +20,7 @@ function DocumentListContainer(props) {
           subtitle={props.subtitle}
         >
           <ContainerDocuments
+            searchCheckBox={props.searchCheckBox}
             documentTitle={props.documentTitle}
             moreDocuments={moreDocuments}
           />

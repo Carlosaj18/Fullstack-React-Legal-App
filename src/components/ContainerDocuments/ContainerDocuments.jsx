@@ -5,7 +5,8 @@ import {
   APICallDocumentsCategory,
   APICallDocumentsCategoryId,
   APICallDocumentsTitle,
-  APICallDocumentsMore
+  APICallDocumentsMore,
+  APICallDocumentsCheckBox
 } from "../services/mockDocuments";
 import DocumentList from "../DocumentList/DocumentList";
 import { useParams } from "react-router-dom";
@@ -14,7 +15,7 @@ function ContainerDocuments(props) {
   const [document, setDocument] = useState([]);
   const [date, setDate] = useState();
   let categoryId = useParams().categoryId;
-
+  
   useEffect(() => {
     {/** console.log("App Mount"); */}
 
@@ -45,6 +46,12 @@ function ContainerDocuments(props) {
           setDocument(response);
         })
         .catch((error) => console.error(error));
+    } else if (props.searchCheckBox){
+      APICallDocumentsCheckBox(props.searchCheckBox)
+        .then((response) => {
+          setDocument(response);
+        })
+        .catch((error) => console.error(error));
     } else {
       APICallDocuments()
         .then((response) => {
@@ -54,7 +61,7 @@ function ContainerDocuments(props) {
     }
 
     {/** return () => {console.log("Will Unmounted")} */}
-  }, [props.categoryId, props.documentTitle, props.moreDocuments, categoryId]);
+  }, [props.categoryId, props.documentTitle, props.moreDocuments, props.searchCheckBox, categoryId]);
 
   {/** console.log("Will Render"); */}
 

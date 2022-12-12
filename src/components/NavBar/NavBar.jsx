@@ -18,8 +18,6 @@ function NavBar({childToParent}) {
     event.preventDefault();
   }
 
-  console.log(searchNav)
-
   return (
     <div className="header">
       <div className="search-container">
