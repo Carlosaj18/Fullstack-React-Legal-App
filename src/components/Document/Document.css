@@ -5,7 +5,7 @@ body #root .container main .container-items .card {
     border-radius: 25px;
     position: relative;
     color: black;
-    box-shadow: 0px 0px 2px #234F1E;
+    box-shadow: 0px 0px 2px ffff transparent;
     overflow: hidden;  
     transition: all 0.20s ease-in;
 
@@ -60,7 +60,7 @@ body #root .container main .container-items .card .logo-container-service img {
     box-shadow: 0px 0px 2px #234F1E;
     overflow: hidden;  
     transition: all 0.20s ease-in;
-    cursor: pointer;
+
   }
 
   body #root .container main .container-items .card .info-card {

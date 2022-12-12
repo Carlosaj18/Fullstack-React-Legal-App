@@ -18,11 +18,12 @@ function NavBar({childToParent}) {
     event.preventDefault();
   }
 
+  console.log(searchNav)
 
   return (
     <div className="header">
       <div className="search-container">
-        <form action="/" onSubmit={(e) => handleSubmit(e)}>
+        <form action="/" onChange={() => childToParent(searchNav.value)}>
           <input
             className="input-search-category"
             type="text"
@@ -30,7 +31,7 @@ function NavBar({childToParent}) {
             value={searchNav.value}
             onChange={(e) => handleChange(e)}
           />
-          <button className="search-icon" type="submit" onClick={()=> childToParent(searchNav.value)}>
+          <button className="search-icon" type="submit" onClick={(e)=>handleSubmit(e)}>
             <i>
               <FontAwesomeIcon icon={faSearch} />
             </i>

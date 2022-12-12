@@ -1,25 +1,44 @@
 import React, { useState, useEffect } from "react";
 import "../ContainerServices/ContainerServices.css";
-import APICallServices from "../services/mockServices";
-import ServiceList from '../ServiceList/ServiceList'
+import APICallServices, {
+  APICallServicesMore,
+  APICallServiceCategoryId,
+  APICallServicesTitle
+} from "../services/mockServices";
+import ServiceList from "../ServiceList/ServiceList";
+import { useParams } from "react-router-dom";
 
-function ContainerServices() {
-
-  //console.log("%cRender/Updated", "color:green");
-  // 2. Creamos un estado para los servicios
+function ContainerServices(props) {
   const [service, setService] = useState([]);
+  let serviceId = useParams().serviceId;
 
-  // 3. Creamos un efecto de montaje
   useEffect(() => {
-    // 4. Llamo a la Promesa y guardo el resultado en un estado
-    APICallServices().then((response) => {
-      setService(response);
-    });
-  }, []);
+    if (props.moreServices) {
+      APICallServicesMore()
+        .then((response) => {
+          setService(response);
+        })
+        .catch((error) => console.error(error));
+    } else if (serviceId) {
+      APICallServiceCategoryId(serviceId)
+        .then((response) => {
+          setService(response);
+        })
+        .catch((error) => console.error(error));
+    } else if (props.documentTitle) {
+      APICallServicesTitle(props.documentTitle)
+        .then((response) => {
+          setService(response);
+        })
+        .catch((error) => console.error(error));
+    } else {
+      APICallServices().then((response) => {
+        setService(response);
+      });
+    }
+  }, [props.moreServices, props.documentTitle, serviceId]);
 
-  return (
-    <ServiceList service={service} />
-  );
+  return <ServiceList service={service} />;
 }
 
 export default ContainerServices;

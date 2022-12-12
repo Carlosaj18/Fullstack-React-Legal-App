@@ -1,7 +1,7 @@
 import React from "react";
 import ContainerOptionsTitles from "../ContainerOptionsTitles/ContainerOptionsTitles";
-import "../ItemListContainer/ItemListContainer.css";
-import SearchBarCategory from '../SearchBarCategory/SearchBarCategory'
+import "../DocumentListContainer/DocumentListContainer.css";
+import SearchBarCategory from "../SearchBarCategory/SearchBarCategory";
 
 function ItemCategoryContainer() {
   return (
@@ -12,7 +12,7 @@ function ItemCategoryContainer() {
         </ContainerOptionsTitles>
       </div>
     </div>
-  )
+  );
 }
 
-export default ItemCategoryContainer
+export default ItemCategoryContainer;

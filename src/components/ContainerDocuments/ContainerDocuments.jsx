@@ -11,19 +11,12 @@ import DocumentList from "../DocumentList/DocumentList";
 import { useParams } from "react-router-dom";
 
 function ContainerDocuments(props) {
-  const [category, setCategory] = useState({ value: props.categoryId });
   const [document, setDocument] = useState([]);
   const [date, setDate] = useState();
-
-  console.log(props.moreDocuments);
-
-  // Como se añade ese parametro a la URL
   let categoryId = useParams().categoryId;
 
   useEffect(() => {
-    {
-      /** console.log("App Mount"); */
-    }
+    {/** console.log("App Mount"); */}
 
     let hora = new Date().toLocaleTimeString();
     setDate(hora);
@@ -60,16 +53,10 @@ function ContainerDocuments(props) {
         .catch((error) => console.error(error));
     }
 
-    {
-      /** return () => {
-      console.log("Will Unmounted")
-    } */
-    }
+    {/** return () => {console.log("Will Unmounted")} */}
   }, [props.categoryId, props.documentTitle, props.moreDocuments, categoryId]);
 
-  {
-    /** console.log("Will Render"); */
-  }
+  {/** console.log("Will Render"); */}
 
   return <DocumentList latestDocuments={document} date={date} />;
 }

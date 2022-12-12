@@ -2,9 +2,10 @@ body #root .container main .container-items .container-cards {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 4em;
+    gap: 3em;
     padding: 10px;
     justify-content: center;
+    height: fit-content;
 }
 
 

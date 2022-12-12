@@ -1,4 +1,4 @@
-body #root .container main .container-detail-document .card {
+body #root .container main .container-detail-service .card {
     min-width: 220px;
     width: 620px;
     height: 620px;
@@ -11,12 +11,12 @@ body #root .container main .container-detail-document .card {
     width: 50%;
 }
 
-body #root .container main .container-detail-document .card:hover {
+body #root .container main .container-detail-service .card:hover {
   transform: scale(1.1);
   transform: translateY(-10px);
 }
 
-body #root .container main .container-detail-document .card .logo-container-service {
+body #root .container main .container-detail-service .card .logo-container-service {
     padding: 1rem;
     padding-bottom: 1.75rem;
     position: relative;
@@ -24,7 +24,7 @@ body #root .container main .container-detail-document .card .logo-container-serv
     object-fit: cover;
 } 
 
-body #root .container main .container-detail-document .card .logo-container-service {
+body #root .container main .container-detail-service .card .logo-container-service {
     padding: 1rem;
     position: relative;
     width: 80%;
@@ -33,12 +33,12 @@ body #root .container main .container-detail-document .card .logo-container-serv
     align-items:center;
   }
 
-body #root .container main .container-detail-document .card .logo-container-service img {
+body #root .container main .container-detail-service .card .logo-container-service img {
     width: 100%;
     height: fit-content;
   }
 
-  body #root .container main .container-detail-document .card .card-background {
+  body #root .container main .container-detail-service .card .card-background {
     display: flex;
     justify-content:center;
     align-items:center;
@@ -54,7 +54,7 @@ body #root .container main .container-detail-document .card .logo-container-serv
     cursor: pointer;
   }
 
-  body #root .container main .container-detail-document .card .info-card {
+  body #root .container main .container-detail-service .card .info-card {
     background: #fff;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
@@ -64,7 +64,7 @@ body #root .container main .container-detail-document .card .logo-container-serv
     align-items: center;
   }
 
-  body #root .container main .container-detail-document .card .icon-document {
+  body #root .container main .container-detail-service .card .icon-service {
     color: #234F1E;
     display: flex; 
     flex-direction: row;
@@ -72,7 +72,7 @@ body #root .container main .container-detail-document .card .logo-container-serv
     gap: 2.4em;
   }
 
-  body #root .container main .container-detail-document .card .icon-document Button {
+  body #root .container main .container-detail-service .card .icon-service Button {
     color: #234F1E;
     font-size: 3.5em;
     margin-top: 0.5em;
@@ -85,25 +85,25 @@ body #root .container main .container-detail-document .card .logo-container-serv
     transition: transform 350ms ease-in-out;
   }
 
-  body #root .container main .container-detail-document .card .icon-document Button:hover {
+  body #root .container main .container-detail-service .card .icon-document Button:hover {
     transform: translateY(10px);
   }
 
-  body #root .container main .container-detail-document .card h3 {
+  body #root .container main .container-detail-service .card h3 {
     font-size: 2em;
     color: #234F1E;
     gap: 0 !important;
     margin: 0 !important;
   }
 
-  body #root .container main .container-detail-document .card p {
+  body #root .container main .container-detail-service .card p {
     font-size: 1.3em;
     color: #234F1E;
     gap: 0 !important;
     margin: 0 !important;
   }
 
-  body #root .container main .container-detail-document .card .info-description {
+  body #root .container main .container-detail-service .card .info-description {
     display: flex;
     flex-direction: column;
     gap: 0 !important;

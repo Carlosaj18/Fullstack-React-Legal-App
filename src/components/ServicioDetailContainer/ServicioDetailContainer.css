@@ -1,4 +1,4 @@
-body #root .container main .container-detail-document {
+body #root .container main .container-detail-service {
     display: flex;
     justify-content: space-around;
     align-items: start;

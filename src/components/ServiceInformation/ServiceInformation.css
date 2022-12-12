@@ -1,0 +1,30 @@
+body #root .container main .container-detail-service .container-information {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 40%;
+}
+
+body #root .container main .container-detail-service .container-information h1 {
+    font-size: 4em;
+}
+
+body #root .container main .container-detail-service .container-information strong {
+    font-size: 3em;
+    margin-top: -1em;
+}
+
+body #root .container main .container-detail-service .container-information div {
+    font-size: 1em;
+    margin-top: 3em;
+    text-align: justify;
+    margin-right: 6em;
+}
+
+body #root .container main .container-detail-service .container-information button {
+    margin-top: 3em;
+    font-size: 2em;
+    padding: 0.5em;
+    width: 70%;
+}

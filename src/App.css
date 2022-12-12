@@ -10,7 +10,7 @@
 .container main {
   display: grid;
   grid-column-start: 2;
-  grid-template-rows: 1fr 100px auto 1fr auto;
+  grid-template-rows: 1fr 100px auto auto auto;
   grid-template-columns: repeat(12, 1fr);
   padding: 0 1.5rem 1.5rem;
   max-height: 100%;
@@ -24,7 +24,6 @@ body #root .container main header {
   grid-row: 1;
   grid-column: 1/-1;
   padding: 1rem 0;
-  
 }
 
 body #root .container main .header {
@@ -38,19 +37,44 @@ body #root .container main .container-title {
   grid-row: 2;
   grid-column: 1/-1;
   grid-template-columns: 1fr;
-  width: 200px;
 }
 
 body #root .container main .container-items {
   display: grid;
   grid-row-start: 3;
-  grid-row-end: 4;
   grid-column: 1/9;
   grid-template-columns: 1fr; 
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   border-right: 3px solid #dfe0eb;
   padding-right: 10px;
 }
+
+body #root .container main .container-detail-document {
+  display: grid;
+  grid-row-start: 3;
+  grid-column: 1/-1;
+  padding: 10px;
+  border: 3px solid #dfe0eb;
+}
+
+body #root .container main  .container-detail-service {
+  display: grid;
+  grid-row-start: 3;
+  grid-column: 1/-1;
+  padding: 10px;
+  border: 3px solid #dfe0eb;
+}
+
+body #root .container main .container-items-service {
+  display: grid;
+  grid-row-start: 4;
+  grid-column: 1/9;
+  grid-template-columns: 1fr; 
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  border-right: 3px solid #dfe0eb;
+  padding-right: 10px;
+}
+
 
 body #root .container main .sidebar {
   display: grid;
@@ -62,6 +86,18 @@ body #root .container main .sidebar {
   grid-template-rows: auto auto;
   gap: 1rem;
   grid-template-rows: repeat(2, 1fr);
+}
+
+body #root .container main .filter-section {
+  display: grid;
+  background-color: #e6e7eb;
+  display: grid;
+  grid-row-start: 3;
+  grid-row-end: -1;
+  grid-column: 10/-1;
+  grid-template-rows: auto;
+  gap: 1rem;
+  grid-template-rows: repeat(1fr);
 }
 
 @media (max-width: 504px){
@@ -77,8 +113,13 @@ body #root .container main .sidebar {
 
   body #root .container main .sidebar {
     display: grid;
-    grid-row: -1;
+    grid-row-start: 5;
+    grid-row-end: -1;
     grid-column: 1/-1;
+  }
+
+  body #root .container main .filter-section {
+    display: none;
   }
 
   body {

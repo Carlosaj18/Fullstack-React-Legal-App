@@ -1,4 +1,4 @@
-body #root .container main .container-items-service .container-services {
+body #root .container main .container-items-service .container-cards {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;

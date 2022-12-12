@@ -2,22 +2,22 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
-import "./DocumentDetail.css";
+import "./ServiceDetail.css";
 import ToggleButton from "../ToggleButton/ToggleButton";
 import { Button } from "@chakra-ui/react";
 
-function DocumentDetail(props) {
+function ServiceDetail(props) {
   return (
     <>
       <div className="card">
         <div className="card-background">
           <div className="logo-container-service">
             <ToggleButton icon="♥" />
-            <img src={`${props.document.image}`} alt="logo" />
+            <img src={`${props.service.image}`} alt="logo" />
           </div>
         </div>
         <div className="info-card">
-          <div className="icon-document">
+          <div className="icon-service">
             <Button>
               <FontAwesomeIcon icon={faDownload} />
             </Button>
@@ -26,10 +26,10 @@ function DocumentDetail(props) {
             </Button>
           </div>
           <div className="info-description">
-            <h3>{props.document.title}</h3>
-            <p>Categoria: {props.document.category}</p>
+            <h3>{props.service.title}</h3>
+            <p>Categoria: {props.service.category}</p>
             <p>Creado el {props.date}</p>
-            <p>Firma {props.document.signatures}</p>
+            <p>Firma {props.service.signatures}</p>
           </div>
         </div>
         {/* Contador */}
@@ -38,4 +38,4 @@ function DocumentDetail(props) {
   );
 }
 
-export default DocumentDetail;
+export default ServiceDetail;
