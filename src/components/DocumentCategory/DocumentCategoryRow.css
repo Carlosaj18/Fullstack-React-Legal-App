@@ -1,0 +1,10 @@
+.documentCategoryTitle {
+    color: #234F1E;
+    padding: 1.5rem 1rem;
+    border-radius: 0.5rem;
+    text-align: start;
+    height: -moz-fit-content;
+    height: fit-content;
+    font-weight: bold;
+    font-size: 1.2em;
+}

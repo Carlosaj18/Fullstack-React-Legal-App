@@ -1,5 +1,6 @@
 body #root .container main .container-detail-document .card {
-    min-width: 220px;
+    min-width: 480px;
+    max-width: 480px;
     width: 620px;
     height: 620px;
     border-radius: 25px;
@@ -8,7 +9,6 @@ body #root .container main .container-detail-document .card {
     box-shadow: 0px 0px 2px #234F1E;
     overflow: hidden;  
     transition: all 0.20s ease-in;
-    width: 50%;
 }
 
 body #root .container main .container-detail-document .card:hover {
@@ -45,7 +45,7 @@ body #root .container main .container-detail-document .card .logo-container-serv
     background-color: rgb(211, 211, 211);
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    height: 70%;
+    height: 65%;
     position: relative;
     color: black;
     box-shadow: 0px 0px 2px #234F1E;
@@ -58,10 +58,11 @@ body #root .container main .container-detail-document .card .logo-container-serv
     background: #fff;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    height: 30%;
+    height: 35%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    width: 100%;
   }
 
   body #root .container main .container-detail-document .card .icon-document {
@@ -69,7 +70,9 @@ body #root .container main .container-detail-document .card .logo-container-serv
     display: flex; 
     flex-direction: row;
     margin-top: 0.5em;
-    gap: 2.4em;
+    gap: 2em;
+    width:  50%;
+    margin-left: 1.5em;
   }
 
   body #root .container main .container-detail-document .card .icon-document Button {
@@ -90,7 +93,7 @@ body #root .container main .container-detail-document .card .logo-container-serv
   }
 
   body #root .container main .container-detail-document .card h3 {
-    font-size: 2em;
+    font-size: 1.5em;
     color: #234F1E;
     gap: 0 !important;
     margin: 0 !important;
@@ -106,8 +109,18 @@ body #root .container main .container-detail-document .card .logo-container-serv
   body #root .container main .container-detail-document .card .info-description {
     display: flex;
     flex-direction: column;
-    gap: 0 !important;
-    margin: 0 !important;
+    margin-right: 1.5em;
     padding: 0 !important;
     margin-top: 0.5em;
+    width:  50%;
   }
+
+  body #root .container main .container-detail-document .card .info-description h3 {
+    text-align: end;
+  }
+
+  body #root .container main .container-detail-document .card .info-description p {
+    margin-top: 0.5em;
+    text-align: end;
+  }
+

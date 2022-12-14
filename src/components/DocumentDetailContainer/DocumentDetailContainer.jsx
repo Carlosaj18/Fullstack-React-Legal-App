@@ -25,6 +25,7 @@ function DocumentDetailContainer() {
     <div className="container-detail-document">
       <DocumentDetail document={document} date={date} />
       <DocumentInformation document={document}/>
+
     </div>
   );
 }

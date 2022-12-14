@@ -22,6 +22,7 @@ body #root .container main .container-items .card:hover p {
   height: fit-content;
 }
 
+
 body #root .container main .container-items .card:hover h3 {
   font-size: 1em;
 }

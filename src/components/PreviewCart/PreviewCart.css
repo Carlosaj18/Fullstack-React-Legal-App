@@ -1,0 +1,72 @@
+#main {
+    transition: margin-left 0.5s;
+    padding: 16px;
+  }
+  .sidebar-carrito {
+    height: 100%;
+    width: 350px;
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    background-color: #212121;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 4em;
+    border: 3px solid red;
+  }
+  .sidebar-carrito .closebtn:hover {
+    color: #6243f7;
+  }
+  .sidebar-carrito .title {
+    width: 200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0em 1em 1em 1em;
+    border-bottom: 1px solid #00ffcb;
+    transition: all 0.5s;
+  }
+  .sidebar-carrito .title h4 {
+    color: #00ffcb;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-right: 0.5em;
+  }
+  .sidebar-carrito .details {
+    width: 200px;
+    margin: auto;
+    text-align: center;
+    padding: 1em 0em;
+    border-bottom: 1px solid #00ffcb;
+  }
+  .details p {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 0.5em;
+  }
+  .sidebar-carrito .closebtn {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  .sidebar-carrito button {
+    width: 150px;
+    display: block;
+    margin: 1em auto;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #212121;
+    font-size: 1rem;
+    padding: 0.3em 1em;
+    background-color: #00ffcb;
+    transform: all 0.5s;
+  }
+  .sidebar-carrito button:hover {
+    background-color: #6243f7;
+    color: #00ffcb;
+    width: 200px;
+    border-radius: 25px;
+  }

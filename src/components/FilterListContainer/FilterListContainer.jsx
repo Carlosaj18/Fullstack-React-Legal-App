@@ -169,7 +169,7 @@ function FilterListContainer({ childToParentCheckBox }) {
           <span className="checkmark"></span>
         </label>
         <br />{" "}
-        <label className="container-checkbox" for="Unsolved">
+        <label className="container-checkbox" for="contractual">
           {" "}
           Contractual
           <input
@@ -315,14 +315,14 @@ function FilterListContainer({ childToParentCheckBox }) {
           <span className="checkmark"></span>
         </label>
         <br />{" "}
-        <label className="container-checkbox" for="derecho-mercantil">
+        <label className="container-checkbox" for="derecho-digital">
           {" "}
-          Derecho Mercantil
+          Derecho Digital
           <input
             type="checkbox"
-            id="derecho-mercantil"
-            name="derecho-mercantil"
-            value="derecho-mercantil"
+            id="derecho-digital"
+            name="derecho-digital"
+            value="derecho-digital"
             checked={checkedState[18]}
             onChange={() => handleOnChange(18)}
           />

@@ -1,54 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
 import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
 import userImg from "../../images/userimg.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
-import { faFilter } from "@fortawesome/free-solid-svg-icons";
+import SearchNabBar from '../SearchNabBar/SearchNabBar';
 
-function NavBar({childToParent}) {
-  const [searchNav, setSearchNav] = useState({ value: "" });
+function NavBar({onFilterTextChange, filterText}) {
+  
 
-  function handleChange(event) {
-    setSearchNav({ value: event.target.value }); // Seteo el valor del search
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
+  const user = {
+    name: 'Carlos Jaramillo',
+    imageUrl: userImg,
+    imageSize: 60,
+  };
 
   return (
     <div className="header">
-      <div className="search-container">
-        <form action="/" onChange={() => childToParent(searchNav.value)}>
-          <input
-            className="input-search-category"
-            type="text"
-            placeholder="Search documents..."
-            value={searchNav.value}
-            onChange={(e) => handleChange(e)}
-          />
-          <button className="search-icon" type="submit" onClick={(e)=>handleSubmit(e)}>
-            <i>
-              <FontAwesomeIcon icon={faSearch} />
-            </i>
-          </button>
-        </form>
-        <button type="submit" className="filters">
-          <i>
-            <FontAwesomeIcon icon={faFilter} />
-          </i>
-          Filters
-        </button>
-      </div>
+      < SearchNabBar onFilterTextChange={onFilterTextChange} filterText={filterText}/>
       <div className="user">
         <div className="icons">
           <CartWidget />
         </div>
         <div className="container-user">
           <div className="user-img">
-            <img src={userImg} alt="user-profile" />
+            <img
+              src={user.imageUrl}
+              alt="user-profile"
+              style={{
+                width: user.imageSize,
+                height: user.imageSize,
+              }}
+            />
           </div>
           <p className="name">Hi, Carlos</p>
         </div>

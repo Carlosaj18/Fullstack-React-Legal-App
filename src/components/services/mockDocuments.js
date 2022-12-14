@@ -47,7 +47,7 @@ export const APICallDocumentsTitle = (title) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       let documentFound = documents.filter((documentArray) => {
-        return title.toLowerCase() === ""
+        return title.toLowerCase() === " "
           ? documentArray
           : documentArray.title.toLowerCase().includes(title.toLowerCase());
       });
@@ -76,14 +76,31 @@ export const APICallDocumentsCheckBox = (searchCheckBox) => {
       let filterCombo = searchCheckBox.filter((checkBox) => {
         return checkBox !== undefined;
       });
-      console.log(filterCombo);
-      filterCombo.forEach((element) => {
-        let array = documents.filter((document) => {
-          return document.category === element;
+      if (filterCombo.length > 0) {
+        filterCombo.forEach((element) => {
+          let array = documents.filter((document) => {
+            return (
+              document.signed === element ||
+              document.category === element ||
+              document.state === element ||
+              document.area === element
+            );
+          });
+          if (array.length > 0) arrayOptions.push(...array);
         });
-        arrayOptions.push(array);
-      });
-      console.log(arrayOptions)
+        if (arrayOptions) {
+          let tem = [];
+          arrayOptions.forEach((option) => {
+            if (!tem.includes(option)) {
+              tem.push(option);
+            }
+          });
+          resolve(tem);
+        } else reject("Document not found");
+      } else {
+        let newArry = documents.slice(0, 3);
+        resolve(newArry);
+      }
     }, 1000);
   });
 };

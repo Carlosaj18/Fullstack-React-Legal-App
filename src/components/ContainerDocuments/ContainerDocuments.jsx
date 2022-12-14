@@ -6,19 +6,25 @@ import {
   APICallDocumentsCategoryId,
   APICallDocumentsTitle,
   APICallDocumentsMore,
-  APICallDocumentsCheckBox
+  APICallDocumentsCheckBox,
 } from "../services/mockDocuments";
 import DocumentList from "../DocumentList/DocumentList";
 import { useParams } from "react-router-dom";
+import DocumentCategoryRow from "../DocumentCategory/DocumentCategoryRow";
 
 function ContainerDocuments(props) {
   const [document, setDocument] = useState([]);
   const [date, setDate] = useState();
   let categoryId = useParams().categoryId;
-  
-  useEffect(() => {
-    {/** console.log("App Mount"); */}
+  let headingContratos = false;
+  let headingAcuerdos = false;
+  let headingTemplates = false;
+  let lastCategory = null;
+  let contratos;
+  let acuerdos;
+  let templates;
 
+  useEffect(() => {
     let hora = new Date().toLocaleTimeString();
     setDate(hora);
 
@@ -46,7 +52,13 @@ function ContainerDocuments(props) {
           setDocument(response);
         })
         .catch((error) => console.error(error));
-    } else if (props.searchCheckBox){
+    } else if (props.searchCheckBox) {
+      APICallDocumentsCheckBox(props.searchCheckBox)
+        .then((response) => {
+          setDocument(response);
+        })
+        .catch((error) => console.error(error));
+    } else if (props.searchCheckBox && props.documentTitle) {
       APICallDocumentsCheckBox(props.searchCheckBox)
         .then((response) => {
           setDocument(response);
@@ -59,13 +71,56 @@ function ContainerDocuments(props) {
         })
         .catch((error) => console.error(error));
     }
+  }, [
+    props.categoryId,
+    props.documentTitle,
+    props.moreDocuments,
+    props.searchCheckBox,
+    categoryId,
+  ]);
 
-    {/** return () => {console.log("Will Unmounted")} */}
-  }, [props.categoryId, props.documentTitle, props.moreDocuments, props.searchCheckBox, categoryId]);
+  document.forEach((doc) => {
+    if (doc.category !== lastCategory && doc.category === 'contratos') {
+      headingContratos = true;
+    }
+    lastCategory = doc.category;
+  });
 
-  {/** console.log("Will Render"); */}
+  document.forEach((doc) => {
+    if (doc.category !== lastCategory && doc.category === 'acuerdos') {
+      headingAcuerdos = true;
+    }
+    lastCategory = doc.category;
+  });
 
-  return <DocumentList latestDocuments={document} date={date} />;
+  document.forEach((doc) => {
+    if (doc.category !== lastCategory && doc.category === 'templates') {
+      headingTemplates = true;
+    }
+    lastCategory = doc.category;
+  });
+
+  contratos = document.filter((contrato) => {
+    return contrato.category === "contratos";
+  });
+  acuerdos = document.filter((acuerdo) => {
+    return acuerdo.category === "acuerdos";
+  });
+  templates = document.filter((template) => {
+    return template.category === "templates";
+  });
+
+  return (
+    <>
+      {" "}
+      {headingContratos === true  ? <DocumentCategoryRow category="Contratos" /> : null}
+      {contratos.length > 0 ? <DocumentList latestDocuments={contratos} date={date} /> : null}
+      {headingAcuerdos === true ? <DocumentCategoryRow category="Acuerdos" /> : null}
+      {acuerdos.length > 0 ? <DocumentList latestDocuments={acuerdos} date={date} /> : null}  
+      {headingTemplates === true ? <DocumentCategoryRow category="Templates" /> : null}
+      {templates.length > 0 ? <DocumentList latestDocuments={templates} date={date} /> : null}  
+    </>
+  );
 }
 
 export default ContainerDocuments;

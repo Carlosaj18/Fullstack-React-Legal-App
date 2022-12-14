@@ -5,3 +5,13 @@ body #root .container main .container-detail-document {
     gap: 6em;
     width: 100%;
 }
+
+@media (max-width: 1177px){
+    body #root .container main .container-detail-document {
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+    
+    
+}

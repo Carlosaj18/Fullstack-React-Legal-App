@@ -7,12 +7,14 @@ import ToggleButton from "../ToggleButton/ToggleButton";
 import { Button } from "@chakra-ui/react";
 
 function DocumentDetail(props) {
+
   return (
     <>
+      <div>hola</div>
       <div className="card">
         <div className="card-background">
           <div className="logo-container-service">
-            <ToggleButton icon="♥" />
+            <ToggleButton  icon="♥" />
             <img src={`${props.document.image}`} alt="logo" />
           </div>
         </div>

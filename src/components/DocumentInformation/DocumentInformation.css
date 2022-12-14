@@ -7,24 +7,55 @@ body #root .container main .container-detail-document .container-information {
 }
 
 body #root .container main .container-detail-document .container-information h1 {
-    font-size: 4em;
+    font-size: 2.5em;
+    text-align: start;
 }
 
-body #root .container main .container-detail-document .container-information strong {
+body #root .container main .container-detail-document .container-information .price {
     font-size: 3em;
-    margin-top: -1em;
+    margin-top: 0.5em;
+    font-weight: bold;
 }
 
 body #root .container main .container-detail-document .container-information div {
     font-size: 1em;
-    margin-top: 3em;
+    margin-top: 2em;
     text-align: justify;
     margin-right: 6em;
 }
+
+body #root .container main .container-detail-document .container-information .clausulas {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
 
 body #root .container main .container-detail-document .container-information button {
     margin-top: 3em;
     font-size: 2em;
     padding: 0.5em;
     width: 70%;
+}
+
+body #root .container main .container-detail-document .container-information button:hover {
+    background-color: #234F1E;
+    color: white;
+}
+
+@media (max-width: 1177px){
+
+    body #root .container main .container-detail-document .container-information {
+        width: 80%;
+    }
+
+    body #root .container main .container-detail-document .container-information button {
+        width: 100%;
+        margin-top: 1em !important;
+        margin-bottom: 1em !important;
+    }
+
+    body #root .container main .container-detail-document .container-information button:hover {
+        background-color: #234F1E;
+        color: white;
+    }
 }

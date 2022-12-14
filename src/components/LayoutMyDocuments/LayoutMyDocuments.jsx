@@ -16,7 +16,7 @@ function LayoutMyDocuments(props) {
 
   return (
     <>
-      <DocumentListContainer searchCheckBox={searchCheckBox} heading={<h3 style={style} className="heading">Estos son nuestros contratos y documentos legales listos para usar, construidos y revisados bajo los mayores estándares de calidad, y a precios inigualables.</h3>} documentTitle={props.documentTitle} subtitle="Mis Documentos"/>
+      <DocumentListContainer searchCheckBox={searchCheckBox} heading={<h3 style={style} className="heading">Estos son nuestros contratos y documentos legales listos para usar, construidos y revisados bajo los mayores estándares de calidad, y a precios inigualables.</h3>} documentTitle={props.documentTitle} subtitle="Mis Documentos"/>   
       <FilterListContainer childToParentCheckBox={childToParentCheckBox}/>
     </>
   );

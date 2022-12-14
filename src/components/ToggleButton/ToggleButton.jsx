@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './ToggleButton.css';
+import './ToggleButton.css'
 
 function ToggleButton(props) {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -7,7 +7,6 @@ function ToggleButton(props) {
 
   function handleFavorite() {
     setIsFavorite(!isFavorite); 
-    console.log("click");
   }
 
   return (
