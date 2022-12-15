@@ -1,0 +1,29 @@
+.contador {
+    display: flex;
+
+}
+
+.contador button {
+    width: 10px;
+    display: block;
+    margin: 1em auto;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #212121;
+    font-size: 1rem;
+    padding: 0.3em 1em;
+    background-color: fff;
+    transform: all 0.5s;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+
+
+.contador .left {
+    border-left: 1px solid black;
+}
+
+.contador .right {
+    border-right: 1px solid black;
+}

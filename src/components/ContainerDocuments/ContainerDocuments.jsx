@@ -80,21 +80,21 @@ function ContainerDocuments(props) {
   ]);
 
   document.forEach((doc) => {
-    if (doc.category !== lastCategory && doc.category === 'contratos') {
+    if (doc.category !== lastCategory && doc.category === "contratos") {
       headingContratos = true;
     }
     lastCategory = doc.category;
   });
 
   document.forEach((doc) => {
-    if (doc.category !== lastCategory && doc.category === 'acuerdos') {
+    if (doc.category !== lastCategory && doc.category === "acuerdos") {
       headingAcuerdos = true;
     }
     lastCategory = doc.category;
   });
 
   document.forEach((doc) => {
-    if (doc.category !== lastCategory && doc.category === 'templates') {
+    if (doc.category !== lastCategory && doc.category === "templates") {
       headingTemplates = true;
     }
     lastCategory = doc.category;
@@ -113,12 +113,34 @@ function ContainerDocuments(props) {
   return (
     <>
       {" "}
-      {headingContratos === true  ? <DocumentCategoryRow category="Contratos" /> : null}
-      {contratos.length > 0 ? <DocumentList latestDocuments={contratos} date={date} /> : null}
-      {headingAcuerdos === true ? <DocumentCategoryRow category="Acuerdos" /> : null}
-      {acuerdos.length > 0 ? <DocumentList latestDocuments={acuerdos} date={date} /> : null}  
-      {headingTemplates === true ? <DocumentCategoryRow category="Templates" /> : null}
-      {templates.length > 0 ? <DocumentList latestDocuments={templates} date={date} /> : null}  
+      {headingContratos === true ? (
+        <DocumentCategoryRow category="Contratos" />
+      ) : null}
+      {contratos.length > 0 ? (
+        <DocumentList latestDocuments={contratos} date={date} />
+      ) : null}
+      {headingAcuerdos === true ? (
+        <DocumentCategoryRow category="Acuerdos" />
+      ) : null}
+      {acuerdos.length > 0 ? (
+        <DocumentList latestDocuments={acuerdos} date={date} />
+      ) : null}
+      {headingTemplates === true ? (
+        <DocumentCategoryRow category="Templates" />
+      ) : null}
+      {templates.length > 0 ? (
+        <DocumentList latestDocuments={templates} date={date} />
+      ) : null}
+      {document <= 0 ? (
+        <div>
+          <h1 style={{ textAlign: "center", color: "#234F1E " }}>
+            {" "}
+            No hay documentos con esos criterios{" "}
+          </h1>
+        </div>
+      ) : (
+        null
+      )}
     </>
   );
 }

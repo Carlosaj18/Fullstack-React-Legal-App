@@ -4,23 +4,36 @@ import CartWidget from "../CartWidget/CartWidget";
 import userImg from "../../images/userimg.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
-import SearchNabBar from '../SearchNabBar/SearchNabBar';
+import SearchNabBar from "../SearchNabBar/SearchNabBar";
 
-function NavBar({onFilterTextChange, filterText}) {
-  
-
+function NavBar({
+  onFilterTextChange,
+  filterText,
+  setButtonFilter,
+  buttonFilter,
+  previewCart,
+  setPreviewCart
+}) {
   const user = {
-    name: 'Carlos Jaramillo',
+    name: "Carlos Jaramillo",
     imageUrl: userImg,
     imageSize: 60,
   };
 
   return (
     <div className="header">
-      < SearchNabBar onFilterTextChange={onFilterTextChange} filterText={filterText}/>
+      <SearchNabBar
+        onFilterTextChange={onFilterTextChange}
+        filterText={filterText}
+        setButtonFilter={setButtonFilter}
+        buttonFilter={buttonFilter}
+      />
       <div className="user">
         <div className="icons">
-          <CartWidget />
+          <CartWidget
+            previewCart={previewCart}
+            setPreviewCart={setPreviewCart}
+          />
         </div>
         <div className="container-user">
           <div className="user-img">

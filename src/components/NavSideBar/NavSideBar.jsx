@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./NavSideBar.css";
 import imageLogo from "../../images/legalApp-logo.png";
@@ -13,16 +13,7 @@ import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { faChartLine } from "@fortawesome/free-solid-svg-icons";
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
-let icons = [
-  faHouse,
-  faFile,
-  faFileSignature,
-  faFileContract,
-  faCloudArrowUp,
-  faChartLine,
-];
-
-function SideBar(props) {
+function SideBar() {
   const lanzarAlerta = () => {
     alert("Do you want to logout your account?");
   };

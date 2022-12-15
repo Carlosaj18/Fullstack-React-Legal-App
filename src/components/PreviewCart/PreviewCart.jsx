@@ -1,55 +1,60 @@
 import React from "react";
 import "./PreviewCart.css";
+import docImage from "../../images/document.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import ContadorDocPreviewCart from "../ContadorDocPreviewCart/ContadorDocPreviewCart";
 
-function previewCart() {
-  // Debe ir en el carrito para linkearlo
-
-  /**   function openNav() {
-    document.getElementById("previewCarrito").style.width = "250px"; // preview cart
-    document.getElementById("main").style.marginRight = "250px"; // header
+function previewCart({ previewCart, setPreviewCart }) {
+  function handleStateChangePreviewCart() {
+    if (previewCart) {
+      setPreviewCart(!previewCart);
+    }
   }
-  function closeNav() {
-    document.getElementById("previewCarrito").style.width = "0";
-    document.getElementById("main").style.marginRight = "0";
-  } */
 
   return (
     <>
-      <div id="previewCarrito" className="sidebar-carrito">
+      <div
+        id={previewCart ? "previewCarrito" : "previewCarrito-not-visible"}
+        className="sidebar-carrito"
+      >
         <div className="title">
-          <h4>Mi carrito</h4>
           <div className="closebtn">
-            <i className="far fa-times-circle"></i>
+            <i>
+              <FontAwesomeIcon
+                icon={faTimesCircle}
+                onClick={() => handleStateChangePreviewCart()}
+              />
+            </i>
+          </div>
+          <h4>Mi Carrito</h4>
+        </div>
+        <div className="details">
+          <div className="detail-imagen">
+            <img src={docImage} alt="Imagen" />
+          </div>
+          <div className="detail-info">
+            <p>
+              <strong>Nombre del paquete</strong>
+            </p>
+            <p className="precio">$Precio</p>
+            <ContadorDocPreviewCart />
+          </div>
+          <div className="closebtn">
+            <i>
+              <FontAwesomeIcon icon={faTimesCircle} />
+            </i>
           </div>
         </div>
-        <div className="details">
-          <p>Nombre del paquete</p>
-          <p>
-            <strong>El detalle de lo que contiene el paquete</strong>
-          </p>
+        <div className="container-footer">
+          <div className="details-subtotal">
+            <div>Subtotal</div>
+            <div>$$$</div>
+          </div>
+          <div className="container-button-ver-carrito">
+            <button className="ver-carrito">Ver Carrito </button>
+          </div>
         </div>
-        <div className="details">
-          <p>Cantidad</p>
-          <p>
-            <strong>item.className=quantity </strong>
-          </p>
-        </div>
-        <div className="details">
-          <p>Precio</p>
-          <p>
-            <strong>$5000</strong>
-          </p>
-        </div>
-        <button>
-          <i className="far fa-trash-alt"></i>
-          Borrar
-        </button>
-        <button>
-          <a className="comprar" href="shoppingCart/shoppingCart">
-            <i className="far fa-smile-wink"></i>
-            Comprar
-          </a>
-        </button>
       </div>
       <div id="emptycart"></div>
     </>

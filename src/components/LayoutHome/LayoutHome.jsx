@@ -6,7 +6,11 @@ import ServiceListContainer from "../ServiceListContainer/ServiceListContainer";
 function LayoutHome(props) {
   return (
     <>
-      <DocumentListContainer documentTitle={props.documentTitle} subtitle="Últimos Documentos"/>
+      <DocumentListContainer
+        buttonFilter={props.buttonFilter}
+        documentTitle={props.documentTitle}
+        subtitle="Últimos Documentos"
+      />
       <ServiceListContainer documentTitle={props.documentTitle} />
       <SideBar />
     </>

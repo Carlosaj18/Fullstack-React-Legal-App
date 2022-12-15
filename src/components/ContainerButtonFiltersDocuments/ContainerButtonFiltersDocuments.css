@@ -1,0 +1,10 @@
+.button-filters {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-filters-not-display {
+    display: none;
+}

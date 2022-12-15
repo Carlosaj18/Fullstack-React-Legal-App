@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ContainerOptionsTitles from "../ContainerOptionsTitles/ContainerOptionsTitles";
 import ContainerDocuments from "../ContainerDocuments/ContainerDocuments";
 import "./DocumentListContainer.css";
+import ContainerButtonFiltersDocuments from '../ContainerButtonFiltersDocuments/ContainerButtonFiltersDocuments'
 
 function DocumentListContainer(props) {
   const [moreDocuments, setMoreDocuments] = useState("");
@@ -18,6 +19,7 @@ function DocumentListContainer(props) {
           childToParentMoreElements={childToParentMoreElements}
           subtitle={props.subtitle}
         >
+          <ContainerButtonFiltersDocuments buttonFilter={props.buttonFilter}/>
           <ContainerDocuments
             searchCheckBox={props.searchCheckBox}
             documentTitle={props.documentTitle}

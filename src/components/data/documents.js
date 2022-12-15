@@ -209,7 +209,7 @@ let documents = [
       "Ley aplicable",
       "Integridad y divisibilidad",
     ],
-    category: "templates",
+    category: "contratos",
     categoryId: 3,
     state: "contractual",
     signed: "firmado",

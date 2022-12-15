@@ -3,10 +3,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
-function SearchNabBar({ onFilterTextChange, filterText }) {
+function SearchNabBar({
+  onFilterTextChange,
+  filterText,
+  setButtonFilter,
+  buttonFilter,
+}) {
   function handleSubmit(e) {
     e.preventDefault();
   }
+
+  function onClickButtonFilter(){
+    return setButtonFilter(!buttonFilter)
+  }
+
   return (
     <>
       <div className="search-container">
@@ -24,7 +34,11 @@ function SearchNabBar({ onFilterTextChange, filterText }) {
             </i>
           </button>
         </form>
-        <button type="submit" className="filters">
+        <button
+          onClick={() => onClickButtonFilter()}
+          type="submit"
+          className="filters"
+        >
           <i>
             <FontAwesomeIcon icon={faFilter} />
           </i>

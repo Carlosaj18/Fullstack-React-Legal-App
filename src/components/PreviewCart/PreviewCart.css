@@ -2,71 +2,153 @@
     transition: margin-left 0.5s;
     padding: 16px;
   }
+
+  #previewCarrito {
+    width: 450px;
+    
+  }
+
+  #previewCarrito-not-visible {
+    width: 0px;
+  }
   .sidebar-carrito {
     height: 100%;
-    width: 350px;
     position: fixed;
     z-index: 1;
     right: 0;
-    background-color: #212121;
+    background-color: #fff ;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 4em;
-    border: 3px solid red;
   }
-  .sidebar-carrito .closebtn:hover {
-    color: #6243f7;
+
+  .sidebar-carrito .closebtn {
+    margin-right: 1em;
+    margin-left: 0px;
+  }
+  .details:hover .closebtn {
+    color: #efb810;
   }
   .sidebar-carrito .title {
-    width: 200px;
+    width: 100%;
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0em 1em 1em 1em;
-    border-bottom: 1px solid #00ffcb;
     transition: all 0.5s;
+    gap: 20px;
+    background-color: #234F1E ;
   }
   .sidebar-carrito .title h4 {
-    color: #00ffcb;
-    font-size: 1.2rem;
+    color: white;
+    font-size: 2rem;
     font-weight: 400;
     margin-right: 0.5em;
   }
   .sidebar-carrito .details {
-    width: 200px;
+    display: flex;
+    width: 100%;
     margin: auto;
     text-align: center;
     padding: 1em 0em;
-    border-bottom: 1px solid #00ffcb;
+    border-bottom: 3px solid #dfe0eb;
   }
-  .details p {
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 300;
-    margin-bottom: 0.5em;
+
+  .detail-imagen {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .detail-imagen img {
+    width: 100px;
+    height: 100px;
+    background-color: #234F1E;
+    padding: 10px;
+  }
+
+  .detail-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:start;
+    gap: -15px;
+    width: 50%;
+    line-height: 0.2;
+  }
+
+  .detail-info p strong {
+    color: #5E5E5E;
+    font-size: 1.3em;
+    font-weight: lighter;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+    width: 90%;
+    word-break: break-word;
+    margin-bottom: 0;
+  }
+
+  .detail-info .precio  {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #2F2F2F
+  }
+
+  .container-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60%;
+  }
+
+  .details-subtotal {
+    display: flex;
+    flex-direction: column;
+    color: #2F2F2F;
+    font-size: 2.5em;
+    align-items: center;
+    justify-content: start;
+    width: 61%;
+    margin-top: 1em;
+    margin-top: 20px;
+    font-weight: 12px;
+    height: fit-content;
+    overflow: hidden;
+    line-height: 1.5;
   }
   .sidebar-carrito .closebtn {
     font-size: 1.5rem;
     color: #fff;
   }
-  .sidebar-carrito button {
-    width: 150px;
-    display: block;
-    margin: 1em auto;
-    border-radius: 15px;
+
+.container-button-ver-carrito {
+  display: flex;
+    justify-content: end;
+    align-items: center;
+}  
+.ver-carrito {
+  margin: 1em auto;
     border: none;
     outline: none;
     cursor: pointer;
-    color: #212121;
-    font-size: 1rem;
+    color: #fff;
+    font-size: 1.6rem;
     padding: 0.3em 1em;
-    background-color: #00ffcb;
+    background-color: fff;
     transform: all 0.5s;
-  }
-  .sidebar-carrito button:hover {
-    background-color: #6243f7;
-    color: #00ffcb;
-    width: 200px;
-    border-radius: 25px;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    
+    transition: opacity .3s;
+    background: #234F1E;
+
+    border-top-width: 1px;
+    border-top-style: solid;
+    height: 80px;
+
+}

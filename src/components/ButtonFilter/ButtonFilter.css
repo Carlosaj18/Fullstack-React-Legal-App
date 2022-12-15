@@ -1,0 +1,14 @@
+.button-filters button {
+    border-radius: 15px;
+    padding: 10px;
+    border: 1px solid #234F1E;
+    font-size: 1em;
+    transition: all 0.20s ease-in;
+    margin-bottom: 1em;
+}
+
+.button-filters button:hover {
+    background: #234F1E;
+    color: #fff;
+    transform: translateY(-10px);
+}

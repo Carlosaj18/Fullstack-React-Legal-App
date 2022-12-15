@@ -200,7 +200,7 @@ function FilterListContainer({ childToParentCheckBox }) {
       </div>
       <div className="areas-juridicas">
         <h3>Especialidades dentro del derecho</h3>{" "}
-        <label className="container-checkbox" for="solved">
+        <label className="container-checkbox" for="derecho-laboral">
           {" "}
           Derecho Laboral
           <input
