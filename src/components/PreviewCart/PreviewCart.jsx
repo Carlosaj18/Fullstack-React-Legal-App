@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./PreviewCart.css";
 import docImage from "../../images/document.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import ContadorDocPreviewCart from "../ContadorDocPreviewCart/ContadorDocPreviewCart";
+import contexto from "../App";
 
-function previewCart({ previewCart, setPreviewCart }) {
+function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
+  const miContext = useContext(contexto);
+  console.log(miContext);
   function handleStateChangePreviewCart() {
-    if (previewCart) {
-      setPreviewCart(!previewCart);
+    if (previewCartWidget) {
+      setPreviewCartWidget(!previewCartWidget);
     }
   }
 
   return (
     <>
       <div
-        id={previewCart ? "previewCarrito" : "previewCarrito-not-visible"}
+        id={previewCartWidget ? "previewCarrito" : "previewCarrito-not-visible"}
         className="sidebar-carrito"
       >
         <div className="title">
@@ -61,4 +64,4 @@ function previewCart({ previewCart, setPreviewCart }) {
   );
 }
 
-export default previewCart;
+export default PreviewCart;

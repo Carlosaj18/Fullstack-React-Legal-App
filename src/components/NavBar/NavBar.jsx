@@ -11,8 +11,8 @@ function NavBar({
   filterText,
   setButtonFilter,
   buttonFilter,
-  previewCart,
-  setPreviewCart
+  previewCartWidget,
+  setPreviewCartWidget
 }) {
   const user = {
     name: "Carlos Jaramillo",
@@ -31,8 +31,8 @@ function NavBar({
       <div className="user">
         <div className="icons">
           <CartWidget
-            previewCart={previewCart}
-            setPreviewCart={setPreviewCart}
+            previewCart={previewCartWidget}
+            setPreviewCart={setPreviewCartWidget}
           />
         </div>
         <div className="container-user">

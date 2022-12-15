@@ -1,4 +1,5 @@
-import React, { useState, createContext } from "react";
+import React, { useState} from "react";
+import { createContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Hamburger from "./components/Hamburger/Hamburger";
@@ -16,7 +17,7 @@ import PreviewCart from "./components/PreviewCart/PreviewCart";
 function App() {
   const [filterText, setFilterText] = useState("");
   const [buttonFilter, setButtonFilter] = useState(false);
-  const [previewCart, setPreviewCart] = useState(false);
+  const [previewCartWidget, setPreviewCartWidget] = useState(false);
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const contexto = createContext([]);
   const Provider = contexto.Provider;
@@ -29,7 +30,7 @@ function App() {
   }*/
 
   return (
-    <Provider value={{ cart: [] }}>
+    <Provider value={ {cart: []} }>
       <BrowserRouter>
         <div className="container">
           <Hamburger />
@@ -37,8 +38,8 @@ function App() {
           <main>
             <header>
               <NavBar
-                previewCart={previewCart}
-                setPreviewCart={setPreviewCart}
+                previewCartWidget={previewCartWidget}
+                setPreviewCartWidget={setPreviewCartWidget}
                 buttonFilter={buttonFilter}
                 setButtonFilter={setButtonFilter}
                 onFilterTextChange={setFilterText}
@@ -85,8 +86,8 @@ function App() {
               <Route path="*" element={<h1>404: Recurso no encontrado</h1>} />
             </Routes>
             <PreviewCart
-              previewCart={previewCart}
-              setPreviewCart={setPreviewCart}
+              previewCartWidget={previewCartWidget}
+              setPreviewCartWidget={setPreviewCartWidget}
             />
           </main>
         </div>
@@ -95,5 +96,5 @@ function App() {
   );
 }
 
-export {contexto} ;
+export {contexto };
 export default App;
