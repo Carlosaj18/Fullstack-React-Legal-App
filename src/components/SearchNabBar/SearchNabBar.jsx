@@ -20,7 +20,7 @@ function SearchNabBar({
   return (
     <>
       <div className="search-container">
-        <form action="/" onSubmit={(e) => handleSubmit(e)}>
+        <form action="/" onClick={(e) => handleSubmit(e)}>
           <input
             className="input-search-category"
             type="text"

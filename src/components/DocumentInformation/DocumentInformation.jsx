@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./DocumentInformation.css";
+import { CartContext } from "../../Contexto/CartProviderContext";
 
 function DocumentInformation(props) {
-  function handleChange() {
-    console.log("Carrito: ", props.document);
-  }
+  const { addItem } = useContext(CartContext);
+
   const getFormattedPrice = (price) => {
     price = parseFloat(price);
     return `${price.toFixed(3)}`;
@@ -39,7 +39,7 @@ function DocumentInformation(props) {
         Si tienes dudas sobre cómo usar este documento, por favor ponte en
         contacto con nuestro equipo de LegalApp.
       </div>
-      <button onClick={() => handleChange()}>Agregar al carrito</button>
+      <button onClick={()=>addItem({id:props.id, item: props.document}, 1)}>Agregar al carrito</button>
     </div>
   );
 }

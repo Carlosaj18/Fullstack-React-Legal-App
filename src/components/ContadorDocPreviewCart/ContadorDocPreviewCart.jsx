@@ -12,6 +12,7 @@ function ContadorDocPreviewCart() {
   function handleClickSum() {
     setCount(count + 1);
   }
+
   return (
     <div className="contador">
       <button onClick={handleClickRest} className="left">-</button>

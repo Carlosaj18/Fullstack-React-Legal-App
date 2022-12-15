@@ -4,16 +4,16 @@ import docImage from "../../images/document.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import ContadorDocPreviewCart from "../ContadorDocPreviewCart/ContadorDocPreviewCart";
-import contexto from "../App";
+import { CartContext } from "../../Contexto/CartProviderContext";
 
 function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
-  const miContext = useContext(contexto);
-  console.log(miContext);
+  const { cart } = useContext(CartContext);
   function handleStateChangePreviewCart() {
     if (previewCartWidget) {
       setPreviewCartWidget(!previewCartWidget);
     }
   }
+  console.log(cart);
 
   return (
     <>

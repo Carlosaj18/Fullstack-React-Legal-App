@@ -31,8 +31,8 @@ function NavBar({
       <div className="user">
         <div className="icons">
           <CartWidget
-            previewCart={previewCartWidget}
-            setPreviewCart={setPreviewCartWidget}
+            previewCartWidget={previewCartWidget}
+            setPreviewCartWidget={setPreviewCartWidget}
           />
         </div>
         <div className="container-user">

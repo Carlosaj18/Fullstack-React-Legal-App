@@ -1,5 +1,4 @@
-import React, { useState} from "react";
-import { createContext } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Hamburger from "./components/Hamburger/Hamburger";
@@ -13,14 +12,13 @@ import LayoutMyDocuments from "./components/LayoutMyDocuments/LayoutMyDocuments"
 import LayoutServices from "./components/LayoutServices/LayoutServices";
 import ServicioDetailContainer from "./components/ServicioDetailContainer/ServicioDetailContainer";
 import PreviewCart from "./components/PreviewCart/PreviewCart";
+import { CartProviderContext } from "./Contexto/CartProviderContext";
 
 function App() {
   const [filterText, setFilterText] = useState("");
   const [buttonFilter, setButtonFilter] = useState(false);
   const [previewCartWidget, setPreviewCartWidget] = useState(false);
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const contexto = createContext([]);
-  const Provider = contexto.Provider;
 
   /*let content;
   if (isLoggedIn) {
@@ -30,7 +28,7 @@ function App() {
   }*/
 
   return (
-    <Provider value={ {cart: []} }>
+    <CartProviderContext>
       <BrowserRouter>
         <div className="container">
           <Hamburger />
@@ -92,9 +90,8 @@ function App() {
           </main>
         </div>
       </BrowserRouter>
-    </Provider>
+    </CartProviderContext>
   );
 }
 
-export {contexto };
 export default App;
