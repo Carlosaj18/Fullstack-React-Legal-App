@@ -30,7 +30,7 @@ function App() {
   return (
     <CartProviderContext>
       <BrowserRouter>
-        <div className="container">
+        <div className="container" >
           <Hamburger />
           <NavSideBar />
           <main>
@@ -89,6 +89,7 @@ function App() {
             />
           </main>
         </div>
+        <div className={previewCartWidget ? "overlay active" : "overlay"}></div>
       </BrowserRouter>
     </CartProviderContext>
   );

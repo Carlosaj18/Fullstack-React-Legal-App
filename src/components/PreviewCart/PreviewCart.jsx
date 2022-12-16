@@ -7,7 +7,8 @@ import ContadorDocPreviewCart from "../ContadorDocPreviewCart/ContadorDocPreview
 import { CartContext } from "../../Contexto/CartProviderContext";
 
 function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
-  const { cart, totalPrinceInCart } = useContext(CartContext);
+  const { cart, totalPrinceInCart, clearCart, removeItem } =
+    useContext(CartContext);
 
   function handleStateChangePreviewCart() {
     if (previewCartWidget) {
@@ -31,13 +32,13 @@ function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
             <strong>{item.title}</strong>
           </p>
           <p className="precio">${getFormattedPrice(item.price)}</p>
-          <ContadorDocPreviewCart cantidad={item.cantidad} item={item}/>
+          <ContadorDocPreviewCart cantidad={item.cantidad} item={item} />
         </div>
-        <div className="closebtn">
+        <button onClick={() => removeItem(item.id)} className="closebtn">
           <i>
             <FontAwesomeIcon icon={faTimesCircle} />
           </i>
-        </div>
+        </button>
       </div>
     );
   });
@@ -82,6 +83,14 @@ function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
             )}
           </div>
           <div className="container-button-ver-carrito">
+            <button
+              onClick={() => clearCart()}
+              className={
+                cart.length > 0 ? "ver-carrito" : "none-vaciar-carrito"
+              }
+            >
+              Vaciar Carrito
+            </button>
             <button className="ver-carrito">Ver Carrito </button>
           </div>
         </div>

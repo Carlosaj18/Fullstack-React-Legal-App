@@ -22,9 +22,15 @@
     padding-top: 4em;
   }
 
+
+
   .sidebar-carrito .closebtn {
     margin-right: 1em;
     margin-left: 0px;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    background-color: transparent;
   }
   .details:hover .closebtn {
     color: #efb810;
@@ -100,7 +106,7 @@
   .container-footer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     height: 60%;
   }
 
@@ -126,7 +132,8 @@
 
 .container-button-ver-carrito {
   display: flex;
-    justify-content: end;
+  flex-direction: column;
+    justify-content: center;
     align-items: center;
 }  
 .ver-carrito {
@@ -136,7 +143,7 @@
     cursor: pointer;
     color: #fff;
     font-size: 1.6rem;
-    padding: 0.3em 1em;
+
     background-color: fff;
     transform: all 0.5s;
     display: flex;
@@ -151,4 +158,8 @@
     border-top-style: solid;
     height: 80px;
 
+}
+
+.none-vaciar-carrito {
+  display: none;
 }

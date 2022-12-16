@@ -5,20 +5,15 @@ export const CartContext = createContext();
 export const CartProviderContext = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  const getQuantityInCart = () => {
-    return cart.length;
-  };
-
   const getFormattedPrice = (price) => {
     price = parseFloat(price).toFixed(3);
     return price;
   };
 
   function totalItemsInCart() {
-    let totalItems = cart.reduce(
-      (accumulator, currentValue) => accumulator + currentValue.cantidad,
-      0
-    );
+    let totalItems = cart.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue.cantidad;
+    }, 0);
     return totalItems;
   }
 
@@ -67,6 +62,19 @@ export const CartProviderContext = ({ children }) => {
     }
   };
 
+  const decreaseQuantity2 = (item, quantity) => {
+        
+    const newCart = cart.map((purchase) => {
+            if (purchase.id === item.id) {
+                return {...purchase, quantity: purchase.cantidad - quantity}
+            } else {
+                return purchase                    
+            }
+        })
+    
+    setCart(newCart);
+}
+
   const totalPrinceInCart = () => {
     let subtotal = cart.reduce(
       (accumulator, currentValue) =>
@@ -77,22 +85,26 @@ export const CartProviderContext = ({ children }) => {
     return subtotal;
   };
 
-  ///const updatedItem = () => {}; // filter
+  const removeItem = (id) => {
+    let updatedCart = cart.filter((product) => product.id !== id);
+    setCart(updatedCart);
+  }; // filter
 
-  /// const removeItem = () => {}; // filter
-
-  ///const clear = () => {}; // []
+  const clearCart = () => {
+    setCart([]);
+  };
 
   return (
     <CartContext.Provider
       value={{
         cart,
         addToCart,
-        getQuantityInCart,
         totalItemsInCart,
         totalPrinceInCart,
         decreaseQuantity,
         increaseQuantity,
+        clearCart,
+        removeItem,
       }}
     >
       {children}
