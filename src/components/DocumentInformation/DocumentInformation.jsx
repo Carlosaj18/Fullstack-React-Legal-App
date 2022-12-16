@@ -4,7 +4,7 @@ import { CartContext } from "../../Contexto/CartProviderContext";
 
 function DocumentInformation(props) {
   const { document } = props;
-  const { addToCart, cart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
   const getFormattedPrice = (price) => {
     price = parseFloat(price);
     return `${price.toFixed(3)}`;
@@ -13,8 +13,6 @@ function DocumentInformation(props) {
     // volver la cantidad global para acceder desde el preview
     addToCart(document, 1);
   };
-
-  console.log(cart, "carrito");
 
   return (
     <div className="container-information">

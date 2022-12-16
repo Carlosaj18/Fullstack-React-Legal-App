@@ -15,6 +15,11 @@ function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
     }
   }
 
+  const getFormattedPrice = (price) => {
+    price = parseFloat(price).toFixed(3);
+    return price;
+  };
+
   let itemCart = cart.map((item) => {
     return (
       <div className="details">
@@ -25,8 +30,8 @@ function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
           <p>
             <strong>{item.title}</strong>
           </p>
-          <p className="precio">${item.price}</p>
-          <ContadorDocPreviewCart cantidad={item.cantidad} />
+          <p className="precio">${getFormattedPrice(item.price)}</p>
+          <ContadorDocPreviewCart cantidad={item.cantidad} item={item}/>
         </div>
         <div className="closebtn">
           <i>
@@ -57,8 +62,24 @@ function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
         {itemCart}
         <div className="container-footer">
           <div className="details-subtotal">
-            <div>Subtotal</div>
-            <div>${totalPrinceInCart()}</div>
+            {totalPrinceInCart() ? (
+              <>
+                <div>Subtotal</div>{" "}
+                <div>${getFormattedPrice(totalPrinceInCart())}</div>
+              </>
+            ) : (
+              <div
+                style={{
+                  textAlign: "center",
+                  display: "flex",
+                  justifyContent: "center",
+                  marginLeft: "182px",
+                  position: "absolute",
+                }}
+              >
+                El carrito está vacío
+              </div>
+            )}
           </div>
           <div className="container-button-ver-carrito">
             <button className="ver-carrito">Ver Carrito </button>

@@ -3,7 +3,7 @@ let documents = [
     id: 1,
     title: "Contrato de Arrendamiento de Vivienda",
     date: "22/11/22",
-    price: "9,900",
+    price: 9.900,
     description:
       "Usa este documento cuando quieras arrendar una casa o un apartamento.",
     clausulas: [
@@ -45,7 +45,7 @@ let documents = [
     id: 2,
     title: "Estatutos para Empresa (SAS)",
     date: "22/11/22",
-    price: "50,000",
+    price: 50.000,
     description:
       "¿Necesitas constituir una empresa? ¿Quieres formalizar tu emprendimiento o tu compañía familiar en una sociedad? Éste es el documento que te sirve.",
     clausulas: [
@@ -74,7 +74,7 @@ let documents = [
     id: 3,
     title: "Documentos para Divorcio",
     date: "22/11/22",
-    price: "35,000",
+    price: 35.000,
     description:
       "Sabemos que un divorcio nunca es fácil, pero estos documentos te ayudarán a hacer más sencillo el proceso legal. ",
     clausulas: [
@@ -96,7 +96,7 @@ let documents = [
     id: 4,
     title: "Contrato de trabajo de Empleada Doméstica",
     date: "22/11/22",
-    price: "15,000",
+    price: 15.000,
     description:
       "Este contrato te sirve para regular la relación frente a la empleada doméstica que trabaja para ti o para tu empresa.",
     clausulas: [
@@ -126,7 +126,7 @@ let documents = [
     id: 5,
     title: "Autorización de Tratamiento de Datos",
     date: "22/11/22",
-    price: "15,000",
+    price: 15.000,
     description:
       "Cuando vas a recolectar datos de tus clientes o proveedores necesitas su autorización. Usa este documento para que ellos te den la autorización que exige la ley.",
     clausulas: [
@@ -148,7 +148,7 @@ let documents = [
     id: 6,
     title: "Contrato de Prestación de servicios",
     date: "22/11/22",
-    price: "10,000",
+    price: 10.000,
     description:
       "¿Necesitas contratar la prestación de un servicio ofrecido por otra persona? ¿Te van a contratar para que prestes un servicio a favor de alguien más? Éste es el documento que te sirve.",
     clausulas: [
@@ -179,7 +179,7 @@ let documents = [
     id: 7,
     title: "Accion de Tutela",
     date: "22/11/22",
-    price: "10,000",
+    price: 10.000,
     description:
       "La tutela es una acción judicial por medio de la cual puedes pedir que se protejan tus derechos fundamentales, como la vida, la igualdad, la libertad, la dignidad, la salud, el derecho al mínimo vital y la intimidad, entre otros.",
     category: "templates",
@@ -194,7 +194,7 @@ let documents = [
     id: 8,
     title: "Contrato de trabajo a Término Indefinido",
     date: "22/11/22",
-    price: "10,000",
+    price:  10.000,
     description:
       "Si necesitas contratar a un empleado por un término indefinido, éste es el documento para ti! Por medio de este contrato puedes definir toda la relación entre ese empleado y tú; puedes establecer cuál será su cargo, sus obligaciones y funciones, de cuánto será su salario y cómo se pagará, y cuáles son las causales para terminar el contrato, entre otros",
     clausulas: [
@@ -221,7 +221,7 @@ let documents = [
     id: 9,
     title: "Promesa de compraventa de bien inmueble",
     date: "22/11/22",
-    price: "10,000",
+    price:  10.000,
     description:
       "¿Quieres comprar o vender una casa, un apartamento, una finca, un lote o un local comercial? Este documento te sirve como promesa para celebrar ese contrato de compraventa sobre cualquier bien inmueble.",
     clausulas: [
@@ -247,7 +247,7 @@ let documents = [
     id: 10,
     title: "Contrato de Compraventa de Vehículo",
     date: "22/11/22",
-    price: "12,000",
+    price:  12.000,
     description: "¿Vendes o compras un carro? Éste es el contrato para ti.",
     clausulas: [
       "Partes",
@@ -270,7 +270,7 @@ let documents = [
     id: 11,
     title: "Requerimiento de Pago",
     date: "22/11/22",
-    price: "10,000",
+    price:  10.000,
     description:
       "¿No te pagan? Usa este producto para escribirle a tu contraparte y decirle que está incumpliendo su obligación de pagarte por un servicio que tú prestaste o por un bien que le vendiste.",
     clausulas: [
@@ -292,7 +292,7 @@ let documents = [
     id: 12,
     title: "Acuerdo de Confidencialidad",
     date: "22/11/22",
-    price: "10,000",
+    price:  10.000,
     description:
       "¿Quieres proteger la información que le entregas a tu proveedor o contraparte? Este acuerdo de confidencialidad te sirve para eso!",
     clausulas: [
@@ -319,7 +319,7 @@ let documents = [
     id: 13,
     title: "Contrato de Trabajo a Término Fijo",
     date: "22/11/22",
-    price: "15,000",
+    price:  15.000,
     description:
       "Si necesitas contratar a un empleado por un término fijo, éste es el documento para ti! Por medio de este contrato puedes definir toda la relación entre ese empleado y tú; puedes establecer cuál será su cargo, sus obligaciones y funciones, de cuánto será su salario y cómo se pagará, cuál es la fecha de inicio y terminación del contrato y cuáles son las causales para terminar el contrato, entre otros.",
     clausulas: [
@@ -346,7 +346,7 @@ let documents = [
     id: 14,
     title: "Poder Judicial",
     date: "22/11/22",
-    price: "7,000",
+    price:  7.000,
     description:
       "¿Necesitas un poder para tu abogado? o ¿Eres abogado y necesitas un poder para representar a tu cliente en un proceso? Éste es el documento para ti!",
     category: "templates",
@@ -361,7 +361,7 @@ let documents = [
     id: 15,
     title: "Cláusula Compromisoria",
     date: "22/11/22",
-    price: "10,000",
+    price:  10.000,
     description:
       "La cláusula compromisoria es un acuerdo para que las partes del contrato no resuelvan sus problemas, diferencias o conflictos ante los jueces comunes y corrientes, sino que los obliga a ir ante un Tribunal de Arbitraje.",
     category: "templates",
@@ -376,7 +376,7 @@ let documents = [
     id: 16,
     title: "Acta de Asamblea de Accionistas",
     date: "22/11/22",
-    price: "11,000",
+    price:  11.000,
     description:
       "Todas las sociedades deben hacer, al menos una vez al año, una asamblea general de accionistas y deben dejar un acta de esa reunión. Acá te presentamos un modelo que te sirve para estas asambleas, ya sean ordinarias o extraordinarias. Este documento está diseñado para Sociedades por Acciones Simplificadas (SAS), pero puede ser adaptado para otro tipo de entidad. ",
     category: "templates",
@@ -391,7 +391,7 @@ let documents = [
     id: 17,
     title: "Poder para Divorcio",
     date: "22/11/22",
-    price: "10,000",
+    price:  10.000,
     description:
       "Este poder se requiere para todos los trámites de divorcio por notaría; en estos casos la ley exige que se haga todo el proceso de divorcio (o de cesación de efectos civiles del matrimonio religioso) por medio de un abogado/a.",
     category: "templates",
@@ -406,7 +406,7 @@ let documents = [
     id: 18,
     title: "Cláusula Penal",
     date: "22/11/22",
-    price: "6,000",
+    price:  6.000,
     description:
       "La cláusula penal, que puedes incluir en prácticamente cualquier contrato, funciona como una multa que debe pagar la persona que incumpla el contrato. Puedes fijar la suma que requieras como multa, dependiendo del valor total del contrato.",
     category: "templates",
@@ -421,7 +421,7 @@ let documents = [
     id: 19,
     title: "Carta de Renuncia",
     date: "22/11/22",
-    price: "10,000",
+    price:  10.000,
     description:
       "¿Quieres renunciar pero no sabes cómo decirlo? Este documento, sencillo pero al grano, te ayuda!",
     category: "templates",
@@ -436,7 +436,7 @@ let documents = [
     id: 20,
     title: "Cláusula Anticorrupción",
     date: "22/11/22",
-    price: "10,000",
+    price:  10.000,
     description:
       "Esta cláusula, que puedes incluir en los contratos de prestación de servicios, te da una protección adicional de los actos fraudulentos o corruptos que llegue a realizar tu potencial contratista. Por medio de esta cláusula, el contratista se obliga a no realizar ninguna actividad que pueda ser considerada ilegal durante el tiempo en que te presta servicios. ",
     category: "templates",
@@ -451,7 +451,7 @@ let documents = [
     id: 21,
     title: "Pagaré",
     date: "22/11/22",
-    price: "10,000",
+    price:  10.000,
     description:
       "¿Le vas a prestar plata a alguien y necesitas una garantía? Éste es el documento para ti. El pagaré es una promesa de alguien que debe un dinero por medio de la cual se compromete a pagarlo. Descárgalo ya!",
     category: "templates",

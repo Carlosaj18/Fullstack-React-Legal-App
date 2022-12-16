@@ -12,7 +12,8 @@ body #root .container main .container-detail-document .container-information h1 
 }
 
 body #root .container main .container-detail-document .container-information .price {
-    font-size: 3em;
+    font-size: 2.8em;
+    width: fit-content;
     margin-top: 0.5em;
     font-weight: bold;
 }
