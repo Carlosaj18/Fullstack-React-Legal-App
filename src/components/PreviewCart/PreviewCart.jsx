@@ -7,13 +7,35 @@ import ContadorDocPreviewCart from "../ContadorDocPreviewCart/ContadorDocPreview
 import { CartContext } from "../../Contexto/CartProviderContext";
 
 function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
-  const { cart } = useContext(CartContext);
+  const { cart, totalPrinceInCart } = useContext(CartContext);
+
   function handleStateChangePreviewCart() {
     if (previewCartWidget) {
       setPreviewCartWidget(!previewCartWidget);
     }
   }
-  console.log(cart);
+
+  let itemCart = cart.map((item) => {
+    return (
+      <div className="details">
+        <div className="detail-imagen">
+          <img src={docImage} alt="Imagen" />
+        </div>
+        <div className="detail-info">
+          <p>
+            <strong>{item.title}</strong>
+          </p>
+          <p className="precio">${item.price}</p>
+          <ContadorDocPreviewCart cantidad={item.cantidad} />
+        </div>
+        <div className="closebtn">
+          <i>
+            <FontAwesomeIcon icon={faTimesCircle} />
+          </i>
+        </div>
+      </div>
+    );
+  });
 
   return (
     <>
@@ -32,27 +54,11 @@ function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
           </div>
           <h4>Mi Carrito</h4>
         </div>
-        <div className="details">
-          <div className="detail-imagen">
-            <img src={docImage} alt="Imagen" />
-          </div>
-          <div className="detail-info">
-            <p>
-              <strong>Nombre del paquete</strong>
-            </p>
-            <p className="precio">$Precio</p>
-            <ContadorDocPreviewCart />
-          </div>
-          <div className="closebtn">
-            <i>
-              <FontAwesomeIcon icon={faTimesCircle} />
-            </i>
-          </div>
-        </div>
+        {itemCart}
         <div className="container-footer">
           <div className="details-subtotal">
             <div>Subtotal</div>
-            <div>$$$</div>
+            <div>${totalPrinceInCart()}</div>
           </div>
           <div className="container-button-ver-carrito">
             <button className="ver-carrito">Ver Carrito </button>

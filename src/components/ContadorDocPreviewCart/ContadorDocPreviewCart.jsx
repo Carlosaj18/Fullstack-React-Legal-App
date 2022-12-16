@@ -1,12 +1,12 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./ContadorDocPreviewCart.css";
 
-function ContadorDocPreviewCart() {
-  const [count, setCount] = useState(0);
+function ContadorDocPreviewCart({ cantidad }) {
+  const [count, setCount] = useState(cantidad);
 
   function handleClickRest() {
-    if(count !== 0){
-        setCount(count - 1);
+    if (cantidad !== 0) {
+      setCount(count - 1);
     }
   }
   function handleClickSum() {
@@ -15,9 +15,13 @@ function ContadorDocPreviewCart() {
 
   return (
     <div className="contador">
-      <button onClick={handleClickRest} className="left">-</button>
+      <button onClick={handleClickRest} className="left">
+        -
+      </button>
       <button className="center">{count}</button>
-      <button onClick={handleClickSum}  className="right">+</button>
+      <button onClick={handleClickSum} className="right">
+        +
+      </button>
     </div>
   );
 }
