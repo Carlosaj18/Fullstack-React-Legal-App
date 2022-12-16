@@ -9,23 +9,22 @@ function ContadorDocPreviewCart({ cantidad, item }) {
 
   useEffect(() => {
     setCartCount(item.cantidad);
-  }, [cart, cartCount, item.cantidad,]);
+  }, [cart, item.cantidad]);
 
   const decrease = () => {
     console.log("Cart Count ", cartCount);
     if (cartCount > 1) {
-      decreaseQuantity(item, cartCount);
+      decreaseQuantity(item, 1);
       setCartCount((count) => (count = cantidad));
     } else if (cartCount === 1) {
       removeItem(item.id);
     }
   };
   const increase = () => {
-    /** if (cartCount < item.stock) {
-      
-    } */
-    addToCart(item, 1);
-    setCartCount((count) => (count = cantidad));
+    if (cartCount < item.stock) {
+      addToCart(item, 1);
+      setCartCount((count) => (count = cantidad));
+    }
   };
 
   return (

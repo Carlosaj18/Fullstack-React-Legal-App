@@ -81,6 +81,10 @@ function App() {
                 path="/document/category/:categoryId"
                 element={<ItemCategoryContainer />}
               />
+              <Route
+                path="/shoping-cart"
+                element={<LayoutServices />}
+              />
               <Route path="*" element={<h1>404: Recurso no encontrado</h1>} />
             </Routes>
             <PreviewCart

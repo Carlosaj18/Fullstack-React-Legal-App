@@ -69,6 +69,7 @@ let documents = [
     signatures: "2/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 3,
@@ -91,6 +92,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 4,
@@ -143,6 +145,7 @@ let documents = [
     signatures: "2/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 6,
@@ -174,6 +177,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 7,
@@ -189,6 +193,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 8,
@@ -216,6 +221,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 9,
@@ -242,6 +248,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 10,
@@ -265,6 +272,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 11,
@@ -287,6 +295,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 12,
@@ -314,6 +323,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 13,
@@ -341,6 +351,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 14,
@@ -356,6 +367,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 15,
@@ -371,6 +383,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 16,
@@ -386,6 +399,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 17,
@@ -401,6 +415,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 18,
@@ -416,6 +431,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 19,
@@ -431,6 +447,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 20,
@@ -446,6 +463,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
   {
     id: 21,
@@ -461,6 +479,7 @@ let documents = [
     signatures: "3/3",
     image: "/assets/document.jpg",
     myDocument: false,
+    stock: 10
   },
 ];
 

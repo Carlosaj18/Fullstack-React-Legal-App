@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import ContadorDocPreviewCart from "../ContadorDocPreviewCart/ContadorDocPreviewCart";
 import { CartContext } from "../../Contexto/CartProviderContext";
+import { Link } from "react-router-dom";
 
 function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
   const { cart, totalPrinceInCart, clearCart, removeItem } =
@@ -91,7 +92,8 @@ function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
             >
               Vaciar Carrito
             </button>
-            <button className="ver-carrito">Ver Carrito </button>
+            <button onClick={()=>handleStateChangePreviewCart()} className="ver-carrito"><Link to="/shoping-cart">Ver Carrito </Link></button>
+            
           </div>
         </div>
       </div>

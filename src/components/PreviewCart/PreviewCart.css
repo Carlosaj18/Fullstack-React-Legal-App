@@ -160,6 +160,11 @@
 
 }
 
+.ver-carrito a {
+  text-decoration: none;
+  color: #fff
+}
+
 .none-vaciar-carrito {
   display: none;
 }

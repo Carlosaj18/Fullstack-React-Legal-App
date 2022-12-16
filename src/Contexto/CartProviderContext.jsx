@@ -65,12 +65,11 @@ export const CartProviderContext = ({ children }) => {
   const decreaseQuantity = (item, quantity) => {
     const newCart = cart.map((purchase) => {
       if (purchase.id === item.id) {
-        return { ...purchase, quantity: purchase.cantidad - ( quantity - 1) };
+        return { ...purchase, cantidad: purchase.cantidad - quantity };
       } else {
         return purchase;
       }
     });
-
     setCart(newCart);
   };
 
@@ -87,7 +86,7 @@ export const CartProviderContext = ({ children }) => {
   const removeItem = (id) => {
     let updatedCart = cart.filter((product) => product.id !== id);
     setCart(updatedCart);
-  }; // filter
+  };
 
   const clearCart = () => {
     setCart([]);

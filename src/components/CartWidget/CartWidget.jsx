@@ -7,6 +7,7 @@ import { CartContext } from "../../Contexto/CartProviderContext";
 function CartWidget({ setPreviewCartWidget, previewCartWidget }) {
   const { totalItemsInCart } = useContext(CartContext);
   let cantidadCarrito = totalItemsInCart();
+  console.log(cantidadCarrito);
   function onClickButtonPreviewCart() {
     return setPreviewCartWidget(!previewCartWidget);
   }
@@ -19,7 +20,7 @@ function CartWidget({ setPreviewCartWidget, previewCartWidget }) {
           onClick={() => onClickButtonPreviewCart()}
         />
       </i>
-      <span>{cantidadCarrito}</span>
+      <span>{cantidadCarrito > 0 ? cantidadCarrito : null}</span>
     </>
   );
 }
