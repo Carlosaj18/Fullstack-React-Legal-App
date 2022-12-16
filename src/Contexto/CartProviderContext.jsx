@@ -51,7 +51,7 @@ export const CartProviderContext = ({ children }) => {
     }
   };
 
-  const decreaseQuantity = (item) => {
+  const decreaseQuantity2 = (item) => {
     if (isInCart(item.id)) {
       const cartUpdated = cart.map((prod) => {
         if (prod.id === item.id) {
@@ -62,18 +62,17 @@ export const CartProviderContext = ({ children }) => {
     }
   };
 
-  const decreaseQuantity2 = (item, quantity) => {
-        
+  const decreaseQuantity = (item, quantity) => {
     const newCart = cart.map((purchase) => {
-            if (purchase.id === item.id) {
-                return {...purchase, quantity: purchase.cantidad - quantity}
-            } else {
-                return purchase                    
-            }
-        })
-    
+      if (purchase.id === item.id) {
+        return { ...purchase, quantity: purchase.cantidad - ( quantity - 1) };
+      } else {
+        return purchase;
+      }
+    });
+
     setCart(newCart);
-}
+  };
 
   const totalPrinceInCart = () => {
     let subtotal = cart.reduce(
