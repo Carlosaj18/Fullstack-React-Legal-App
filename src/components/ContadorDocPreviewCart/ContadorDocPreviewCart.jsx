@@ -9,10 +9,9 @@ function ContadorDocPreviewCart({ cantidad, item }) {
 
   useEffect(() => {
     setCartCount(item.cantidad);
-  }, [cart, item.cantidad]);
+  }, [cart, cantidad]);
 
   const decrease = () => {
-    console.log("Cart Count ", cartCount);
     if (cartCount > 1) {
       decreaseQuantity(item, 1);
       setCartCount((count) => (count = cantidad));
@@ -28,7 +27,7 @@ function ContadorDocPreviewCart({ cantidad, item }) {
   };
 
   return (
-    <div className="contador">
+    <div className="contador"> 
       <button onClick={decrease} className="left">
         -
       </button>

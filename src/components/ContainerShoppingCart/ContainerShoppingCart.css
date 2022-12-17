@@ -1,0 +1,248 @@
+.container-items-cart {
+    display: flex;
+    grid-row-start: 4;
+  grid-column: 1/9;
+}
+
+.container-items-cart .left-items-cart {
+    grid-row-start: 4;
+    grid-column: 1/9;
+}
+
+.container-items-cart .right-items-cart {
+    grid-row-start: 4;
+    grid-column: 10/-1;
+}
+
+.left-items-cart .border, .right-items-cart .border {
+    border-bottom: 3px solid #dfe0eb;
+    margin-bottom:1em;
+}
+
+.container-items-cart .details {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 1em 0em;
+  }
+
+  .detail-imagen {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .detail-imagen img {
+    width: 100px;
+    height: 100px;
+    background-color: #234F1E;
+    padding: 10px;
+  }
+
+  .detail-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:start;
+    gap: -15px;
+    width: 50%;
+    line-height: 0.2;
+  }
+
+  .detail-info p strong {
+    color: #5E5E5E;
+    font-size: 1.3em;
+    font-weight: lighter;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+    width: 90%;
+    word-break: break-word;
+    margin-bottom: 0;
+  }
+
+  .detail-info .precio  {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #2F2F2F
+  }
+
+  .detail-info-document {
+    display: flex;
+    justify-content: start;
+    gap: 5em;
+  }
+
+  .detail-info-document .price-item {
+    height: fit-content;
+    width: 150px;
+  }
+
+  .detail-info-document .detail-info-contador {
+    display: flex;
+    justify-content:start;
+    align-items: start;
+  }
+
+  .closebtn {
+    margin-right: 1em;
+    margin-left: 0px;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    background-color: transparent;
+  }
+
+  .contador {
+    height: fit-content;
+  }
+
+  .container-info-right {
+    justify-content: space-evenly;
+  }
+
+  .container-subtotal-cart {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .cart-subtotal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.5em;
+    font-size: 1.5em;
+  }
+
+  .finalizar-compra {
+    margin: 1em auto;
+    border: none;
+    border-top-style: none;
+    border-top-width: medium;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.6rem;
+    background-color: fff;
+    transform: all 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    transition: opacity .3s;
+    background: #234F1E;
+    border-top-width: 1px;
+    border-top-style: solid;
+    height: 80px;
+  }
+
+  .pago-seguro {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2F2F2F;
+    font-size: 1.5em;
+    font-weight: 12px;
+    line-height: 1.5;
+    gap: 1.5rem;
+  }
+
+  .container-additional-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .codigo-promocional {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-top: 3em;;
+  }
+
+  .codigo-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    width: 500px;
+    gap: 1em;
+    pointer-events: auto;
+    vertical-align: baseline;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    background-color: fff;
+    transform: all 0.5s;
+    margin-bottom: 3em;;
+  }
+
+  .codigo-promocional i {
+    font-size: 1.5em;
+  }
+
+  .codigo-promocional button {
+    font-size: 1.5em;
+    border: none;
+    background-color: transparent
+  }
+
+  .form-cart {
+    display: flex;
+    justify-content: start;
+  }
+
+  .form-cart input {
+    width: 250px;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    font-size: 17px;
+    border-radius: 10px;
+    border: 1px solid #234F1E;
+  }
+
+  .promo-no-visible { 
+    display: none
+  }
+
+  .form-cart-text {
+    display: flex;
+    justify-content: start;
+  }
+
+  textarea {
+    border: none;
+    margin-top: 8px;
+    font-size: 17px;
+    border-radius: 10px;
+    border: 1px solid #234F1E;
+    height: 300px;
+    width: 300px;
+    resize: none;
+  }
+
+  .form-cart-textarea-no-visible {
+    display: none;
+  }
+
+  @media (max-width: 1087px) {
+    .container-items-cart .details {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .detail-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+    }
+
+    .precio {
+        width: 100%;
+    }
+  }

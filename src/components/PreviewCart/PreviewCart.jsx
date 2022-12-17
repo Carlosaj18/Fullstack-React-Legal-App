@@ -92,8 +92,12 @@ function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
             >
               Vaciar Carrito
             </button>
-            <button onClick={()=>handleStateChangePreviewCart()} className="ver-carrito"><Link to="/shoping-cart">Ver Carrito </Link></button>
-            
+            <button
+              onClick={() => handleStateChangePreviewCart()}
+              className="ver-carrito"
+            >
+              <Link to="/shoping-cart">Ver Carrito </Link>
+            </button>
           </div>
         </div>
       </div>

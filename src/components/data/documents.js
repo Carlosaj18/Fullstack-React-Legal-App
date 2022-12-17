@@ -40,6 +40,7 @@ let documents = [
     signatures: "1/3",
     image: "/assets/document.jpg",
     myDocument: true,
+    stock: 10
   },
   {
     id: 2,

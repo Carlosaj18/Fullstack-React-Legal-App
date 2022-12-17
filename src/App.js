@@ -13,11 +13,14 @@ import LayoutServices from "./components/LayoutServices/LayoutServices";
 import ServicioDetailContainer from "./components/ServicioDetailContainer/ServicioDetailContainer";
 import PreviewCart from "./components/PreviewCart/PreviewCart";
 import { CartProviderContext } from "./Contexto/CartProviderContext";
+import ContainerShoppingCart from './components/ContainerShoppingCart/ContainerShoppingCart'
+import ContainerCheckout from './components/ContainerCheckout/ContainerCheckout'
 
 function App() {
   const [filterText, setFilterText] = useState("");
   const [buttonFilter, setButtonFilter] = useState(false);
   const [previewCartWidget, setPreviewCartWidget] = useState(false);
+
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   /*let content;
@@ -83,7 +86,11 @@ function App() {
               />
               <Route
                 path="/shoping-cart"
-                element={<LayoutServices />}
+                element={<ContainerShoppingCart />}
+              />
+              <Route
+                path="/checkout"
+                element={<ContainerCheckout />}
               />
               <Route path="*" element={<h1>404: Recurso no encontrado</h1>} />
             </Routes>

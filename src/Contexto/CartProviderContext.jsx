@@ -83,6 +83,12 @@ export const CartProviderContext = ({ children }) => {
     return subtotal;
   };
 
+  const totalPriceItem = (item) => {
+    let itemCart = cart.find((product) => product.id === item.id);
+    let subtotalItem = itemCart.price * item.cantidad;
+    return subtotalItem;
+  };
+
   const removeItem = (id) => {
     let updatedCart = cart.filter((product) => product.id !== id);
     setCart(updatedCart);
@@ -90,6 +96,18 @@ export const CartProviderContext = ({ children }) => {
 
   const clearCart = () => {
     setCart([]);
+  };
+
+  const getIVA = () => {
+    const IVA = 0.19;
+    let subtotal = totalPrinceInCart();
+    return IVA * subtotal;
+  };
+
+  const finalPriceCart = () => {
+    const IVA = getIVA();
+    let subtotal = totalPrinceInCart();
+    return subtotal + IVA;
   };
 
   return (
@@ -103,6 +121,9 @@ export const CartProviderContext = ({ children }) => {
         increaseQuantity,
         clearCart,
         removeItem,
+        totalPriceItem,
+        getIVA,
+        finalPriceCart
       }}
     >
       {children}

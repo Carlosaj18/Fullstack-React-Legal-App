@@ -22,6 +22,9 @@
     padding-top: 4em;
   }
 
+  .detail-info-document .price-item {
+    font-size: 1.5em;
+  }
 
 
   .sidebar-carrito .closebtn {
@@ -31,6 +34,11 @@
     height: fit-content;
     border: none;
     background-color: transparent;
+    
+  }
+
+  .closebtn i {
+    font-size: 1.5em;
   }
   .details:hover .closebtn {
     color: #efb810;
@@ -85,9 +93,9 @@
     line-height: 0.2;
   }
 
-  .detail-info p strong {
+  .detail-info  strong.title {
     color: #5E5E5E;
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-weight: lighter;
     line-height: 1.5em;
     margin-bottom: 10px;
@@ -96,9 +104,8 @@
     margin-bottom: 0;
   }
 
-  .detail-info .precio  {
-    color: white;
-    font-size: 1.2em;
+  .detail-info p.precio  {
+    font-size: 1.5em;
     font-weight: 600;
     color: #2F2F2F
   }
