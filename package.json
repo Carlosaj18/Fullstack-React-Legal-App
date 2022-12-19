@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "proxy": "http://battuta.medunes.net/api/country/all/?key=dd0fe950948aebe004fe7f39ce43f3c5",
+  "proxy": "https://geo-battuta.net/api/country/all/?key=dd0fe950948aebe004fe7f39ce43f3c5",
   "homepage": "http://localhost:3000",
   "private": true,
   "dependencies": {
