@@ -191,4 +191,10 @@ body #root .container main .filter-section {
     grid-row-start: 5;
     grid-column: 1/-1;
   }
+
+  body #root .container main .container-checkout .container-checkout-revio-pago-left {
+    grid-row-start: 4;
+    grid-column: 1/-1;
+  }
+  
 }

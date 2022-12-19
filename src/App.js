@@ -13,8 +13,8 @@ import LayoutServices from "./components/LayoutServices/LayoutServices";
 import ServicioDetailContainer from "./components/ServicioDetailContainer/ServicioDetailContainer";
 import PreviewCart from "./components/PreviewCart/PreviewCart";
 import { CartProviderContext } from "./Contexto/CartProviderContext";
-import ContainerShoppingCart from './components/ContainerShoppingCart/ContainerShoppingCart'
-import ContainerCheckout from './components/ContainerCheckout/ContainerCheckout'
+import ContainerShoppingCart from "./components/ContainerShoppingCart/ContainerShoppingCart";
+import ContainerCheckout from "./components/ContainerCheckout/ContainerCheckout";
 
 function App() {
   const [filterText, setFilterText] = useState("");
@@ -33,7 +33,7 @@ function App() {
   return (
     <CartProviderContext>
       <BrowserRouter>
-        <div className="container" >
+        <div className="container">
           <Hamburger />
           <NavSideBar />
           <main>
@@ -84,14 +84,8 @@ function App() {
                 path="/document/category/:categoryId"
                 element={<ItemCategoryContainer />}
               />
-              <Route
-                path="/shoping-cart"
-                element={<ContainerShoppingCart />}
-              />
-              <Route
-                path="/checkout"
-                element={<ContainerCheckout />}
-              />
+              <Route path="/shoping-cart" element={<ContainerShoppingCart />} />
+              <Route path="/checkout" element={<ContainerCheckout />} />
               <Route path="*" element={<h1>404: Recurso no encontrado</h1>} />
             </Routes>
             <PreviewCart

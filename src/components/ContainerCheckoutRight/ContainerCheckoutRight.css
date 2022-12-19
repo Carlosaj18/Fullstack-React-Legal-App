@@ -1,0 +1,210 @@
+.container-checkout-right {
+    grid-row-start: 4;
+    grid-column: 9/-1;
+}
+
+.container-resumen {
+    background-color:  #fff;
+    width: 100%;
+    height: 700px;
+    background-color:  #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.resumen-title {
+    display: flex;
+    justify-content: space-around;
+    height: fit-content;
+    width: 100%;
+    align-items: center;
+    color: #234F1E;
+}
+
+.item-container-checkout {
+    scroll-behavior: smooth;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 300px
+}
+
+.item-container-checkout .details {
+    display: flex;
+    height: fit-content;
+    display: flex;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 1em 0em;
+    border-bottom: 1px solid #dfe0eb;
+}
+
+.item-container-checkout .detail-imagen {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-container-checkout  .detail-imagen img {
+    width: 100px;
+    height: 100px;
+    background-color: #234F1E;
+    padding: 10px;
+  }
+
+.item-container-checkout .detail-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:start;
+    gap: -15px;
+    width: 50%;
+    line-height: 0.2;
+}
+
+.item-container-checkout .detail-info  strong {
+    color: #5E5E5E;
+    font-size: 1.7em;
+    font-weight: lighter;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+    word-break: break-word;
+    margin-bottom: 0;
+  }
+
+  .info-header-checkout {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .item-container-checkout .detail-info p.cantidad  {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #2F2F2F
+  }
+
+  .promo-container-checkout {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    border-top: 2px solid #dfe0eb;
+    border-bottom: 2px solid #dfe0eb;
+    margin-top: 1em;
+  }
+
+  .codigo-promocional-checkout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;;
+    margin-bottom: 10px;
+  }
+
+  .codigo-label-checkout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    gap: 1em;
+    pointer-events: auto;
+    vertical-align: baseline;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    background-color: fff;
+    transform: all 0.5s;
+    margin-bottom: 3em;;
+  }
+
+  .codigo-promocional-checkout i {
+    font-size: 1.5em;
+  }
+
+  .codigo-promocional-checkout button {
+    font-size: 1.5em;
+    border: none;
+    background-color: transparent
+  }
+
+  .form-cart-checkout {
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-cart-checkout input {
+    line-height: 2.9;
+    border: 1px solid rgba(18,18,18,.2);
+    padding: 0 10px;
+    min-height: 48px;
+    margin-top: 10px;
+    width: 250px;
+  }
+
+  .promo-no-visible-checkout { 
+    display: none
+  }
+
+  .form-cart-text {
+    display: flex;
+    justify-content: start;
+  }
+
+  .subtotal-checkout-cart {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    border-bottom: 2px solid #dfe0eb;
+    margin-bottom: 1em;
+  }
+
+  .subtotal-checkout-left {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
+  }
+
+  .subtotal-checkout-right {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .subtotal-checkout-left strong {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #2F2F2F
+  }
+
+  .subtotal-checkout-right strong {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #2F2F2F
+  }
+
+  .total-checkout-cart {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    margin-bottom: 1em;
+  }
+
+.total-checkout-cart strong {
+    font-size: 1.8em;
+}

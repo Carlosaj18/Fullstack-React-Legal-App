@@ -1,0 +1,143 @@
+.container-checkout-left {
+    border: 3px solid #dfe0eb;
+    grid-row-start: 4;
+    grid-column: 1/9;
+}
+
+.left-login {
+    background-color:  #fff;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-description {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.login-description a {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+
+.title-checkout-pago {
+    color: #234F1E
+}
+
+.mercado-pago-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    background-color:  #fff;
+    width: 100%;
+    height: 300px;
+}
+
+.mercado-text {
+    text-align: center;
+}
+
+.mercado-pago-info div {
+    color: #234F1E;
+    font-size: 1.5em;
+}
+
+.icon-mercado-pago {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.icon-mercado-pago i {
+    font-size: 3em;
+}
+
+.container-form {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-form h2 {
+    color: #234F1E;
+    font-size: 1.5em;
+}
+
+.form-info-pago {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container-additional {
+    display: flex;
+    width: 100%;
+    gap: 0.5em;
+}
+
+.form-left {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.form-right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.form-info-pago input {
+    line-height: 2.9;
+    border: 1px solid rgba(18,18,18,.2);
+    padding: 0 10px;
+    min-height: 48px;
+    margin-top: 10px;
+}
+
+.form-info-pago select, .form-info-pago option {
+    line-height: 2.9;
+    border: 1px solid rgba(18,18,18,.2);
+    padding: 0 10px;
+    min-height: 48px;
+    margin-top: 10px;
+}
+
+.form-info-pago label {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.submit-mercado-pago {
+    margin: 1em auto;
+    border: none;
+    border-top-style: none;
+    border-top-width: medium;
+    border-top-style: none;
+    border-top-width: medium;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.6rem;
+    background-color: fff;
+    transform: all 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: opacity .3s;
+    background: #234F1E;
+    border-top-width: 1px;
+    border-top-style: solid;
+    margin-top: 20px !important;
+}
+

@@ -1,0 +1,301 @@
+.container-checkout-revio-pago-left {
+    border: 3px solid #dfe0eb;
+    grid-row-start: 4;
+    grid-column: 1/9;
+}
+
+.left-login {
+    background-color:  #fff;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contianer-backgorund-pago {
+    background-color:  #fff;
+}
+
+.terms-background {
+    background-color:  #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.login-description {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.login-description a {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.title-checkout-pago {
+    color: #234F1E
+}
+
+.check-pago-edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px
+}
+
+.container-logomercado {
+    display: flex;
+    margin-left: 20px;
+}
+
+.container-image-mercado-pago {
+    width: 200px;
+}
+
+.container-image-mercado-pago img {
+    width: 100%;
+}
+
+.texto-mercado-pago {
+    color: #234F1E;
+    font-size: 1.7em;
+    width: 400px;
+    margin-left: 8px;
+}
+
+.container-info-user-pago {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 3px solid #dfe0eb;
+    padding-bottom: 50px;
+}
+
+.info-form-user {
+    color: #234F1E;
+    font-size: 1.7em;
+    margin-left: 20px;
+    width: 100%;
+}
+
+.revisar-detalle {
+    margin-left: 20px;
+    color: #234F1E;
+    font-size: 1.7em;
+}
+
+.container-terms-conditions {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    color: #234F1E;
+    font-size: 1.5em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Hide the browser's default radio button */
+  .container-terms-conditions input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    border: 1px solid black;
+  }
+
+  .btn-terms {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: #234F1E;
+    font-size: 1.5em;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 50px;
+    
+  }
+  
+
+  
+  /* On mouse-over, add a grey background color */
+  .container-terms-conditions:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .container-terms-conditions input:checked ~ .checkmark {
+    background-color: #234F1E;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .container-terms-conditions input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .container-terms-conditions .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+
+.btn-realizar-compra {
+    margin: 1em auto;
+    border: none;
+    border-top-style: none;
+    border-top-width: medium;
+    border-top-style: none;
+    border-top-width: medium;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.6rem;
+    background-color: fff;
+    transform: all 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    transition: opacity .3s;
+    background: #234F1E;
+    border-top-width: 1px;
+    border-top-style: solid;
+    height: 80px;
+}
+
+.modal {
+    position:fixed;
+    top:50%; /*Center*/
+    left:50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    z-index: 10;
+    background-color: white;
+    width: 900px;
+    max-width: 80%;
+    height: 900px;
+  }
+
+  .modal.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .modal-header {
+    padding: 10px 15px;
+  }
+
+  .bt-close-modal {
+    background-color: transparent;
+    color: #234F1E
+  }
+
+  .modal-title-header {
+    margin-top: 4.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+  }
+
+  .modal-title-header div {
+    font-size: 20px;
+    color: #234F1E;
+  }
+
+  .modal-title-header i {
+    font-size: 1em;
+  }
+  
+  .modal-title-header .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #234F1E
+  }
+  
+  .modal-header .clase-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .modal-container-scroll {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+  
+  
+  .modal-body {
+    padding: 22px 55px
+  }
+
+  .modal-body p {
+    color: #676969;
+    flex: 1;
+    overflow-y: auto;
+    font-size: 1.2em;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  .btn-cerrar-modal {
+    margin: 1em auto;
+    border: none;
+    border-top-style: none;
+    border-top-width: medium;
+    border-top-style: none;
+    border-top-width: medium;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.6rem;
+    background-color: fff;
+    transform: all 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    transition: opacity .3s;
+    background: #234F1E;
+    border-top-width: 1px;
+    border-top-style: solid;
+    height: 80px;
+  }
+
+  #overlay {
+    position: fixed;
+    transition: 200ms ease-in-out;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+  }
+
+  #overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
