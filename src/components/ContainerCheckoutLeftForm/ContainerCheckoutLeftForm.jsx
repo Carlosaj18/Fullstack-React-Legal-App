@@ -63,10 +63,10 @@ function ContainerCheckoutLeftForm({
     }
 
     if (selectRegion !== undefined) {
-      let selectRegiones = selectRegion.map((item) => {
+      let temporalRegiones = selectRegion.map((item) => {
         return <option value={item.region}>{item.region}</option>;
       });
-      setSelectRegion(selectRegiones);
+      setSelectRegion(temporalRegiones);
       console.log("Region seteado ", selectRegion);
     }
   }
