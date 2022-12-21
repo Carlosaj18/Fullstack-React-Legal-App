@@ -42,7 +42,7 @@ function FilterListContainer({ childToParentCheckBox }) {
         return optionCheckBox[index];
       }
     });
-    setValueCheck(valueArray);
+    setValueCheck(valueArray => valueArray);
     childToParentCheckBox(valueArray);
   };
 

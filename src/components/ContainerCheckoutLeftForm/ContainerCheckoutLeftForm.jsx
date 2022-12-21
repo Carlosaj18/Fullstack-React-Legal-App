@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCreditCard } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import "./ContainerCheckoutLeftForm.css";
-import fetchDatosComboBox  from "../services/apiPaises.js";
+import fetchDatosComboBox from "../services/apiPaises.js";
+import axios from "axios";
 
 function ContainerCheckoutLeftForm({
   setIsActiveForm,
@@ -20,12 +21,30 @@ function ContainerCheckoutLeftForm({
   const [codigoPostal, setCodigoPostal] = useState("");
   const [region, setRegion] = useState("");
   const [phone, setPhone] = useState("");
+  const [paises, setPaises] = useState([]);
+
+  async function getUser() {
+    try {
+      const response = await fetch(
+        "http://battuta.medunes.net/api/country/all/?key=dd0fe950948aebe004fe7f39ce43f3c5",
+        {
+          Accept: "*",
+          "User-Agent": "http://localhost:3000/",
+          method: "GET",
+          mode: "no-cors",
+        }
+      );
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   useEffect(() => {
-    fetchDatosComboBox().then((result) => {
-      console.log(result);
-    });
-  }, []);
+    getUser();
+  }, [paises]);
+
+  console.log(paises);
 
   function onClickFormActive() {
     return setIsActiveForm(!isActiveForm);

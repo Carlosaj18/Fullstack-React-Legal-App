@@ -43,6 +43,13 @@ body #root .container main .container-detail-document .container-information but
     color: white;
 }
 
+body #root .container main .container-detail-document .container-information .clausulas .btn-ver-clausulas {
+    background-color: #234F1E;
+    color: white;
+    font-size: 1em;
+    padding: 0.5em;
+}
+
 @media (max-width: 1177px){
 
     body #root .container main .container-detail-document .container-information {
@@ -60,3 +67,4 @@ body #root .container main .container-detail-document .container-information but
         color: white;
     }
 }
+

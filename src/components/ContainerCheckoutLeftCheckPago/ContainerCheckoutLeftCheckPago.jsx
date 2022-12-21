@@ -6,7 +6,7 @@ import "./ContainerCheckoutLeftCheckPago.css";
 import logoMercado from "../../images/mercadoPago.svg";
 import ModalTerminosCondiciones from "../ModalTerminosCondiciones/ModalTerminoCondicionales";
 
-function ContainerCheckoutLeftCheckPago(props) {
+function ContainerCheckoutLeftCheckPago({ nombre, email, address, telefono }) {
   const [terms, setTerms] = useState(false);
 
   function handleStateFormConditions() {
@@ -41,19 +41,19 @@ function ContainerCheckoutLeftCheckPago(props) {
           <div className="container-info-user-pago">
             <div className="info-form-user">
               <FontAwesomeIcon icon={faCheck} />
-              {props.nombre}
+              {nombre !== " " ? nombre : "Carlos Jaramillo"}
             </div>
             <div className="info-form-user">
               <FontAwesomeIcon icon={faCheck} />
-              {props.email}
+              {email !== "" ? email : "cjaramilloportilla@gmail.com"}
             </div>
             <div className="info-form-user">
               <FontAwesomeIcon icon={faCheck} />
-              {props.address}
+              {address !== " " ? address : "12980 vista isles dr apt 327"}
             </div>
             <div className="info-form-user">
               <FontAwesomeIcon icon={faCheck} />
-              {props.telefono}
+              {telefono !== "" ? telefono : "7868017349"}
             </div>
           </div>
         </div>

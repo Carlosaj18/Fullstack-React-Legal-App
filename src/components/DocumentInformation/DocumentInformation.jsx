@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./DocumentInformation.css";
 import { CartContext } from "../../Contexto/CartProviderContext";
 
 function DocumentInformation(props) {
   const { document } = props;
   const { addToCart } = useContext(CartContext);
+  const [showMore, setShowMore] = useState(false);
+
   const getFormattedPrice = (price) => {
     price = parseFloat(price);
     return `${price.toFixed(3)}`;
@@ -14,6 +16,10 @@ function DocumentInformation(props) {
     addToCart(document, 1);
   };
 
+  function handleMoreClick() {
+    setShowMore(!showMore);
+  }
+
   return (
     <div className="container-information">
       <h1>{props.document.title}</h1>
@@ -21,11 +27,12 @@ function DocumentInformation(props) {
       <div>{props.document.description}</div>
       <div className="clausulas">
         {props.document.clausulas !== undefined
-          ? "En este contrato encontrarás las siguientes cláusulas:"
+          ? "En este contrato encontrarás las siguientes cláusulas: "
           : null}
+        {props.document.clausulas !== undefined ? <button className="btn-ver-clausulas" onClick={handleMoreClick}>  {showMore ? 'Esconder' : 'Ver'} clausulas </button> : null}
       </div>
       <ul>
-        {props.document.clausulas !== undefined &&
+        {showMore && props.document.clausulas !== undefined &&
           props.document.clausulas.map((item, i) => (
             <li
               key={i}

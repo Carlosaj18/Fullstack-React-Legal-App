@@ -69,6 +69,18 @@ export const APICallSingleDocuments = (idURL) => {
   });
 };
 
+export const APICallSingleDocumentsIndex = (id) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let index = documents.findIndex(
+        (documentArray) => documentArray.id === parseInt(id)
+      );
+      if (index) resolve(documents[index]);
+      else reject("Document not found");
+    }, 1000);
+  });
+};
+
 export const APICallDocumentsCheckBox = (searchCheckBox) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
