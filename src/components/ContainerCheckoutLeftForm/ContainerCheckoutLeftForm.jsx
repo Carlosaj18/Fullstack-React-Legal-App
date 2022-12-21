@@ -24,7 +24,6 @@ function ContainerCheckoutLeftForm({
   const [phone, setPhone] = useState("");
   const [selectPais, setSelectPais] = useState([]);
   const [selectRegion, setSelectRegion] = useState();
-  let selectRegiones;
 
   useEffect(() => {
     fetchDatosComboBox().then((response) => {
@@ -64,7 +63,7 @@ function ContainerCheckoutLeftForm({
     }
 
     if (selectRegion !== undefined) {
-      selectRegiones = selectRegion.map((item) => {
+      let selectRegiones = selectRegion.map((item) => {
         return <option value={item.region}>{item.region}</option>;
       });
       setSelectRegion(selectRegiones);
