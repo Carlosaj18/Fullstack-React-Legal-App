@@ -4,7 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCreditCard } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import "./ContainerCheckoutLeftForm.css";
-import fetchDatosComboBox from "../services/apiPaises.js";
+import fetchDatosComboBox, {
+  fetchDatosComboBoxRegions,
+} from "../services/apiPaises.js";
 
 function ContainerCheckoutLeftForm({
   setIsActiveForm,
@@ -20,11 +22,13 @@ function ContainerCheckoutLeftForm({
   const [codigoPostal, setCodigoPostal] = useState("");
   const [region, setRegion] = useState("");
   const [phone, setPhone] = useState("");
-  const [paises, setPaises] = useState([]);
+  const [selectPais, setSelectPais] = useState([]);
+  const [selectRegion, setSelectRegion] = useState();
+  let selectRegiones;
 
   useEffect(() => {
     fetchDatosComboBox().then((response) => {
-      setPaises(response);
+      setSelectPais(response);
     });
   }, []);
 
@@ -52,17 +56,24 @@ function ContainerCheckoutLeftForm({
     event.preventDefault();
   }
 
-  function handleClickPaises(pais) {
-    console.log(pais.value);
+  function handleClickPaises() {
+    if (pais !== undefined) {
+      fetchDatosComboBoxRegions(pais).then((response) => {
+        setSelectRegion(response);
+      });
+    }
+
+    if (selectRegion !== undefined) {
+      selectRegiones = selectRegion.map((item) => {
+        return <option value={item.region}>{item.region}</option>;
+      });
+      setSelectRegion(selectRegiones);
+      console.log("Region seteado ", selectRegion);
+    }
   }
 
-  let selectPaises = paises.map((item) => {
-    return (
-      <option value={item.name} onClick={() => handleClickPaises(item.name)}>
-        {item.name}
-        {console.log(item.name)}
-      </option>
-    );
+  let selectPaises = selectPais.map((item) => {
+    return <option value={item.code}>{item.name}</option>;
   });
 
   return (
@@ -139,7 +150,10 @@ function ContainerCheckoutLeftForm({
           <div className="form-container-additional">
             <div className="form-left">
               <label for="pais">* País</label>
-              <select name="pets" id="pet-select">
+              <select
+                onChange={(e) => handleChange(e, setPais)}
+                onClick={() => handleClickPaises()}
+              >
                 <option value="">--Please choose an option--</option>
                 {selectPaises}
               </select>
@@ -154,12 +168,10 @@ function ContainerCheckoutLeftForm({
             </div>
             <div className="form-right">
               <label for="region">* Región</label>
-              <input
-                type="text"
-                id="region"
-                name="region"
-                onChange={(e) => handleChange(e, setRegion)}
-              />
+              <select onChange={(e) => handleChange(e, setRegion)}>
+                <option value="">--Please choose an option--</option>
+                {selectRegion}
+              </select>
               <label for="telefono">*Teléfono</label>
               <input
                 type="text"
