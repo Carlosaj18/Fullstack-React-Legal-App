@@ -5,7 +5,6 @@ import { faCreditCard } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import "./ContainerCheckoutLeftForm.css";
 import fetchDatosComboBox from "../services/apiPaises.js";
-import axios from "axios";
 
 function ContainerCheckoutLeftForm({
   setIsActiveForm,
@@ -23,28 +22,11 @@ function ContainerCheckoutLeftForm({
   const [phone, setPhone] = useState("");
   const [paises, setPaises] = useState([]);
 
-  async function getUser() {
-    try {
-      const response = await fetch(
-        "http://battuta.medunes.net/api/country/all/?key=dd0fe950948aebe004fe7f39ce43f3c5",
-        {
-          Accept: "*",
-          "User-Agent": "http://localhost:3000/",
-          method: "GET",
-          mode: "no-cors",
-        }
-      );
-      console.log(response);
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
   useEffect(() => {
-    getUser();
-  }, [paises]);
-
-  console.log(paises);
+    fetchDatosComboBox().then((response) => {
+      setPaises(response);
+    });
+  }, []);
 
   function onClickFormActive() {
     return setIsActiveForm(!isActiveForm);
@@ -69,6 +51,19 @@ function ContainerCheckoutLeftForm({
     setUserInfo(userInfo);
     event.preventDefault();
   }
+
+  function handleClickPaises(pais) {
+    console.log(pais.value);
+  }
+
+  let selectPaises = paises.map((item) => {
+    return (
+      <option value={item.name} onClick={() => handleClickPaises(item.name)}>
+        {item.name}
+        {console.log(item.name)}
+      </option>
+    );
+  });
 
   return (
     <div className="container-checkout-left">
@@ -146,14 +141,7 @@ function ContainerCheckoutLeftForm({
               <label for="pais">* País</label>
               <select name="pets" id="pet-select">
                 <option value="">--Please choose an option--</option>
-                <option value="dog" onChange={(e) => handleChange(e, setPais)}>
-                  Dog
-                </option>
-                <option value="cat">Cat</option>
-                <option value="hamster">Hamster</option>
-                <option value="parrot">Parrot</option>
-                <option value="spider">Spider</option>
-                <option value="goldfish">Goldfish</option>
+                {selectPaises}
               </select>
 
               <label for="postal">Código postal</label>

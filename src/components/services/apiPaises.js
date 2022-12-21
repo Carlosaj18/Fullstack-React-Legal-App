@@ -1,17 +1,24 @@
-import axios from "axios";
-
 const URL =
   "https://geo-battuta.net/api/country/all/?key=dd0fe950948aebe004fe7f39ce43f3c5";
+const BATTUTA_KEY = "00000000000000000000000000000000";
+const URLTESTING =
+  "https://geo-battuta.net/api/country/all/?key=" + BATTUTA_KEY;
 
-const fetchDatosComboBox = () => {
-  axios
-    .get("api/paises")
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((error) => {
-      console.log(error);
+async function fetchDatosComboBox() {
+  try {
+    const response = await fetch(URLTESTING, {
+      "Cache-Control": "no-cache",
+      Host: "http://localhost:3000/",
+      "User-Agent": "http://localhost:3000/",
+      Accept: "*/*",
+      "Accept-Encoding": "gzip, deflate, br",
+      Connection: "keep-alive",
     });
-};
+    let jsonResponse = await response.json();
+    return jsonResponse;
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 export default fetchDatosComboBox;
