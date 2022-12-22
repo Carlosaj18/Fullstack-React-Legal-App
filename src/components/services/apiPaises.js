@@ -44,4 +44,31 @@ export async function fetchDatosComboBoxRegions(countryCode) {
   }
 }
 
+export async function fetchDatosComboBoxCiudades(countryCode, region) {
+  console.log(region)
+  try {
+    const response = await fetch(
+      "http://geo-battuta.net/api/city/"
+	    +countryCode
+	    +"/search/?region="
+	    +region
+	    +"&key="
+	    +BATTUTA_KEY,
+      {
+        "Cache-Control": "no-cache",
+        Host: "http://localhost:3000/",
+        "User-Agent": "http://localhost:3000/",
+        Accept: "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        Connection: "keep-alive",
+      }
+    );
+    let jsonResponse = await response.json();
+    console.log(jsonResponse)
+    return jsonResponse;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 export default fetchDatosComboBox;

@@ -6,6 +6,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import "./ContainerCheckoutLeftForm.css";
 import fetchDatosComboBox, {
   fetchDatosComboBoxRegions,
+  fetchDatosComboBoxCiudades,
 } from "../services/apiPaises.js";
 
 function ContainerCheckoutLeftForm({
@@ -24,12 +25,15 @@ function ContainerCheckoutLeftForm({
   const [phone, setPhone] = useState("");
   const [selectPais, setSelectPais] = useState([]);
   const [selectRegion, setSelectRegion] = useState();
+  const [selectCiudad, setSelectCiudad] = useState();
 
   useEffect(() => {
-    fetchDatosComboBox().then((response) => {
-      setSelectPais(response);
-    });
-  }, []);
+    fetchDatosComboBox()
+      .then((response) => {
+        setSelectPais(response);
+      })
+      .catch((error) => console.log(error));
+  }, [selectRegion]);
 
   function onClickFormActive() {
     return setIsActiveForm(!isActiveForm);
@@ -57,17 +61,26 @@ function ContainerCheckoutLeftForm({
 
   function handleClickPaises() {
     if (pais !== undefined) {
-      fetchDatosComboBoxRegions(pais).then((response) => {
-        setSelectRegion(response);
-      });
+      fetchDatosComboBoxRegions(pais)
+        .then((response) => {
+          setSelectRegion(response);
+        })
+        .catch((error) => console.log(error));
     }
+  }
 
-    if (selectRegion !== undefined) {
-      let temporalRegiones = selectRegion.map((item) => {
-        return <option value={item.region}>{item.region}</option>;
-      });
-      setSelectRegion(temporalRegiones);
-      console.log("Region seteado ", selectRegion);
+  function handleClickRegiones() {
+    if (
+      (pais !== undefined || pais === "") &&
+      (region !== undefined || region === "")
+    ) {
+      console.log("region seleccionada");
+      fetchDatosComboBoxCiudades(pais, region)
+        .then((response) => {
+          setSelectCiudad(response);
+          console.log(response, "ciudades");
+        })
+        .catch((error) => console.log(error));
     }
   }
 
@@ -139,22 +152,27 @@ function ContainerCheckoutLeftForm({
             name="address"
             onChange={(e) => handleChange(e, setAddress)}
           />
-          <label for="ciudad">* Ciudad</label>
-          <input
-            type="text"
-            id="ciudad"
-            name="ciudad"
-            onChange={(e) => handleChange(e, setCiudad)}
-          />
+          <label for="pais">* País</label>
+          <select
+            onChange={(e) => handleChange(e, setPais)}
+            onClick={() => handleClickPaises()}
+          >
+            <option value="">--Please choose an option--</option>
+            {selectPaises}
+          </select>
           <div className="form-container-additional">
             <div className="form-left">
-              <label for="pais">* País</label>
+              <label for="region">* Región</label>
               <select
-                onChange={(e) => handleChange(e, setPais)}
-                onClick={() => handleClickPaises()}
+                onChange={(e) => handleChange(e, setRegion)}
+                onClick={() => handleClickRegiones()}
               >
                 <option value="">--Please choose an option--</option>
-                {selectPaises}
+                {selectRegion !== undefined
+                  ? selectRegion.map((item) => {
+                      return <option value={item.region}>{item.region}</option>;
+                    })
+                  : null}
               </select>
 
               <label for="postal">Código postal</label>
@@ -166,10 +184,17 @@ function ContainerCheckoutLeftForm({
               />
             </div>
             <div className="form-right">
-              <label for="region">* Región</label>
-              <select onChange={(e) => handleChange(e, setRegion)}>
+              <label for="ciudad">* Ciudad</label>
+              <select
+                onChange={(e) => handleChange(e, setCiudad)}
+                onClick={() => handleClickRegiones()}
+              >
                 <option value="">--Please choose an option--</option>
-                {selectRegion}
+                {selectCiudad !== undefined
+                  ? selectCiudad.map((item) => {
+                      return <option>{item.city}</option>;
+                    })
+                  : null}
               </select>
               <label for="telefono">*Teléfono</label>
               <input
