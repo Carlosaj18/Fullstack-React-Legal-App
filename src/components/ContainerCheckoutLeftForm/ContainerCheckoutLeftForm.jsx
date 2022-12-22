@@ -71,14 +71,12 @@ function ContainerCheckoutLeftForm({
 
   function handleClickRegiones() {
     if (
-      (pais !== undefined || pais === "") &&
-      (region !== undefined || region === "")
+      (pais !== undefined || pais !== " ") &&
+      (region !== undefined || region !== " ")
     ) {
-      console.log("region seleccionada");
       fetchDatosComboBoxCiudades(pais, region)
         .then((response) => {
           setSelectCiudad(response);
-          console.log(response, "ciudades");
         })
         .catch((error) => console.log(error));
     }
@@ -187,14 +185,13 @@ function ContainerCheckoutLeftForm({
               <label for="ciudad">* Ciudad</label>
               <select
                 onChange={(e) => handleChange(e, setCiudad)}
-                onClick={() => handleClickRegiones()}
               >
                 <option value="">--Please choose an option--</option>
                 {selectCiudad !== undefined
                   ? selectCiudad.map((item) => {
                       return <option>{item.city}</option>;
                     })
-                  : null}
+                  : ""}
               </select>
               <label for="telefono">*Teléfono</label>
               <input

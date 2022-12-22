@@ -31,54 +31,61 @@ function ContainerDocuments(props) {
     setDate(hora);
 
     if (props.categoryId) {
+      setLoading(true);
       APICallDocumentsCategory(props.categoryId)
         .then((response) => {
           setDocument(response);
+          setLoading(false);
         })
-        .catch((error) => console.error(error))
-        .finally(() => setLoading(false));
+        .catch((error) => console.error(error));
     } else if (categoryId) {
+      setLoading(true);
       APICallDocumentsCategoryId(categoryId)
         .then((response) => {
           setDocument(response);
+          setLoading(false);
         })
-        .catch((error) => console.error(error))
-        .finally(() => setLoading(false));
+        .catch((error) => console.error(error));
     } else if (props.documentTitle) {
+      setLoading(true);
       APICallDocumentsTitle(props.documentTitle)
         .then((response) => {
           setDocument(response);
+          setLoading(false);
         })
-        .catch((error) => console.error(error))
-        .finally(() => setLoading(false));
+        .catch((error) => console.error(error));
     } else if (props.moreDocuments) {
+      setLoading(true);
       APICallDocumentsMore()
         .then((response) => {
           setDocument(response);
+          setLoading(false);
         })
-        .catch((error) => console.error(error))
-        .finally(() => setLoading(false));
+        .catch((error) => console.error(error));
     } else if (props.searchCheckBox) {
+      setLoading(true);
       APICallDocumentsCheckBox(props.searchCheckBox)
         .then((response) => {
           setDocument(response);
+          setLoading(false);
         })
-        .catch((error) => console.error(error))
-        .finally(() => setLoading(false));
+        .catch((error) => console.error(error));
     } else if (props.searchCheckBox && props.documentTitle) {
+      setLoading(true);
       APICallDocumentsCheckBox(props.searchCheckBox)
         .then((response) => {
           setDocument(response);
+          setLoading(false);
         })
-        .catch((error) => console.error(error))
-        .finally(() => setLoading(false));
+        .catch((error) => console.error(error));
     } else {
+      setLoading(true);
       APICallDocuments()
         .then((response) => {
           setDocument(response);
+          setLoading(false);
         })
-        .catch((error) => console.error(error))
-        .finally(() => setLoading(false));
+        .catch((error) => console.error(error));
     }
   }, [
     props.categoryId,
