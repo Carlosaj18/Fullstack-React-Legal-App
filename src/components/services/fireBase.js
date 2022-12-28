@@ -64,7 +64,7 @@ export async function APICallDocumentsMore(ultimo, setUltimo) {
   setUltimo(lastVisible);
   const docsArray = querySnapshot.docs;
   let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id })); // /*let item = doc.data(); item.id = doc.id; return item; */
-    return dataDocs;
+  return dataDocs;
 }
 
 export async function APICallDocumentsCategory(category) {
@@ -81,7 +81,6 @@ export async function APICallDocumentsTitle(title) {
   const collectionRef = query(collection(db, "documents"));
   console.log("Collection: ", collectionRef);
   const q = query(collectionRef, where(title, "in", collectionRef));
-  console.log("Firebase Filter Title", q);
   const querySnapshot = await getDocs(q);
   const docsArray = querySnapshot.docs;
 

@@ -62,6 +62,7 @@ function ContainerDocuments(props) {
       setLoading(true);
       APICallDocumentsMore(ultimo, setUltimo)
         .then((response) => {
+          console.log(response)
           setDocument(response);
           setLoading(false);
         })
@@ -91,7 +92,7 @@ function ContainerDocuments(props) {
         })
         .catch((error) => console.error(error));
     }
-  }, [props, props.moreDocuments, categoryId]);
+  }, [props, categoryId]);
 
   document.forEach((doc) => {
     if (doc.category !== lastCategory && doc.category === "contratos") {
