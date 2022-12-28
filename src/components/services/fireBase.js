@@ -62,10 +62,9 @@ export async function APICallDocumentsMore(ultimo, setUltimo) {
   const querySnapshot = await getDocs(next);
   let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
   setUltimo(lastVisible);
-  console.log("ultimo", ultimo);
   const docsArray = querySnapshot.docs;
   let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id })); // /*let item = doc.data(); item.id = doc.id; return item; */
-  return dataDocs;
+    return dataDocs;
 }
 
 export async function APICallDocumentsCategory(category) {
