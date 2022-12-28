@@ -46,40 +46,26 @@ export async function APICallDocuments(setUltimo) {
   const q = query(collectionRef, orderBy("title", "asc"), limit(3));
   const querySnapshot = await getDocs(q);
   let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
+  setUltimo(lastVisible);
   const docsArray = querySnapshot.docs;
   let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id })); // /*let item = doc.data(); item.id = doc.id; return item; */
-  setUltimo(lastVisible);
   return dataDocs;
 }
 
 export async function APICallDocumentsMore(ultimo, setUltimo) {
-  let bandera = true;
-  if (bandera) {
-    const first = query(
-      collection(db, "documents"),
-      orderBy("title", "asc"),
-      startAfter(ultimo),
-      limit(3)
-    );
-    const querySnapshot = await getDocs(first);
-    const docsArray = querySnapshot.docs;
-    let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id })); // /*let item = doc.data(); item.id = doc.id; return item; */
-    return dataDocs;
-  } else {
-    bandera = false;
-    const next = query(
-      collection(db, "documents"),
-      orderBy("title", "asc"),
-      startAfter(ultimo),
-      limit(3)
-    );
-    const querySnapshot = await getDocs(next);
-    let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
-    setUltimo(lastVisible);
-    const docsArray = querySnapshot.docs;
-    let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id })); // /*let item = doc.data(); item.id = doc.id; return item; */
-    return dataDocs;
-  }
+  const next = query(
+    collection(db, "documents"),
+    orderBy("title", "asc"),
+    startAfter(ultimo),
+    limit(3)
+  );
+  const querySnapshot = await getDocs(next);
+  let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
+  setUltimo(lastVisible);
+  console.log("ultimo", ultimo);
+  const docsArray = querySnapshot.docs;
+  let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id })); // /*let item = doc.data(); item.id = doc.id; return item; */
+  return dataDocs;
 }
 
 export async function APICallDocumentsCategory(category) {

@@ -19,7 +19,7 @@ function ContainerDocuments(props) {
   const [document, setDocument] = useState([]);
   const [date, setDate] = useState();
   const [loading, setLoading] = useState(true);
-  const [ultimo, setUltimo] = React.useState(null)
+  const [ultimo, setUltimo] = React.useState(null);
   let categoryId = useParams().categoryId;
   let headingContratos = false;
   let headingAcuerdos = false;
@@ -28,8 +28,6 @@ function ContainerDocuments(props) {
   let contratos;
   let acuerdos;
   let templates;
-
-  console.log('Container Last', ultimo)
 
   useEffect(() => {
     let hora = new Date().toLocaleTimeString();
@@ -63,7 +61,7 @@ function ContainerDocuments(props) {
       // setarlo en false
       props.setMoreDocuments(false);
       setLoading(true);
-      APICallDocumentsMore(ultimo)
+      APICallDocumentsMore(ultimo, setUltimo)
         .then((response) => {
           setDocument(response);
           setLoading(false);
