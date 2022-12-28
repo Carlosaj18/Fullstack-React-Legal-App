@@ -1,7 +1,5 @@
 let documents = [
-  {
-    id: 1,
-    title: "Contrato de Arrendamiento de Vivienda",
+  {    title: "Contrato de Arrendamiento de Vivienda",
     date: "22/11/22",
     price: 9.900,
     description:
@@ -34,17 +32,13 @@ let documents = [
     categoryId: 1,
     state: "contractual",
     signed: "firmado",
-    state: "contractual",
-    signed: "firmado",
     area: "derecho-civil",
     signatures: "1/3",
     image: "/assets/document.jpg",
     myDocument: true,
     stock: 10
   },
-  {
-    id: 2,
-    title: "Estatutos para Empresa (SAS)",
+  {    title: "Estatutos para Empresa (SAS)",
     date: "22/11/22",
     price: 50.000,
     description:
@@ -72,9 +66,7 @@ let documents = [
     myDocument: false,
     stock: 10
   },
-  {
-    id: 3,
-    title: "Documentos para Divorcio",
+  {    title: "Documentos para Divorcio",
     date: "22/11/22",
     price: 35.000,
     description:
@@ -95,9 +87,7 @@ let documents = [
     myDocument: false,
     stock: 10
   },
-  {
-    id: 4,
-    title: "Contrato de trabajo de Empleada Doméstica",
+  {    title: "Contrato de trabajo de Empleada Doméstica",
     date: "22/11/22",
     price: 15.000,
     description:
@@ -125,9 +115,7 @@ let documents = [
     image: "/assets/document.jpg",
     myDocument: true,
   },
-  {
-    id: 5,
-    title: "Autorización de Tratamiento de Datos",
+  {    title: "Autorización de Tratamiento de Datos",
     date: "22/11/22",
     price: 15.000,
     description:
@@ -148,9 +136,7 @@ let documents = [
     myDocument: false,
     stock: 10
   },
-  {
-    id: 6,
-    title: "Contrato de Prestación de servicios",
+  {    title: "Contrato de Prestación de servicios",
     date: "22/11/22",
     price: 10.000,
     description:
@@ -180,9 +166,7 @@ let documents = [
     myDocument: false,
     stock: 10
   },
-  {
-    id: 7,
-    title: "Accion de Tutela",
+  {    title: "Accion de Tutela",
     date: "22/11/22",
     price: 10.000,
     description:
@@ -196,9 +180,7 @@ let documents = [
     myDocument: false,
     stock: 10
   },
-  {
-    id: 8,
-    title: "Contrato de trabajo a Término Indefinido",
+  {    title: "Contrato de trabajo a Término Indefinido",
     date: "22/11/22",
     price:  10.000,
     description:
@@ -224,9 +206,7 @@ let documents = [
     myDocument: false,
     stock: 10
   },
-  {
-    id: 9,
-    title: "Promesa de compraventa de bien inmueble",
+  {    title: "Promesa de compraventa de bien inmueble",
     date: "22/11/22",
     price:  10.000,
     description:
@@ -252,7 +232,6 @@ let documents = [
     stock: 10
   },
   {
-    id: 10,
     title: "Contrato de Compraventa de Vehículo",
     date: "22/11/22",
     price:  12.000,
@@ -276,7 +255,6 @@ let documents = [
     stock: 10
   },
   {
-    id: 11,
     title: "Requerimiento de Pago",
     date: "22/11/22",
     price:  10.000,
@@ -299,7 +277,6 @@ let documents = [
     stock: 10
   },
   {
-    id: 12,
     title: "Acuerdo de Confidencialidad",
     date: "22/11/22",
     price:  10.000,
@@ -327,7 +304,6 @@ let documents = [
     stock: 10
   },
   {
-    id: 13,
     title: "Contrato de Trabajo a Término Fijo",
     date: "22/11/22",
     price:  15.000,
@@ -355,7 +331,6 @@ let documents = [
     stock: 10
   },
   {
-    id: 14,
     title: "Poder Judicial",
     date: "22/11/22",
     price:  7.000,
@@ -371,7 +346,6 @@ let documents = [
     stock: 10
   },
   {
-    id: 15,
     title: "Cláusula Compromisoria",
     date: "22/11/22",
     price:  10.000,
@@ -387,7 +361,6 @@ let documents = [
     stock: 10
   },
   {
-    id: 16,
     title: "Acta de Asamblea de Accionistas",
     date: "22/11/22",
     price:  11.000,
@@ -403,7 +376,6 @@ let documents = [
     stock: 10
   },
   {
-    id: 17,
     title: "Poder para Divorcio",
     date: "22/11/22",
     price:  10.000,
@@ -419,7 +391,6 @@ let documents = [
     stock: 10
   },
   {
-    id: 18,
     title: "Cláusula Penal",
     date: "22/11/22",
     price:  6.000,
@@ -435,7 +406,6 @@ let documents = [
     stock: 10
   },
   {
-    id: 19,
     title: "Carta de Renuncia",
     date: "22/11/22",
     price:  10.000,
@@ -451,7 +421,6 @@ let documents = [
     stock: 10
   },
   {
-    id: 20,
     title: "Cláusula Anticorrupción",
     date: "22/11/22",
     price:  10.000,
@@ -467,7 +436,6 @@ let documents = [
     stock: 10
   },
   {
-    id: 21,
     title: "Pagaré",
     date: "22/11/22",
     price:  10.000,

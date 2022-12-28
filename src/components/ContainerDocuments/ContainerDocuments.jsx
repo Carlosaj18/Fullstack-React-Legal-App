@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "../Document/Document.css";
-import APICallDocuments from "../services/mockDocuments";
 import {
-  APICallDocumentsCategory,
   APICallDocumentsCategoryId,
-  APICallDocumentsTitle,
-  APICallDocumentsMore,
   APICallDocumentsCheckBox,
 } from "../services/mockDocuments";
+import {
+  APICallDocuments,
+  APICallDocumentsCategory,
+  APICallDocumentsTitle,
+  APICallDocumentsMore,
+} from "../services/fireBase";
 import DocumentList from "../DocumentList/DocumentList";
 import { useParams } from "react-router-dom";
 import DocumentCategoryRow from "../DocumentCategory/DocumentCategoryRow";
@@ -55,6 +57,8 @@ function ContainerDocuments(props) {
         })
         .catch((error) => console.error(error));
     } else if (props.moreDocuments) {
+      // setarlo en false
+      props.setMoreDocuments(false);
       setLoading(true);
       APICallDocumentsMore()
         .then((response) => {
@@ -87,13 +91,7 @@ function ContainerDocuments(props) {
         })
         .catch((error) => console.error(error));
     }
-  }, [
-    props.categoryId,
-    props.documentTitle,
-    props.moreDocuments,
-    props.searchCheckBox,
-    categoryId,
-  ]);
+  }, [props, categoryId]);
 
   document.forEach((doc) => {
     if (doc.category !== lastCategory && doc.category === "contratos") {

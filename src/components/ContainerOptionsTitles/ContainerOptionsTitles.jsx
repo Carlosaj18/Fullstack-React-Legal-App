@@ -5,8 +5,6 @@ import "./ContainerOptionsTitles.css";
 
 function ContainerOptionsTitles(props) {
 
-  
-
   return (
     <>
       <div className="container-option-items">

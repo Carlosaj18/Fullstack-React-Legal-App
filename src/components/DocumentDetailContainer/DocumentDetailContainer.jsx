@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import {
-  APICallSingleDocuments,
-  APICallSingleDocumentsIndex,
-} from "../services/mockDocuments";
+import { APICallSingleDocumentsIndex } from "../services/mockDocuments";
+import { APICallSingleDocuments } from "../services/fireBase";
 import DocumentDetail from "../DocumentDetail/DocumentDetail";
 import { useParams } from "react-router-dom";
 import "./DocumentDetailContainer.css";
@@ -26,7 +24,6 @@ function DocumentDetailContainer() {
         })
         .catch((error) => console.error("Documento not found"));
     } else {
-
       APICallSingleDocuments(id)
         .then((response) => {
           setDocument(response);
