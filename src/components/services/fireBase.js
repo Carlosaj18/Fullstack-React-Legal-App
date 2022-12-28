@@ -31,7 +31,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-let lastVisible;
 
 export async function APICallSingleDocuments(id) {
   //const id = "1Ya8gu7u24pAuGlGILLf";
@@ -42,40 +41,41 @@ export async function APICallSingleDocuments(id) {
   return document;
 }
 
-export async function APICallDocuments() {
+export async function APICallDocuments(setUltimo) {
   const collectionRef = query(collection(db, "documents"));
   const q = query(collectionRef, orderBy("title", "asc"), limit(3));
   const querySnapshot = await getDocs(q);
-  lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
+  let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
   const docsArray = querySnapshot.docs;
   let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id })); // /*let item = doc.data(); item.id = doc.id; return item; */
+  setUltimo(lastVisible);
   return dataDocs;
 }
 
-export async function APICallDocumentsMore() {
+export async function APICallDocumentsMore(ultimo, setUltimo) {
   let bandera = true;
   if (bandera) {
     const first = query(
       collection(db, "documents"),
       orderBy("title", "asc"),
-      startAfter(lastVisible),
+      startAfter(ultimo),
       limit(3)
     );
     const querySnapshot = await getDocs(first);
     const docsArray = querySnapshot.docs;
     let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id })); // /*let item = doc.data(); item.id = doc.id; return item; */
-    console.log(dataDocs);
     return dataDocs;
   } else {
     bandera = false;
     const next = query(
       collection(db, "documents"),
       orderBy("title", "asc"),
-      startAfter(lastVisible),
+      startAfter(ultimo),
       limit(3)
     );
     const querySnapshot = await getDocs(next);
-    const lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
+    let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
+    setUltimo(lastVisible);
     const docsArray = querySnapshot.docs;
     let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id })); // /*let item = doc.data(); item.id = doc.id; return item; */
     return dataDocs;
