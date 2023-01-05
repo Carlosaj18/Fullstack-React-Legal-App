@@ -53,18 +53,24 @@ export async function APICallDocuments(setUltimo) {
 }
 
 export async function APICallDocumentsMore(ultimo, setUltimo) {
-  const next = query(
-    collection(db, "documents"),
-    orderBy("title", "asc"),
-    startAfter(ultimo),
-    limit(3)
-  );
-  const querySnapshot = await getDocs(next);
-  let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
-  setUltimo(lastVisible);
-  const docsArray = querySnapshot.docs;
-  let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id })); // /*let item = doc.data(); item.id = doc.id; return item; */
-  return dataDocs;
+  if (ultimo !== undefined) {
+    const next = query(
+      collection(db, "documents"),
+      orderBy("title", "asc"),
+      startAfter(ultimo),
+      limit(3)
+    );
+    const querySnapshot = await getDocs(next);
+    let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
+    setUltimo(lastVisible);
+    const docsArray = querySnapshot.docs;
+    if (!docsArray.empty) {
+      let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id })); // /*let item = doc.data(); item.id = doc.id; return item; */
+      return dataDocs;
+    }
+  } else {
+    alert("No hay mas documentos");
+  }
 }
 
 export async function APICallDocumentsCategory(category) {
@@ -76,16 +82,13 @@ export async function APICallDocumentsCategory(category) {
   return dataDocs;
 }
 
-export async function APICallDocumentsTitle(title) {
-  console.log("Titulo que llega por props: ", title);
+export async function APICallDocumentsTitle(setArray) {
   const collectionRef = query(collection(db, "documents"));
-  console.log("Collection: ", collectionRef);
-  const q = query(collectionRef, where(title, "in", collectionRef));
+  const q = query(collectionRef);
   const querySnapshot = await getDocs(q);
   const docsArray = querySnapshot.docs;
-
   let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id }));
-  return dataDocs;
+  return setArray(dataDocs);
 }
 
 export async function createCollection() {

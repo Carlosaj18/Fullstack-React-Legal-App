@@ -19,7 +19,9 @@ function ContainerDocuments(props) {
   const [document, setDocument] = useState([]);
   const [date, setDate] = useState();
   const [loading, setLoading] = useState(true);
-  const [ultimo, setUltimo] = React.useState(null);
+  const [ultimo, setUltimo] = useState(null);
+  const [term, setTerm] = useState(null);
+  const [array, setArray] = useState([]);
   let categoryId = useParams().categoryId;
   let headingContratos = false;
   let headingAcuerdos = false;
@@ -28,6 +30,12 @@ function ContainerDocuments(props) {
   let contratos;
   let acuerdos;
   let templates;
+
+  const searchTerm = (termino) => {
+    return function (x) {
+      return x.title.toLowerCase().includes(termino) || !termino;
+    };
+  };
 
   useEffect(() => {
     let hora = new Date().toLocaleTimeString();
@@ -50,19 +58,35 @@ function ContainerDocuments(props) {
         })
         .catch((error) => console.error(error));
     } else if (props.documentTitle) {
+      setTerm(props.documentTitle);
       setLoading(true);
-      APICallDocumentsTitle(props.documentTitle)
-        .then((response) => {
-          setDocument(response);
-          setLoading(false);
-        })
-        .catch((error) => console.error(error));
-    } else if (props.moreDocuments) {
+      if (array.length > 0) {
+        //let documentFound = array.filter(searchTerm(term));
+        let documentFound = array.filter((documentArray) => {
+          return props.documentTitle.toLowerCase() === " "
+            ? documentArray
+            : documentArray.title
+                .toLowerCase()
+                .includes(props.documentTitle.toLowerCase());
+        });
+        console.log("FILTRADO: ", documentFound);
+        setDocument(documentFound);
+      } else {
+        APICallDocumentsTitle(setArray)
+          .then((response) => {
+            console.log(array);
+            // props.documentTitle
+            //setDocument(response);
+            setLoading(false);
+          })
+          .catch((error) => console.error(error));
+      }
+    } else if (props.moreDocuments || props.moreDocuments === false) {
       // setarlo en false
+      props.setMoreDocuments(false);
       setLoading(true);
       APICallDocumentsMore(ultimo, setUltimo)
         .then((response) => {
-          console.log(response)
           setDocument(response);
           setLoading(false);
         })
@@ -94,36 +118,38 @@ function ContainerDocuments(props) {
     }
   }, [props, categoryId]);
 
-  document.forEach((doc) => {
-    if (doc.category !== lastCategory && doc.category === "contratos") {
-      headingContratos = true;
-    }
-    lastCategory = doc.category;
-  });
+  if (document !== undefined) {
+    document.forEach((doc) => {
+      if (doc.category !== lastCategory && doc.category === "contratos") {
+        headingContratos = true;
+      }
+      lastCategory = doc.category;
+    });
 
-  document.forEach((doc) => {
-    if (doc.category !== lastCategory && doc.category === "acuerdos") {
-      headingAcuerdos = true;
-    }
-    lastCategory = doc.category;
-  });
+    document.forEach((doc) => {
+      if (doc.category !== lastCategory && doc.category === "acuerdos") {
+        headingAcuerdos = true;
+      }
+      lastCategory = doc.category;
+    });
 
-  document.forEach((doc) => {
-    if (doc.category !== lastCategory && doc.category === "templates") {
-      headingTemplates = true;
-    }
-    lastCategory = doc.category;
-  });
+    document.forEach((doc) => {
+      if (doc.category !== lastCategory && doc.category === "templates") {
+        headingTemplates = true;
+      }
+      lastCategory = doc.category;
+    });
 
-  contratos = document.filter((contrato) => {
-    return contrato.category === "contratos";
-  });
-  acuerdos = document.filter((acuerdo) => {
-    return acuerdo.category === "acuerdos";
-  });
-  templates = document.filter((template) => {
-    return template.category === "templates";
-  });
+    contratos = document.filter((contrato) => {
+      return contrato.category === "contratos";
+    });
+    acuerdos = document.filter((acuerdo) => {
+      return acuerdo.category === "acuerdos";
+    });
+    templates = document.filter((template) => {
+      return template.category === "templates";
+    });
+  }
 
   return (
     <>
