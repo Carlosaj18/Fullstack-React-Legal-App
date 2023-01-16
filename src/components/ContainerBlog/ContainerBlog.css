@@ -1,24 +1,34 @@
-body #root .container main .sidebar {
-    display: flex; 
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-}
-
 body #root .container main .sidebar .container-blog  {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: fit-content;
     flex-direction: column;
+    align-items: center;
+    height: 200px;
     gap: 2em;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
     flex-wrap: wrap;
+    padding-top: 15px;;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 @media (max-width: 1253px){
     body #root .container main .sidebar .container-blog {
         flex-direction: row;
+        gap: 3em;
+        padding: 10px;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        flex-wrap: nowrap;
+        justify-content: none;
+        height: auto;
+        overflow-y: hidden;
     }
+}
 
-    
+@media (max-width: 860px){
+    body #root .container main .sidebar .container-blog {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
 }

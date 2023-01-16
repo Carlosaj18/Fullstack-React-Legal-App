@@ -6,7 +6,6 @@ import BlogList from "../BlogList/BlogList";
 function ContainerBlog(props) {
   const [blog, setBlog] = useState([]);
 
-  console.log(props.moreBlog)
   useEffect(() => {
     if (props.moreBlog) {
       APICallBlogMore()

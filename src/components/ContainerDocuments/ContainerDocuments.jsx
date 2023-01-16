@@ -3,25 +3,26 @@ import "../Document/Document.css";
 import {
   APICallDocumentsCategoryId,
   APICallDocumentsCheckBox,
+  APICallDocumentsTitle,
 } from "../services/mockDocuments";
 import {
   APICallDocuments,
   APICallDocumentsCategory,
-  APICallDocumentsTitle,
   APICallDocumentsMore,
+  APICallDocumentsFireBase,
 } from "../services/fireBase";
 import DocumentList from "../DocumentList/DocumentList";
 import { useParams } from "react-router-dom";
 import DocumentCategoryRow from "../DocumentCategory/DocumentCategoryRow";
 import Loader from "../Loader/Loader";
+import { useSelector } from "react-redux";
 
 function ContainerDocuments(props) {
   const [document, setDocument] = useState([]);
   const [date, setDate] = useState();
   const [loading, setLoading] = useState(true);
   const [ultimo, setUltimo] = useState(null);
-  const [term, setTerm] = useState(null);
-  const [array, setArray] = useState([]);
+  const [arrayAPI, setArrayAPI] = useState([]);
   let categoryId = useParams().categoryId;
   let headingContratos = false;
   let headingAcuerdos = false;
@@ -30,17 +31,11 @@ function ContainerDocuments(props) {
   let contratos;
   let acuerdos;
   let templates;
-
-  const searchTerm = (termino) => {
-    return function (x) {
-      return x.title.toLowerCase().includes(termino) || !termino;
-    };
-  };
+  let searchTerm = useSelector((state) => state.searhStoreTerm);
 
   useEffect(() => {
     let hora = new Date().toLocaleTimeString();
     setDate(hora);
-
     if (props.categoryId) {
       setLoading(true);
       APICallDocumentsCategory(props.categoryId)
@@ -57,30 +52,32 @@ function ContainerDocuments(props) {
           setLoading(false);
         })
         .catch((error) => console.error(error));
-    } else if (props.documentTitle) {
-      setTerm(props.documentTitle);
-      setLoading(true);
-      if (array.length > 0) {
-        //let documentFound = array.filter(searchTerm(term));
-        let documentFound = array.filter((documentArray) => {
-          return props.documentTitle.toLowerCase() === " "
-            ? documentArray
-            : documentArray.title
-                .toLowerCase()
-                .includes(props.documentTitle.toLowerCase());
-        });
-        console.log("FILTRADO: ", documentFound);
-        setDocument(documentFound);
+    } else if (searchTerm.length > 0) {
+      if (arrayAPI.length > 0) {
+        setLoading(true);
+        let element = [...searchTerm];
+        let lastElement = element[element.length - 1];
+        const documentFound =
+          lastElement === ""
+            ? arrayAPI
+            : arrayAPI.filter((document) =>
+                document.title.toLowerCase().includes(lastElement.toLowerCase())
+              );
+        if (documentFound.length > 0) {
+          setLoading(false);
+          setDocument(documentFound);
+        }
       } else {
-        APICallDocumentsTitle(setArray)
-          .then((response) => {
-            console.log(array);
-            // props.documentTitle
-            //setDocument(response);
-            setLoading(false);
-          })
-          .catch((error) => console.error(error));
+        APICallDocumentsFireBase(setArrayAPI);
       }
+    } else if (props.documentTitle) {
+      setLoading(true);
+      APICallDocumentsTitle(props.documentTitle)
+        .then((response) => {
+          setDocument(response);
+          setLoading(false);
+        })
+        .catch((error) => console.error(error));
     } else if (props.moreDocuments || props.moreDocuments === false) {
       // setarlo en false
       props.setMoreDocuments(false);
@@ -116,7 +113,7 @@ function ContainerDocuments(props) {
         })
         .catch((error) => console.error(error));
     }
-  }, [props, categoryId]);
+  }, [props, categoryId, searchTerm]);
 
   if (document !== undefined) {
     document.forEach((doc) => {
@@ -153,38 +150,36 @@ function ContainerDocuments(props) {
 
   return (
     <>
-      {" "}
-      {headingContratos === true ? (
-        <DocumentCategoryRow category="Contratos" />
-      ) : null}
+      {headingContratos ? <DocumentCategoryRow category="Contratos" /> : null}
       {loading ? (
         <Loader />
-      ) : contratos.length > 0 ? (
-        <DocumentList latestDocuments={contratos} date={date} />
-      ) : null}
-      {headingAcuerdos === true ? (
-        <DocumentCategoryRow category="Acuerdos" />
-      ) : null}
+      ) : (
+        contratos.length > 0 && (
+          <DocumentList latestDocuments={contratos} date={date} />
+        )
+      )}
+      {headingAcuerdos ? <DocumentCategoryRow category="Acuerdos" /> : null}
       {loading ? (
         <Loader />
-      ) : acuerdos.length > 0 ? (
-        <DocumentList latestDocuments={acuerdos} date={date} />
-      ) : null}
-      {headingTemplates === true ? (
-        <DocumentCategoryRow category="Templates" />
-      ) : null}
+      ) : (
+        acuerdos.length > 0 && (
+          <DocumentList latestDocuments={acuerdos} date={date} />
+        )
+      )}
+      {headingTemplates ? <DocumentCategoryRow category="Templates" /> : null}
       {loading ? (
         <Loader />
-      ) : templates.length > 0 ? (
-        <DocumentList latestDocuments={templates} date={date} />
-      ) : null}
+      ) : (
+        templates.length > 0 && (
+          <DocumentList latestDocuments={templates} date={date} />
+        )
+      )}
       {loading ? (
         <Loader />
-      ) : document <= 0 ? (
+      ) : document === 0 ? (
         <div>
           <h1 style={{ textAlign: "center", color: "#234F1E " }}>
-            {" "}
-            No hay documentos con esos criterios{" "}
+            No hay documentos con esos criterio
           </h1>
         </div>
       ) : null}

@@ -1,0 +1,25 @@
+.container-categoria-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container-categoria-labels button {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 10px;
+    border: 1px solid #234F1E;
+    font-size: 1.2em;
+    transition: all 0.20s ease-in;
+    margin-bottom: 2em;
+    width: 250px;
+    
+}
+.container-categoria-labels button:hover { 
+    background: #234F1E;
+    color: #fff;
+    transform: translateY(-10px);}

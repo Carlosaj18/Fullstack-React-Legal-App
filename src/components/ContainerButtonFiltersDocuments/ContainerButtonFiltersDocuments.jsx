@@ -1,15 +1,31 @@
 import React from "react";
 import ButtonFilter from "../ButtonFilter/ButtonFilter";
 import "./ContainerButtonFiltersDocuments.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpAZ } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDownZA } from "@fortawesome/free-solid-svg-icons";
+import { faMoneyCheckDollar } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import {faFilter } from "@fortawesome/free-solid-svg-icons";
+import {faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
+
 
 function ContainerButtonFiltersDocuments({ buttonFilter }) {
   return (
     <div
       className={buttonFilter ? "button-filters" : "button-filters-not-display"}
     >
-      <ButtonFilter name="Ordenar por Precio"/>
-      <ButtonFilter name="Ordenar A-Z"/>
-      <ButtonFilter name="Filtrar Favoritos"/>
+      <div className="button-filters-flex-scroll">
+        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faFilter} />}/>
+        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faArrowUpAZ} />} name="Ordenar A-Z" />
+        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faArrowDownZA} />} name="Ordenar Z-A" />
+        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faMoneyCheckDollar} />} name="Ordenar por Precio" />
+        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faStar} />} name="Filtrar Favoritos" />
+        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faCloudArrowUp} />} name="Documentos Descargados" />
+        {/** <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faFileWord} />} name="Contratos" />
+        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faFileWord} />} name="Acuerdos" />
+        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faFileWord} />} name="Templates" /> */}
+      </div>
     </div>
   );
 }

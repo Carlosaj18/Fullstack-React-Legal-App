@@ -7,6 +7,7 @@ import { CartContext } from "../../Contexto/CartProviderContext";
 function CartWidget({ setPreviewCartWidget, previewCartWidget }) {
   const { totalItemsInCart } = useContext(CartContext);
   let cantidadCarrito = totalItemsInCart();
+  
   function onClickButtonPreviewCart() {
     return setPreviewCartWidget(!previewCartWidget);
   }

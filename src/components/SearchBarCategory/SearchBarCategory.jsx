@@ -17,23 +17,7 @@ function SearchBarCategory() {
 
   return (
     <>
-      <div className="search-container">
-        <form action="/document/category/" onSubmit={(e) => handleSubmit(e)}>
-          <input
-            className="input-search-category"
-            type="text"
-            placeholder="Search category..."
-            value={search.value}
-            onChange={(e) => handleChange(e)}
-          />
-          <button className="search-icon" type="submit">
-            <i>
-              <FontAwesomeIcon icon={faSearch} />
-            </i>
-          </button>
-        </form>
-      </div>
-      <ContainerDocuments categoryId={search.value} />
+      <ContainerDocuments />
     </>
   );
 }

@@ -3,8 +3,14 @@ import './ButtonFilter.css'
 
 function ButtonFilter(props) {
   return (
-    <button>{props.name}</button>
+    <button className='button-flex-filter'><i>{props.icon}{props.name}</i></button>
   )
 }
+
+
+
+
+
+
 
 export default ButtonFilter

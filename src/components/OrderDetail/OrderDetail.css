@@ -1,0 +1,10 @@
+.order-detail-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-detail-flex h1 {
+    color: #234F1E;
+}

@@ -2,31 +2,37 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
+import { createdSearchTerm } from "../../features/searchBar/searchBarSlice";
 
 function SearchNabBar({
-  onFilterTextChange,
   filterText,
-  setButtonFilter,
+  setFilterText,
   buttonFilter,
+  setButtonFilter,
 }) {
+  const dispatch = useDispatch();
+
   function handleSubmit(e) {
     e.preventDefault();
+    console.log("Busqueda enviada");
+    dispatch(createdSearchTerm(filterText));
   }
 
-  function onClickButtonFilter(){
-    return setButtonFilter(!buttonFilter)
+  function onClickButtonFilter() {
+    return setButtonFilter(!buttonFilter);
   }
 
   return (
     <>
       <div className="search-container">
-        <form action="/" onClick={(e) => handleSubmit(e)}>
+        <form action="/" onSubmit={(e) => handleSubmit(e)}>
           <input
             className="input-search-category"
             type="text"
             placeholder="Search documents..."
             value={filterText}
-            onChange={(e) => onFilterTextChange(e.target.value)}
+            onChange={(e) => setFilterText(e.target.value)}
           />
           <button className="search-icon" type="submit">
             <i>

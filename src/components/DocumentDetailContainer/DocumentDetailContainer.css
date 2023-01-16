@@ -1,4 +1,4 @@
-body #root .container main .container-detail-document {
+body #root .container main .container-detail-document-flex {
     display: flex;
     justify-content: space-around;
     align-items: start;
@@ -6,12 +6,10 @@ body #root .container main .container-detail-document {
     width: 100%;
 }
 
-@media (max-width: 1177px){
-    body #root .container main .container-detail-document {
+@media (max-width: 1377px){
+    body #root .container main .container-detail-document-flex {
         flex-direction: column;
         align-items: center;
         gap: 1em;
     }
-    
-    
 }

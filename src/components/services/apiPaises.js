@@ -22,6 +22,7 @@ async function fetchDatosComboBox() {
 }
 
 export async function fetchDatosComboBoxRegions(countryCode) {
+  console.log(countryCode);
   if (countryCode !== "") {
     try {
       const response = await fetch(

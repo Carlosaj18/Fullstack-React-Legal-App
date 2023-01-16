@@ -2,7 +2,6 @@ import React from "react";
 import Document from "../Document/Document";
 
 function DocumentList(props) {
-
   return (
     <div className="container-cards">
       {props.latestDocuments.map((item) => {

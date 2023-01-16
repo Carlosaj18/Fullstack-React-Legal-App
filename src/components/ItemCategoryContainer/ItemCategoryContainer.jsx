@@ -1,17 +1,20 @@
 import React from "react";
-import ContainerOptionsTitles from "../ContainerOptionsTitles/ContainerOptionsTitles";
 import "../DocumentListContainer/DocumentListContainer.css";
-import SearchBarCategory from "../SearchBarCategory/SearchBarCategory";
+import CategoriaLabels from "../CategoriaLabels/CategoriaLabels";
+import DocumentListContainer from "../DocumentListContainer/DocumentListContainer";
 
-function ItemCategoryContainer() {
+function ItemCategoryContainer(props) {
   return (
-    <div className="container-items">
-      <div className="container-latest">
-        <ContainerOptionsTitles subtitle="Documents">
-          <SearchBarCategory />
-        </ContainerOptionsTitles>
+    <>
+      <div className="container-items">
+        <DocumentListContainer
+          subtitle="Últimos Documentos"
+          buttonFilter={props.buttonFilter}
+          documentTitle={props.documentTitle}
+        />
       </div>
-    </div>
+      <CategoriaLabels />
+    </>
   );
 }
 

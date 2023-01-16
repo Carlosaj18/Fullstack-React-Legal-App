@@ -35,8 +35,8 @@ body #root .container main .header .search-container form .search-icon {
 
 body #root .container main .header .search-container form .search-icon i{
   position: absolute;
-  left: -25px;
-  top: -5px;
+  left: -26px;
+  top: -12px;
 }
 
 body #root .container main .header .search-container .filters {

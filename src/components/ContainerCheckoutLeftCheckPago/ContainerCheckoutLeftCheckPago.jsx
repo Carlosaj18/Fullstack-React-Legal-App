@@ -1,16 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import "./ContainerCheckoutLeftCheckPago.css";
 import logoMercado from "../../images/mercadoPago.svg";
 import ModalTerminosCondiciones from "../ModalTerminosCondiciones/ModalTerminoCondicionales";
+import { CartContext } from "../../Contexto/CartProviderContext";
+import { createBuyOrder_WithStockControl } from "../services/fireBase";
+import swal from "sweetalert";
+import { useNavigate } from "react-router-dom";
 
 function ContainerCheckoutLeftCheckPago({ nombre, email, address, telefono }) {
   const [terms, setTerms] = useState(false);
+  const { cart, finalPriceCart, clearCart } = useContext(CartContext);
+  const navigateTo = useNavigate();
 
   function handleStateFormConditions() {
     setTerms(!terms);
+  }
+
+  function handleCheckOut() {
+    const order = {
+      buyer: {
+        name: nombre,
+        email: email,
+        address: address,
+        phone: telefono,
+      },
+      items: cart,
+      total: finalPriceCart(),
+      date: new Date(),
+    };
+
+    createBuyOrder_WithStockControl(order).then((id) =>
+      /** swal(
+          "Gracias por tu compra",
+          `Se genero la orden correctamente, tu numero de ticket es: ${id}`,
+          "success"
+        ), */
+      setTimeout(() => {
+        clearCart();
+        navigateTo(`/orderDetail/${id}`);
+      }, 1000)
+    );
   }
 
   return (
@@ -88,7 +120,12 @@ function ContainerCheckoutLeftCheckPago({ nombre, email, address, telefono }) {
             </div>
           </div>
         </div>
-        <button className="btn-realizar-compra">Realizar Compra </button>
+        <button
+          onClick={() => handleCheckOut()}
+          className="btn-realizar-compra"
+        >
+          Realizar Compra{" "}
+        </button>
       </div>
       {terms ? (
         <ModalTerminosCondiciones terms={terms} setTerms={setTerms} />

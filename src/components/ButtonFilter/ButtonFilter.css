@@ -5,6 +5,18 @@
     font-size: 1em;
     transition: all 0.20s ease-in;
     margin-bottom: 1em;
+    margin-bottom: 20px;;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    
+}
+
+.button-flex-filter {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    border: 3px solid red;
 }
 
 .button-filters button:hover {

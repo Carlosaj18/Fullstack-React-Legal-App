@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
@@ -9,10 +9,11 @@ import imageDoc from "../../images/document.jpg";
 import data from "../data/documents";
 
 function DocumentDetail(props) {
+
   function handleNextClick() {
     if(props.index < data.length) props.setIndex(props.index + 1);
-  } 
-
+  }
+  
   return (
     <div className="container-vertical-felx ">
       <div className="container-image-detail-document-flex">

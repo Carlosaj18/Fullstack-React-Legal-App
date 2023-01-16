@@ -12,10 +12,13 @@ import { faFileContract } from "@fortawesome/free-solid-svg-icons";
 import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { faChartLine } from "@fortawesome/free-solid-svg-icons";
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import NavItem from "../NavItem/NavItem";
+import { createCollection } from "../services/fireBase";
 
 function SideBar() {
   const lanzarAlerta = () => {
     alert("Do you want to logout your account?");
+    // Si true -> <LoginForm />
   };
 
   return (
@@ -30,77 +33,52 @@ function SideBar() {
       </Link>
       <nav className="sidebar-nav">
         <ul>
-          <li className="selected">
-            <i>
-              <FontAwesomeIcon icon={faHouse} />
-            </i>
-            <button onClick={() => console.log("Home")} className="button">
-              <Link to="/">Home</Link>
-            </button>
-          </li>
-          <li className="selected">
-            <i>
-              <FontAwesomeIcon icon={faFile} />
-            </i>
-            <button
-              onClick={() => console.log("My documents")}
-              className="button"
-            >
-              <Link to="/document/my-documents">My documents</Link>
-            </button>
-          </li>
-          <li className="selected">
-            <i>
-              <FontAwesomeIcon icon={faFileSignature} />
-            </i>
-            <button
-              onClick={() => console.log("My signatures")}
-              className="button"
-            >
-              <Link to="/service/my-services"> Services</Link>
-            </button>
-          </li>
-          <li className="selected">
-            <i>
-              <FontAwesomeIcon icon={faFileContract} />
-            </i>
-            <button
-              onClick={() => console.log("My templates")}
-              className="button"
-            >
-              <Link>My templates </Link>
-            </button>
-          </li>
-          <li className="selected">
-            <i>
-              <FontAwesomeIcon icon={faCloudArrowUp} />
-            </i>
-            <button
-              onClick={() => console.log("Law upgrade")}
-              className="button"
-            >
-              <Link>Law upgrade</Link>
-            </button>
-          </li>
-          <li className="selected">
-            <i>
-              <FontAwesomeIcon icon={faChartLine} />
-            </i>
-            <button onClick={() => console.log("Dashboard")} className="button">
-              <Link to="/">Dashboard</Link>
-            </button>
-          </li>
+          <NavItem
+            icon={<FontAwesomeIcon icon={faHouse} />}
+            link="/"
+            name="Home"
+          />
+          <NavItem
+            icon={<FontAwesomeIcon icon={faFile} />}
+            link="/document/my-documents"
+            name="My documents"
+          />
+          <NavItem
+            icon={<FontAwesomeIcon icon={faFileSignature} />}
+            link="/service/my-services"
+            name="Services"
+          />
+          <NavItem
+            icon={<FontAwesomeIcon icon={faFileContract} />}
+            link="/"
+            name="My templates"
+          />
+          <NavItem
+            icon={<FontAwesomeIcon icon={faCloudArrowUp} />}
+            link="/document/category"
+            name="Categorias"
+          />
+          <NavItem
+            icon={<FontAwesomeIcon icon={faChartLine} />}
+            link="/"
+            name="Dashboard"
+          />
         </ul>
         <div className="image-container">
           <img src={imageGuide} alt="logo" />
         </div>
         <ul>
-          <li className="logout">
-            <i>
-              <FontAwesomeIcon icon={faRightFromBracket} />
-            </i>
-            <button onMouseOver={() => lanzarAlerta()}>Logout</button>
-          </li>
+          <NavItem
+            icon={<FontAwesomeIcon icon={faRightFromBracket} />}
+            name="Logout"
+            handleEvent={() => lanzarAlerta()}
+          />
+          {/** 
+           <NavItem
+            icon={<FontAwesomeIcon icon={faCloudArrowUp} />}
+            name="Export Data"
+            handleEvent={createCollection}
+          /> */}
         </ul>
       </nav>
       <div className="fill-bottom"></div>

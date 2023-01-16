@@ -8,21 +8,25 @@ import fetchDatosComboBox, {
   fetchDatosComboBoxRegions,
   fetchDatosComboBoxCiudades,
 } from "../services/apiPaises.js";
+import InputForm from "../InputForm/InputForm";
 
 function ContainerCheckoutLeftForm({
   setIsActiveForm,
   isActiveForm,
   setUserInfo,
 }) {
-  const [email, setEmail] = useState("");
-  const [nombre, setNombre] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [address, setAddress] = useState("");
-  const [ciudad, setCiudad] = useState("");
-  const [pais, setPais] = useState("");
-  const [codigoPostal, setCodigoPostal] = useState("");
-  const [region, setRegion] = useState("");
-  const [phone, setPhone] = useState("");
+  const [buyerData, setBuyerData] = useState({
+    email: "",
+    nombre: "",
+    apellido: "",
+    address: "",
+    ciudad: "",
+    pais: "",
+    codigoPostal: "",
+    region: "",
+    phone: "",
+  });
+
   const [selectPais, setSelectPais] = useState([]);
   const [selectRegion, setSelectRegion] = useState();
   const [selectCiudad, setSelectCiudad] = useState();
@@ -39,42 +43,36 @@ function ContainerCheckoutLeftForm({
     return setIsActiveForm(!isActiveForm);
   }
 
-  function handleChange(event, setState) {
-    setState(event.target.value);
-  }
-
   function handleSubmit(event) {
-    let userInfo = {
-      email: email,
-      nombre: nombre,
-      apellido: lastName,
-      address: address,
-      ciudad: ciudad,
-      pais: pais,
-      codigoPostal: codigoPostal,
-      region: region,
-      phone: phone,
-    };
-    setUserInfo(userInfo);
     event.preventDefault();
+    setUserInfo(buyerData);
+    setBuyerData({
+      email: "",
+      nombre: "",
+      apellido: "",
+      address: "",
+      ciudad: "",
+      pais: "",
+      codigoPostal: "",
+      region: "",
+      phone: "",
+    });
   }
 
   function handleClickPaises() {
-    if (pais !== undefined) {
-      fetchDatosComboBoxRegions(pais)
-        .then((response) => {
-          setSelectRegion(response);
-        })
-        .catch((error) => console.log(error));
-    }
+    fetchDatosComboBoxRegions(buyerData.pais)
+      .then((response) => {
+        setSelectRegion(response);
+      })
+      .catch((error) => console.log(error));
   }
 
   function handleClickRegiones() {
     if (
-      (pais !== undefined || pais !== " ") &&
-      (region !== undefined || region !== " ")
+      (buyerData.pais !== undefined || buyerData.pais !== "") &&
+      (buyerData.region !== undefined || buyerData.region !== "")
     ) {
-      fetchDatosComboBoxCiudades(pais, region)
+      fetchDatosComboBoxCiudades(buyerData.pais, buyerData.region)
         .then((response) => {
           setSelectCiudad(response);
         })
@@ -82,9 +80,16 @@ function ContainerCheckoutLeftForm({
     }
   }
 
-  let selectPaises = selectPais.map((item) => {
-    return <option value={item.code}>{item.name}</option>;
-  });
+  function handleInputChange(event) {
+    let nameInput = event.target.name;
+    let value = event.target.value;
+    //buyerData[nameInput] = value; // ASIGNAR DATA DINAMICA
+    let newBuyerData = { ...buyerData };
+    newBuyerData[nameInput] = value;
+    setBuyerData(newBuyerData);
+  }
+
+  // Validacion FROM
 
   return (
     <div className="container-checkout-left">
@@ -122,83 +127,108 @@ function ContainerCheckoutLeftForm({
           action="/"
           onClick={(e) => handleSubmit(e)}
         >
-          <label for="femail">* Email para confirmar el pedido </label>
-          <input
-            type="text"
-            id="femail"
-            name="femail"
-            onChange={(e) => handleChange(e, setEmail)}
+          <InputForm
+            title="* Email para confirmar el pedido "
+            typeInput="text"
+            name="email"
+            value={buyerData.email}
+            onChange={handleInputChange}
           />
-          <label for="lname">* Nombre</label>
-          <input
-            type="text"
-            id="fname"
-            name="fname"
-            onChange={(e) => handleChange(e, setNombre)}
+          <InputForm
+            title="* Nombre "
+            typeInput="text"
+            name="nombre"
+            value={buyerData.nombre}
+            onChange={handleInputChange}
           />
-          <label for="lname">* Apellido</label>
-          <input
-            type="text"
-            id="lname"
-            name="lname"
-            onChange={(e) => handleChange(e, setLastName)}
+
+          <InputForm
+            title="* Apellido "
+            typeInput="text"
+            name="apellido"
+            value={buyerData.apellido}
+            onChange={handleInputChange}
           />
-          <label for="address">* Dirección</label>
-          <input
-            type="text"
-            id="address"
+
+          <InputForm
+            title="* Dirección "
+            typeInput="text"
             name="address"
-            onChange={(e) => handleChange(e, setAddress)}
+            value={buyerData.address}
+            onChange={handleInputChange}
           />
+
           <label for="pais">* País</label>
           <select
-            onChange={(e) => handleChange(e, setPais)}
+            onChange={handleInputChange}
             onClick={() => handleClickPaises()}
+            name="pais"
           >
-            <option value="">--Please choose an option--</option>
-            {selectPaises}
+            <option value={buyerData.pais}>--Please choose an option--</option>
+            {selectPais !== undefined
+              ? selectPais.map((item) => {
+                  return (
+                    <option name="pais" value={item.code}>
+                      {item.name}
+                    </option>
+                  );
+                })
+              : null}
           </select>
+
           <div className="form-container-additional">
             <div className="form-left">
               <label for="region">* Región</label>
               <select
-                onChange={(e) => handleChange(e, setRegion)}
+                onChange={handleInputChange}
                 onClick={() => handleClickRegiones()}
+                name="region"
               >
-                <option value="">--Please choose an option--</option>
+                <option value={buyerData.region}>
+                  --Please choose an option--
+                </option>
                 {selectRegion !== undefined
                   ? selectRegion.map((item) => {
-                      return <option value={item.region}>{item.region}</option>;
+                      return (
+                        <option name={item.region} value={item.region}>
+                          {item.region}
+                        </option>
+                      );
                     })
                   : null}
               </select>
 
-              <label for="postal">Código postal</label>
-              <input
-                type="text"
-                id="postal"
-                name="postal"
-                onChange={(e) => handleChange(e, setCodigoPostal)}
+              <InputForm
+                title="* Código postal "
+                typeInput="text"
+                name="codigoPostal"
+                value={buyerData.codigoPostal}
+                onChange={handleInputChange}
               />
             </div>
             <div className="form-right">
               <label for="ciudad">* Ciudad</label>
-              <select
-                onChange={(e) => handleChange(e, setCiudad)}
-              >
-                <option value="">--Please choose an option--</option>
+              <select onChange={handleInputChange} name="ciudad">
+                <option value={buyerData.ciudad}>
+                  --Please choose an option--
+                </option>
                 {selectCiudad !== undefined
                   ? selectCiudad.map((item) => {
-                      return <option>{item.city}</option>;
+                      return (
+                        <option name={item.city} value={item.city}>
+                          {item.city}
+                        </option>
+                      );
                     })
                   : ""}
               </select>
-              <label for="telefono">*Teléfono</label>
-              <input
-                type="text"
-                id="telefono"
-                name="telefono"
-                onChange={(e) => handleChange(e, setPhone)}
+
+              <InputForm
+                title="* Teléfono "
+                typeInput="text"
+                name="phone"
+                value={buyerData.phone}
+                onChange={handleInputChange}
               />
             </div>
           </div>

@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 function Document(props) {
   let urlDetail = `/document/detail/${props.id}`;
+  //let urlDetailCategory = `/document/category/1/detail/${props.id}`
 
   return (
     <div className="card">
@@ -19,7 +20,6 @@ function Document(props) {
       <div className="info-card">
         <i className="icon-document">
           <Link to={urlDetail}>
-            {" "}
             <FontAwesomeIcon icon={faFileSignature} />
           </Link>
         </i>

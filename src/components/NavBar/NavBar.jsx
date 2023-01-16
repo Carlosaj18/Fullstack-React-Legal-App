@@ -1,32 +1,28 @@
 import React from "react";
-import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
-import userImg from "../../images/userimg.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell } from "@fortawesome/free-solid-svg-icons";
 import SearchNabBar from "../SearchNabBar/SearchNabBar";
+import NotificationWidget from "../NotificationWidget/NotificationWidget";
+import "./NavBar.css";
 
 function NavBar({
-  onFilterTextChange,
   filterText,
-  setButtonFilter,
+  setFilterText,
   buttonFilter,
+  setButtonFilter,
   previewCartWidget,
-  setPreviewCartWidget
+  setPreviewCartWidget,
+  notificationWidget,
+  setNotificationWidget,
+  user
 }) {
-  const user = {
-    name: "Carlos Jaramillo",
-    imageUrl: userImg,
-    imageSize: 60,
-  };
-
+  
   return (
     <div className="header">
       <SearchNabBar
-        onFilterTextChange={onFilterTextChange}
         filterText={filterText}
-        setButtonFilter={setButtonFilter}
+        setFilterText={setFilterText}
         buttonFilter={buttonFilter}
+        setButtonFilter={setButtonFilter}
       />
       <div className="user">
         <div className="icons">
@@ -46,14 +42,13 @@ function NavBar({
               }}
             />
           </div>
-          <p className="name">Hi, Carlos</p>
+          <p className="name">Hi, {user.name}</p>
         </div>
       </div>
-      <button className="button-notification">
-        <i>
-          <FontAwesomeIcon className="fa-bell" icon={faBell} />
-        </i>{" "}
-      </button>
+      <NotificationWidget
+        notificationWidget={notificationWidget}
+        setNotificationWidget={setNotificationWidget}
+      />
     </div>
   );
 }
