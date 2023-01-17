@@ -34,6 +34,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+export async function APICallDocumentsFireBase() {
+  const collectionRef = query(collection(db, "documents"));
+  const q = query(collectionRef);
+  const querySnapshot = await getDocs(q);
+  const docsArray = querySnapshot.docs;
+  let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id }));
+  return dataDocs;
+}
+
 export async function APICallSingleDocuments(id) {
   //const id = "1Ya8gu7u24pAuGlGILLf";
   const docRef = doc(db, "documents", id);
@@ -45,6 +54,15 @@ export async function APICallSingleDocuments(id) {
   } else {
     console.log("No such document!");
   }
+}
+
+export async function APICallDocumentsCategoryId(categoryId) {
+  const collectionRef = query(collection(db, "documents"));
+  const q = query(collectionRef, where("categoryId", "==", categoryId));
+  const querySnapshot = await getDocs(q);
+  const docsArray = querySnapshot.docs;
+  let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id }));
+  return dataDocs;
 }
 
 export async function APICallSingleDocumentsNext() {
@@ -60,12 +78,22 @@ export async function APICallSingleDocumentsNext() {
   } else {
     alert("No hay mas documentos");
   }*/
-
 }
 
 export async function APICallDocuments(setUltimo) {
   const collectionRef = query(collection(db, "documents"));
   const q = query(collectionRef, orderBy("title", "asc"), limit(3));
+  const querySnapshot = await getDocs(q);
+  let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
+  setUltimo(lastVisible);
+  const docsArray = querySnapshot.docs;
+  let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id })); // /*let item = doc.data(); item.id = doc.id; return item; */
+  return dataDocs;
+}
+
+export async function APICallMyDocuments(setUltimo) {
+  const collectionRef = query(collection(db, "documents"));
+  const q = query(collectionRef, where("myDocument", "==", true), limit(3) );
   const querySnapshot = await getDocs(q);
   let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
   setUltimo(lastVisible);
@@ -102,15 +130,6 @@ export async function APICallDocumentsCategory(category) {
   const docsArray = querySnapshot.docs;
   let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id }));
   return dataDocs;
-}
-
-export async function APICallDocumentsFireBase(setArrayAPI) {
-  const collectionRef = query(collection(db, "documents"));
-  const q = query(collectionRef);
-  const querySnapshot = await getDocs(q);
-  const docsArray = querySnapshot.docs;
-  let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id }));
-  return setArrayAPI(dataDocs);
 }
 
 export async function createCollection() {

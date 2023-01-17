@@ -1,41 +1,42 @@
-import React, { useState, useEffect } from "react";
-import { APICallSingleDocumentsIndex } from "../services/mockDocuments";
+import React, { useContext, useState, useEffect } from "react";
 import {
   APICallSingleDocuments,
-  APICallSingleDocumentsNext,
-  APICallDocumentsFireBase,
 } from "../services/fireBase";
 import DocumentDetail from "../DocumentDetail/DocumentDetail";
 import { useParams } from "react-router-dom";
 import DocumentInformation from "../DocumentInformation/DocumentInformation";
 import Loader from "../Loader/Loader";
+import { ArrayDataContext } from "../../Contexto/ArrayDataProviderContext";
 import "./DocumentDetailContainer.css";
 
 function DocumentDetailContainer() {
+  const { arrayAPI, APICallContextFireBase } = useContext(ArrayDataContext);
   const [document, setDocument] = useState([]);
-  const [arrayAPI, setArrayAPI] = useState([]);
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(-1);
   const [date, setDate] = useState();
   const [loading, setLoading] = useState(true);
   let { id } = useParams();
   let idDocument = index;
 
   useEffect(() => {
-    if (id !== undefined && idDocument !== 0) {
+    if (id !== undefined && idDocument !== -1) {
       if (arrayAPI.length > 0) {
         setLoading(true);
         let temArray = [...arrayAPI];
-        if (index === 0) {
+        if (index === -1) {
           let indexArray = temArray.findIndex(
             (documentArray) => documentArray.id === id
           );
           setIndex(indexArray);
+        } else if (index === temArray.length) {
+          setIndex(-1);
         } else {
           setDocument(temArray[index]);
           setLoading(false);
         }
       } else {
-        APICallDocumentsFireBase(setArrayAPI);
+        APICallContextFireBase();
+        setLoading(false);
       }
     } else {
       APICallSingleDocuments(id)
@@ -48,7 +49,7 @@ function DocumentDetailContainer() {
 
     let hora = new Date().toLocaleTimeString();
     setDate(hora);
-  }, [id, idDocument, document]);
+  }, [id, idDocument, document, index]);
 
   return (
     <>

@@ -26,3 +26,11 @@ body #root .container main .header .user .icons {
   body #root .container main .header .user .icons i:hover {
     color: #234F1E;;
   }
+
+  .icon-cartWidget {
+    position: relative;
+  }
+
+  .cantidad-cartWidget {
+    position: absolute;
+  }

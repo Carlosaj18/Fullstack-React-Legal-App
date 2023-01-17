@@ -31,7 +31,7 @@ function ContainerServices(props) {
           setLoading(false);
         })
         .catch((error) => console.error(error));
-    } else if (props.documentTitle) {
+    } /** else if (props.documentTitle !== undefined) {
       setLoading(true);
       APICallServicesTitle(props.documentTitle)
         .then((response) => {
@@ -39,7 +39,7 @@ function ContainerServices(props) {
           setLoading(false);
         })
         .catch((error) => console.error(error));
-    } else {
+    } */ else {
       setLoading(true);
       APICallServices().then((response) => {
         setService(response);
@@ -48,9 +48,9 @@ function ContainerServices(props) {
     }
   }, [props.moreServices, props.documentTitle, serviceId]);
 
-  return <>
-  {loading ? <Loader /> : <ServiceList service={service} />}
-  </>
+  //console.log("Loading Container Service", loading);
+
+  return <>{loading ? <Loader /> : <ServiceList service={service} />}</>;
 }
 
 export default ContainerServices;

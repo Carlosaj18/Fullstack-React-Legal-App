@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./DocumentInformation.css";
 import { CartContext } from "../../Contexto/CartProviderContext";
+import { Link } from "react-router-dom";
 
 function DocumentInformation(props) {
   const { document } = props;
@@ -22,17 +23,25 @@ function DocumentInformation(props) {
 
   return (
     <div className="container-information">
-      <h1>{props.document.title}</h1>
+      <h1 className="title-vista-detallada">{props.document.title}</h1>
       <div className="price">$ {getFormattedPrice(props.document.price)}</div>
-      <div>{props.document.description}</div>
+      <div className="description-vista-detallada">
+        {props.document.description}
+      </div>
       <div className="clausulas">
         {props.document.clausulas !== undefined
           ? "En este contrato encontrarás las siguientes cláusulas: "
           : null}
-        {props.document.clausulas !== undefined ? <button className="btn-ver-clausulas" onClick={handleMoreClick}>  {showMore ? 'Esconder' : 'Ver'} clausulas </button> : null}
+        {props.document.clausulas !== undefined ? (
+          <button className="btn-ver-clausulas" onClick={handleMoreClick}>
+            {" "}
+            {showMore ? "Esconder" : "Ver"} clausulas{" "}
+          </button>
+        ) : null}
       </div>
       <ul>
-        {showMore && props.document.clausulas !== undefined &&
+        {showMore &&
+          props.document.clausulas !== undefined &&
           props.document.clausulas.map((item, i) => (
             <li
               key={i}
@@ -44,12 +53,15 @@ function DocumentInformation(props) {
             </li>
           ))}
       </ul>
-      <div>Descárgalos y completa la información!</div>
-      <div>
-        Si tienes dudas sobre cómo usar este documento, por favor ponte en
-        contacto con nuestro equipo de LegalApp.
+      <div className="info-adicional-vista-detallada">
+        Descárgalos y completa la información!
       </div>
-      <button onClick={onAdd}>Agregar al carrito</button>
+      <div className="info-adicional-vista-detallada">
+        Si tienes dudas sobre cómo usar este documento, por favor ponte en
+        contacto con nuestro equipo de LegalApp. O usa el servicio de
+        diligenciamiento <Link to="/service/my-services">acompañado por un abogado.</Link>
+      </div>
+      <button className="button-vista-detallada" onClick={onAdd}>Agregar al carrito</button>
     </div>
   );
 }

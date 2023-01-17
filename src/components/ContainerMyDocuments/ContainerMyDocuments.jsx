@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import "../Document/Document.css";
 import {
-  APICallDocuments,
+  APICallMyDocuments,
   APICallDocumentsCategoryId,
   APICallDocumentsCategory,
   APICallDocumentsMore,
@@ -13,8 +13,9 @@ import Loader from "../Loader/Loader";
 import { useSelector } from "react-redux";
 import { ArrayDataContext } from "../../Contexto/ArrayDataProviderContext";
 
-function ContainerDocuments(props) {
+function ContainerMyDocuments(props) {
   const { arrayAPI, APICallContextFireBase } = useContext(ArrayDataContext);
+  const [arrayAPIMyDouments, setArrayAPIMyDouments] = useState([]);
   const [document, setDocument] = useState([]);
   const [date, setDate] = useState();
   const [loading, setLoading] = useState(true);
@@ -30,7 +31,7 @@ function ContainerDocuments(props) {
   let searchTerm = useSelector((state) => state.searhStoreTerm);
 
   useEffect(() => {
-    if (arrayAPI.length > 0) {
+    if (arrayAPIMyDouments.length > 0) {
       let hora = new Date().toLocaleTimeString();
       setDate(hora);
       if (props.categoryName !== undefined) {
@@ -57,8 +58,8 @@ function ContainerDocuments(props) {
         let lastElement = element[element.length - 1];
         const documentFound =
           lastElement === ""
-            ? arrayAPI
-            : arrayAPI.filter((document) =>
+            ? arrayAPIMyDouments
+            : arrayAPIMyDouments.filter((document) =>
                 document.title.toLowerCase().includes(lastElement.toLowerCase())
               );
         if (documentFound.length > 0) {
@@ -70,8 +71,8 @@ function ContainerDocuments(props) {
         setLoading(true);
         const documentFound =
           props.documentTitle === ""
-            ? arrayAPI.slice(0, 3)
-            : arrayAPI.filter((document) =>
+            ? arrayAPIMyDouments.slice(0, 3)
+            : arrayAPIMyDouments.filter((document) =>
                 document.title
                   .toLowerCase()
                   .includes(props.documentTitle.toLowerCase())
@@ -85,8 +86,8 @@ function ContainerDocuments(props) {
         setLoading(true);
         const documentFound =
           props.documentTitle === ""
-            ? arrayAPI
-            : arrayAPI.filter((document) =>
+            ? arrayAPIMyDouments
+            : arrayAPIMyDouments.filter((document) =>
                 document.title
                   .toLowerCase()
                   .includes(props.documentTitle.toLowerCase())
@@ -95,8 +96,8 @@ function ContainerDocuments(props) {
           setLoading(false);
           setDocument(documentFound);
         }
-      } else if (props.moreDocuments !== "") { // si le damos en more documents ya despues no aplica ningun filtro, y se queda en false
-        console.log("props.moreDocuments", props.moreDocuments);
+      } else if (props.moreDocuments !== "") {
+        console.log("props.moreDocuments");
         props.setMoreDocuments(false);
         setLoading(true);
         APICallDocumentsMore(ultimo, setUltimo)
@@ -118,7 +119,7 @@ function ContainerDocuments(props) {
           });
           if (filterCombo.length > 0) {
             filterCombo.forEach((element) => {
-              let array = arrayAPI.filter((document) => {
+              let array = arrayAPIMyDouments.filter((document) => {
                 return (
                   document.signed === element ||
                   document.category === element ||
@@ -140,7 +141,7 @@ function ContainerDocuments(props) {
             } else console.log("No document found");
           } else {
             setLoading(true);
-            APICallDocuments(setUltimo)
+            APICallMyDocuments(setUltimo)
               .then((response) => {
                 setDocument(response);
                 setLoading(false);
@@ -148,16 +149,10 @@ function ContainerDocuments(props) {
               .catch((error) => console.error("Else error", error));
           }
         }, 1000);
-      } else if (props.myDocument) {
-        console.log("MyDocuments");
-        setLoading(true);
-        let myDocument = arrayAPI.filter((item) => item.myDocument === true);
-        setDocument(myDocument);
-        setLoading(false);
       } else {
-        console.log("ELSE");
+        console.log("Else My Documents");
         setLoading(true);
-        APICallDocuments(setUltimo)
+        APICallMyDocuments(setUltimo)
           .then((response) => {
             setDocument(response);
             setLoading(false);
@@ -165,9 +160,11 @@ function ContainerDocuments(props) {
           .catch((error) => console.error("Else error", error));
       }
     } else {
-      console.log("Entro y carga DB");
+      console.log("Entro y carga DB en My Documents");
       setLoading(true);
       APICallContextFireBase();
+      let myDocument = arrayAPI.filter((item) => item.myDocument === true);
+      setArrayAPIMyDouments(myDocument);
       setLoading(false);
     }
   }, [props, props.documentTitle, categoryId, searchTerm, arrayAPI, setUltimo]);
@@ -204,7 +201,6 @@ function ContainerDocuments(props) {
       return template.category === "templates";
     });
   }
-
 
   return (
     <>
@@ -257,4 +253,4 @@ function ContainerDocuments(props) {
   );
 }
 
-export default ContainerDocuments;
+export default ContainerMyDocuments;

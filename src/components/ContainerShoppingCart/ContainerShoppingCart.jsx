@@ -62,8 +62,6 @@ function ContainerShoppingCart() {
     );
   });
 
-  console.log(itemCart);
-
   return (
     <>
       <div className="container-items-cart">
@@ -74,8 +72,7 @@ function ContainerShoppingCart() {
           {itemCart.length > 0 ? (
             itemCart
           ) : (
-            <h1 style={{ textAlign: "center" }}>
-              {" "}
+            <h1 style={{ textAlign: "center", color: "#234F1E" }}>
               No hay elementos en el carrito
             </h1>
           )}
@@ -85,13 +82,15 @@ function ContainerShoppingCart() {
             <h1>Resumen del pedido</h1>
           </div>
           <div className="container-info-right">
-            <div classNmae="container-subtotal-cart">
+            <div className="container-subtotal-cart">
               <div className="cart-subtotal">
                 <div>Subtotal</div>
                 <div>${getFormattedPrice(totalPrinceInCart())}</div>
               </div>
             </div>
-            <Link to="/checkout"><button className="finalizar-compra">Finalizar la Compra </button></Link>
+            <Link to="/checkout">
+              <button className="finalizar-compra">Finalizar la Compra </button>
+            </Link>
             <div className="pago-seguro">
               <FontAwesomeIcon icon={faLock} />
               <p>Pago seguro</p>
@@ -109,9 +108,7 @@ function ContainerShoppingCart() {
               Ingresar código promocional
             </button>
           </div>
-          <form
-            className={isPromo ? "form-cart" : "promo-no-visible"}
-          >
+          <form className={isPromo ? "form-cart" : "promo-no-visible"}>
             <div className="form-cart">
               <input
                 type="text"
@@ -131,7 +128,9 @@ function ContainerShoppingCart() {
             <button onClick={handleNota}>Agrega una nota</button>
           </div>
           <form
-            className={isNota ? "form-cart-text" : "form-cart-textarea-no-visible"}
+            className={
+              isNota ? "form-cart-text" : "form-cart-textarea-no-visible"
+            }
           >
             <div>
               <textarea

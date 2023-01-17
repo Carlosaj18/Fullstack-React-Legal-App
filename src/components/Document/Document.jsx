@@ -3,11 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileSignature } from "@fortawesome/free-solid-svg-icons";
 import "./Document.css";
 import ToggleButton from "../ToggleButton/ToggleButton";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function Document(props) {
   let urlDetail = `/document/detail/${props.id}`;
   //let urlDetailCategory = `/document/category/1/detail/${props.id}`
+  let url = useParams();
 
   return (
     <div className="card">

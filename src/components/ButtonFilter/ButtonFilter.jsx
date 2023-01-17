@@ -1,16 +1,13 @@
-import React from 'react'
-import './ButtonFilter.css'
+import React from "react";
+import "./ButtonFilter.css";
 
 function ButtonFilter(props) {
   return (
-    <button className='button-flex-filter'><i>{props.icon}{props.name}</i></button>
-  )
+    <button className="button-flex-filter">
+      <i>{props.icon}</i>
+      {props.name}
+    </button>
+  );
 }
 
-
-
-
-
-
-
-export default ButtonFilter
+export default ButtonFilter;

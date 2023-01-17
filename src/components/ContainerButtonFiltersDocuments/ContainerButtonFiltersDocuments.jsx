@@ -17,11 +17,11 @@ function ContainerButtonFiltersDocuments({ buttonFilter }) {
     >
       <div className="button-filters-flex-scroll">
         <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faFilter} />}/>
-        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faArrowUpAZ} />} name="Ordenar A-Z" />
-        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faArrowDownZA} />} name="Ordenar Z-A" />
-        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faMoneyCheckDollar} />} name="Ordenar por Precio" />
-        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faStar} />} name="Filtrar Favoritos" />
-        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faCloudArrowUp} />} name="Documentos Descargados" />
+        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faArrowUpAZ} />} name="A-Z" />
+        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faArrowDownZA} />} name="Z-A" />
+        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faMoneyCheckDollar} />} name="Precio" />
+        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faStar} />} name="Favoritos" />
+        <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faCloudArrowUp} />} name="Descargados" />
         {/** <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faFileWord} />} name="Contratos" />
         <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faFileWord} />} name="Acuerdos" />
         <ButtonFilter className="scroll-y" icon={<FontAwesomeIcon icon={faFileWord} />} name="Templates" /> */}

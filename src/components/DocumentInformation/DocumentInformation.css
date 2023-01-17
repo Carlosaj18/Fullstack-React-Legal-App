@@ -1,29 +1,40 @@
 body #root .container main .container-detail-document .container-information {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: start;
     width: 40%;
+    padding: 10px;
 }
 
-body #root .container main .container-detail-document .container-information h1 {
+.title-vista-detallada {
+    text-align: center;
     font-size: 2.5em;
-    text-align: start;
 }
 
 body #root .container main .container-detail-document .container-information .price {
     font-size: 2.8em;
-    width: fit-content;
+    width: 100%;
     margin-top: 0.5em;
     font-weight: bold;
+    text-align: start;
 }
 
-body #root .container main .container-detail-document .container-information div {
+.description-vista-detallada {
     font-size: 1em;
     margin-top: 2em;
+    margin-bottom: 2em;
     text-align: justify;
-    margin-right: 6em;
+    width: 100%;
 }
+
+.info-adicional-vista-detallada {
+    font-size: 1em;
+    text-align: justify;
+    width: 100%;
+    margin-top: 1em;
+}
+
 
 body #root .container main .container-detail-document .container-information .clausulas {
     font-size: 1.5em;
@@ -31,14 +42,14 @@ body #root .container main .container-detail-document .container-information .cl
 }
 
 
-body #root .container main .container-detail-document .container-information button {
+body #root .container main .container-detail-document .container-information .button-vista-detallada {
     margin-top: 3em;
-    font-size: 2em;
+    font-size: 1.5em;
     padding: 0.5em;
-    width: 70%;
+    width: 100%;
 }
 
-body #root .container main .container-detail-document .container-information button:hover {
+body #root .container main .container-detail-document .container-information .button-vista-detallada:hover {
     background-color: #234F1E;
     color: white;
 }
@@ -48,6 +59,11 @@ body #root .container main .container-detail-document .container-information .cl
     color: white;
     font-size: 1em;
     padding: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2em;
 }
 
 @media (max-width: 1177px){
@@ -65,6 +81,14 @@ body #root .container main .container-detail-document .container-information .cl
     body #root .container main .container-detail-document .container-information button:hover {
         background-color: #234F1E;
         color: white;
+    }
+}
+
+@media (max-width: 1377px){
+    .container-information {
+        width: 60% !important;
+        min-width: 480px;
+        max-width: 480px;
     }
 }
 

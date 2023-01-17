@@ -48,8 +48,8 @@ export async function fetchDatosComboBoxRegions(countryCode) {
 }
 
 export async function fetchDatosComboBoxCiudades(countryCode, region) {
-  console.log(region);
-  if (region !== "") {
+  console.log(countryCode, region);
+  if (region !== "" && countryCode !== "") {
     try {
       const response = await fetch(
         "http://geo-battuta.net/api/city/" +
@@ -68,6 +68,7 @@ export async function fetchDatosComboBoxCiudades(countryCode, region) {
         }
       );
       let jsonResponse = await response.json();
+      console.log(jsonResponse)
       return jsonResponse;
     } catch (error) {
       console.error(error);

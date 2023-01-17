@@ -14,13 +14,13 @@ function CartWidget({ setPreviewCartWidget, previewCartWidget }) {
 
   return (
     <>
-      <i>
+      <i className="icon-cartWidget">
         <FontAwesomeIcon
           icon={faCartShopping}
           onClick={() => onClickButtonPreviewCart()}
         />
       </i>
-      <span>{cantidadCarrito > 0 ? cantidadCarrito : null}</span>
+      <span className="cantidad-cartWidget">{cantidadCarrito > 0 ? cantidadCarrito : null}</span>
     </>
   );
 }

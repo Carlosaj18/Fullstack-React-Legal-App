@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import DocumentListContainer from "../DocumentListContainer/DocumentListContainer";
 import FilterListContainer from "../FilterListContainer/FilterListContainer";
-import ContainerMyDocuments from "../ContainerMyDocuments/ContainerMyDocuments";
+import ContainerDocuments from "../ContainerDocuments/ContainerDocuments";
 
-function LayoutMyDocuments(props) {
+function LayoutTemplates(props) {
   let style = {
     display: "flex",
     flexWrap: "wrap",
@@ -33,16 +33,16 @@ function LayoutMyDocuments(props) {
         searchCheckBox={searchCheckBox}
         heading={
           <h3 style={{ textAlign: "center" }} className="heading">
-            Estos son tus documentos legales, almacenados en tu repositorio
-            juridico personal. Construidos y revisados bajo los mayores
-            estándares de calidad, y a precios inigualables.
+            Estos son nuestros templates legales listos para usar, construidos y
+            revisados bajo los mayores estándares de calidad, y a precios
+            inigualables. Solo debes descargarlo para poder usarlo.
           </h3>
         }
         documentTitle={props.documentTitle}
         subtitle="Mis Documentos"
         childToParentMoreElements={childToParentMoreElements}
-        containerMyDocument={
-          <ContainerMyDocuments
+        containerDocument={
+          <ContainerDocuments
             searchCheckBox={searchCheckBox}
             documentTitle={props.documentTitle}
             styleCSS={style}
@@ -56,4 +56,4 @@ function LayoutMyDocuments(props) {
   );
 }
 
-export default LayoutMyDocuments;
+export default LayoutTemplates;

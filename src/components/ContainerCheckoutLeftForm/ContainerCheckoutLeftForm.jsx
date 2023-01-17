@@ -46,17 +46,6 @@ function ContainerCheckoutLeftForm({
   function handleSubmit(event) {
     event.preventDefault();
     setUserInfo(buyerData);
-    setBuyerData({
-      email: "",
-      nombre: "",
-      apellido: "",
-      address: "",
-      ciudad: "",
-      pais: "",
-      codigoPostal: "",
-      region: "",
-      phone: "",
-    });
   }
 
   function handleClickPaises() {
@@ -87,6 +76,7 @@ function ContainerCheckoutLeftForm({
     let newBuyerData = { ...buyerData };
     newBuyerData[nameInput] = value;
     setBuyerData(newBuyerData);
+    console.log(buyerData);
   }
 
   // Validacion FROM
@@ -168,7 +158,7 @@ function ContainerCheckoutLeftForm({
             {selectPais !== undefined
               ? selectPais.map((item) => {
                   return (
-                    <option name="pais" value={item.code}>
+                    <option name="pais" value={item.code} key={item.name}>
                       {item.name}
                     </option>
                   );
@@ -190,7 +180,7 @@ function ContainerCheckoutLeftForm({
                 {selectRegion !== undefined
                   ? selectRegion.map((item) => {
                       return (
-                        <option name={item.region} value={item.region}>
+                        <option name={item.region} value={item.region} key={item.region}>
                           {item.region}
                         </option>
                       );
@@ -215,7 +205,7 @@ function ContainerCheckoutLeftForm({
                 {selectCiudad !== undefined
                   ? selectCiudad.map((item) => {
                       return (
-                        <option name={item.city} value={item.city}>
+                        <option name={item.city} value={item.city} key={item.city}>
                           {item.city}
                         </option>
                       );

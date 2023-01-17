@@ -39,6 +39,11 @@ function SideBar() {
             name="Home"
           />
           <NavItem
+            icon={<FontAwesomeIcon icon={faFileContract} />}
+            link="/my-templates"
+            name="My templates"
+          />
+          <NavItem
             icon={<FontAwesomeIcon icon={faFile} />}
             link="/document/my-documents"
             name="My documents"
@@ -49,15 +54,16 @@ function SideBar() {
             name="Services"
           />
           <NavItem
-            icon={<FontAwesomeIcon icon={faFileContract} />}
-            link="/"
-            name="My templates"
-          />
-          <NavItem
             icon={<FontAwesomeIcon icon={faCloudArrowUp} />}
             link="/document/category"
             name="Categorias"
           />
+          {/** 
+           <NavItem
+            icon={<FontAwesomeIcon icon={faCloudArrowUp} />}
+            link="/document/scaner"
+            name="Scanear"
+          /> */}
           <NavItem
             icon={<FontAwesomeIcon icon={faChartLine} />}
             link="/"

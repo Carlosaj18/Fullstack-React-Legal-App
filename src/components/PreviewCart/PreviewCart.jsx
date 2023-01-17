@@ -24,7 +24,7 @@ function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
 
   let itemCart = cart.map((item) => {
     return (
-      <div className="details">
+      <div className="details" key={item.id}>
         <div className="detail-imagen">
           <img src={docImage} alt="Imagen" />
         </div>
@@ -51,6 +51,7 @@ function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
         className="sidebar-carrito"
       >
         <div className="title">
+          <h4>Mi Carrito</h4>
           <div className="closebtn">
             <i>
               <FontAwesomeIcon
@@ -59,7 +60,6 @@ function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
               />
             </i>
           </div>
-          <h4>Mi Carrito</h4>
         </div>
         {itemCart}
         <div className="container-footer">
@@ -75,7 +75,6 @@ function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
                   textAlign: "center",
                   display: "flex",
                   justifyContent: "center",
-                  marginLeft: "182px",
                   position: "absolute",
                 }}
               >
@@ -92,12 +91,16 @@ function PreviewCart({ previewCartWidget, setPreviewCartWidget }) {
             >
               Vaciar Carrito
             </button>
-            <button
-              onClick={() => handleStateChangePreviewCart()}
-              className="ver-carrito"
-            >
-              <Link to="/shoping-cart">Ver Carrito </Link>
-            </button>
+            {cart.length > 0 ? (
+              <Link to="/shoping-cart">
+                <button
+                  onClick={() => handleStateChangePreviewCart()}
+                  className="ver-carrito"
+                >
+                  Ver Carrito
+                </button>
+              </Link>
+            ) : null}
           </div>
         </div>
       </div>

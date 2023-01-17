@@ -15,8 +15,7 @@
 .button-flex-filter {
     display: flex;
     flex-direction: row;
-    gap: 2em;
-    border: 3px solid red;
+    gap: 0.5em;
 }
 
 .button-filters button:hover {

@@ -16,10 +16,18 @@
   padding: 5px;
 }
 
+
 .container-image-detail-document img {
   width: 100%;
   height: 100%;
+  transition: all 0.20s ease-in;
 }
+
+.container-image-detail-document img:hover {
+  transform: scale(1.075);
+}
+
+
 
 .container-vertical-felx {
   display: flex;
@@ -162,4 +170,10 @@ body #root .container main .container-detail-document .card .logo-container-serv
     margin-top: 0.5em;
     text-align: end;
   }
+
+  @media (max-width: 1377px){
+    .container-image-detail-document-flex {
+        width: 100%;
+    }
+}
 

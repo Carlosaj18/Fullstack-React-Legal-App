@@ -9,7 +9,6 @@ import imageDoc from "../../images/document.jpg";
 import data from "../data/documents";
 
 function DocumentDetail(props) {
-
   function handleNextClick() {
     if(props.index < data.length) props.setIndex(props.index + 1);
   }
@@ -27,7 +26,7 @@ function DocumentDetail(props) {
           <div className="container-image-detail-document">
             <img alt="" src={imageDoc}></img>
           </div>
-          <h3>
+          <h3 style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
             ({props.index + 1} of {data.length})
           </h3>
         </div>
@@ -54,7 +53,6 @@ function DocumentDetail(props) {
               <p>Firma {props.document.signatures}</p>
             </div>
           </div>
-          {/* Contador */}
         </div>
       </div>
       <button className="btn-ver-next-document" onClick={handleNextClick}>

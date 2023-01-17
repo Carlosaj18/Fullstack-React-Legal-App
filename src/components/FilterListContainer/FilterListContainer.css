@@ -2,6 +2,12 @@ body #root .container main .filter-section h3 {
     font-size: 20px;
 }
 
+.flex-total-input {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .container-checkbox {
     display: block;
     position: relative;
@@ -13,6 +19,7 @@ body #root .container main .filter-section h3 {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    width: 60%;
   }
 /* Hide the browser's default checkbox */
 .container-checkbox input {
@@ -66,6 +73,19 @@ body #root .container main .filter-section h3 {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+  }
+
+  .checkmark-total-number {
+    background-color: #234F1E;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    font-size: 1em;
+    padding: 6px;
+    display: flex;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
   }
 
   @media (max-width: 1253px){

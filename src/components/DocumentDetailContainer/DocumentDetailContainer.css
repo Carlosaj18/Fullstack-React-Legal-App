@@ -11,5 +11,7 @@ body #root .container main .container-detail-document-flex {
         flex-direction: column;
         align-items: center;
         gap: 1em;
+        justify-content: center;
+        align-items: center;
     }
 }
