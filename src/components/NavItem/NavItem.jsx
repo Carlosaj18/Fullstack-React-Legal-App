@@ -5,9 +5,7 @@ function NavItem(props) {
   return (
     <>
       <li className="selected">
-        <i>
-          {props.icon}
-        </i>
+        <i>{props.icon}</i>
         <button className="button" onClick={props.handleEvent}>
           <Link to={props.link}>{props.name}</Link>
         </button>

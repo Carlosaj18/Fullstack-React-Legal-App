@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+
 import {
   getFirestore,
   doc,
@@ -93,7 +94,7 @@ export async function APICallDocuments(setUltimo) {
 
 export async function APICallMyDocuments(setUltimo) {
   const collectionRef = query(collection(db, "documents"));
-  const q = query(collectionRef, where("myDocument", "==", true), limit(3) );
+  const q = query(collectionRef, where("myDocument", "==", true), limit(3));
   const querySnapshot = await getDocs(q);
   let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
   setUltimo(lastVisible);
@@ -114,12 +115,33 @@ export async function APICallDocumentsMore(ultimo, setUltimo) {
     let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
     setUltimo(lastVisible);
     const docsArray = querySnapshot.docs;
-    if (!docsArray.empty) {
+    if (docsArray.length > 0) {
       let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id })); // /*let item = doc.data(); item.id = doc.id; return item; */
       return dataDocs;
+    } else {
+      return [];
     }
-  } else {
-    alert("No hay mas documentos");
+  }
+}
+
+export async function APICallMyDocumentsMore(ultimo, setUltimo) {
+  if (ultimo !== undefined) {
+    const next = query(
+      collection(db, "documents"),
+      where("myDocument", "==", true),
+      startAfter(ultimo),
+      limit(3)
+    );
+    const querySnapshot = await getDocs(next);
+    let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
+    setUltimo(lastVisible);
+    const docsArray = querySnapshot.docs;
+    if (docsArray.length > 0) {
+      let dataDocs = docsArray.map((doc) => ({ ...doc.data(), id: doc.id })); // /*let item = doc.data(); item.id = doc.id; return item; */
+      return dataDocs;
+    } else {
+      return [];
+    }
   }
 }
 

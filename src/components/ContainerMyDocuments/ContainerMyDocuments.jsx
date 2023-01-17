@@ -4,7 +4,7 @@ import {
   APICallMyDocuments,
   APICallDocumentsCategoryId,
   APICallDocumentsCategory,
-  APICallDocumentsMore,
+  APICallMyDocumentsMore,
 } from "../services/fireBase";
 import DocumentList from "../DocumentList/DocumentList";
 import { useParams } from "react-router-dom";
@@ -12,6 +12,10 @@ import DocumentCategoryRow from "../DocumentCategory/DocumentCategoryRow";
 import Loader from "../Loader/Loader";
 import { useSelector } from "react-redux";
 import { ArrayDataContext } from "../../Contexto/ArrayDataProviderContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { updatedSearchTerm } from "../../features/searchBar/searchBarSlice";
+import { useDispatch } from "react-redux";
 
 function ContainerMyDocuments(props) {
   const { arrayAPI, APICallContextFireBase } = useContext(ArrayDataContext);
@@ -29,6 +33,18 @@ function ContainerMyDocuments(props) {
   let acuerdos;
   let templates;
   let searchTerm = useSelector((state) => state.searhStoreTerm);
+  const dispatch = useDispatch();
+
+  const alertaNotDocumentFound = (message) => {
+    const resolveAfter3Sec = new Promise((resolve) =>
+      setTimeout(resolve, 1000)
+    );
+    toast.promise(resolveAfter3Sec, {
+      pending: message,
+      success: `${message} 👌`,
+      error: "Promise rejected 🤯",
+    });
+  };
 
   useEffect(() => {
     if (arrayAPIMyDouments.length > 0) {
@@ -53,6 +69,7 @@ function ContainerMyDocuments(props) {
           })
           .catch((error) => console.error("Error categoryId", error));
       } else if (searchTerm.length > 0) {
+        console.log("Search term in My Documents", searchTerm);
         setLoading(true);
         let element = [...searchTerm];
         let lastElement = element[element.length - 1];
@@ -65,9 +82,14 @@ function ContainerMyDocuments(props) {
         if (documentFound.length > 0) {
           setLoading(false);
           setDocument(documentFound);
+        } else {
+          alertaNotDocumentFound("No hay documentos con esos parametros");
+          setLoading(false);
+          setDocument([]);
+          dispatch(updatedSearchTerm([]));
         }
       } else if (props.documentTitle !== "") {
-        console.log("props.documentTitle");
+        console.log("props.documentTitle in My Documents", props.documentTitle);
         setLoading(true);
         const documentFound =
           props.documentTitle === ""
@@ -80,6 +102,10 @@ function ContainerMyDocuments(props) {
         if (documentFound.length > 0) {
           setLoading(false);
           setDocument(documentFound);
+        } else {
+          alertaNotDocumentFound("No hay documentos con esos parametros");
+          setLoading(false);
+          setDocument([]);
         }
       } else if (props.documentTitle !== undefined && searchTerm.length > 0) {
         console.log("props.documentTitle && searchTerm");
@@ -96,21 +122,31 @@ function ContainerMyDocuments(props) {
           setLoading(false);
           setDocument(documentFound);
         }
-      } else if (props.moreDocuments !== "") {
-        console.log("props.moreDocuments");
-        props.setMoreDocuments(false);
+      } else if (props.moreDocuments !== "" && props.moreDocuments !== false) {
+        console.log("props.moreDocuments in MyDocuments");
+        props.setMoreDocuments(!props.moreDocuments);
         setLoading(true);
-        APICallDocumentsMore(ultimo, setUltimo)
+        APICallMyDocumentsMore(ultimo, setUltimo)
           .then((response) => {
-            setDocument(response);
-            setLoading(false);
+            if (response.length > 0) {
+              setDocument(response);
+              setLoading(false);
+            } else {
+              alertaNotDocumentFound("No hay mas documentos");
+              setTimeout(() => {
+                APICallMyDocuments(setUltimo);
+                setLoading(false);
+              }, 10000);
+            }
           })
           .catch((error) => console.error("Error more docs", error));
       } else if (
         props.searchCheckBox !== "" &&
         props.searchCheckBox !== undefined
+        // validacion del props.searchCheckBox
+        // cambiar la vista de los numeros de filtros
       ) {
-        console.log("props.searchCheckBox");
+        console.log("props.searchCheckBox", props.searchCheckBox);
         setLoading(true);
         setTimeout(() => {
           let arrayOptions = [];

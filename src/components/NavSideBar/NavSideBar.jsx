@@ -13,11 +13,14 @@ import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { faChartLine } from "@fortawesome/free-solid-svg-icons";
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import NavItem from "../NavItem/NavItem";
-import { createCollection } from "../services/fireBase";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function SideBar() {
   const lanzarAlerta = () => {
-    alert("Do you want to logout your account?");
+    toast.warning("Do you want to logout your account?", {
+      position: toast.POSITION.TOP_RIGHT,
+    });
     // Si true -> <LoginForm />
   };
 
@@ -78,6 +81,18 @@ function SideBar() {
             icon={<FontAwesomeIcon icon={faRightFromBracket} />}
             name="Logout"
             handleEvent={() => lanzarAlerta()}
+          />
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
           />
           {/** 
            <NavItem

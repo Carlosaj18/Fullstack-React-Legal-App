@@ -15,7 +15,6 @@ function SearchNabBar({
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Busqueda enviada");
     dispatch(createdSearchTerm(filterText));
   }
 

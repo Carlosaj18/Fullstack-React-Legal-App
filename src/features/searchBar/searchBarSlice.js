@@ -8,11 +8,12 @@ export const SearchStoreSlice = createSlice({
       state.push(action.payload);
     },
     updatedSearchTerm: (state, action) => {
-      const { id } = action.payload;
+      /* const { id } = action.payload;
       const searchFound = state.find((searchTerm) => searchTerm.id === id);
       if (searchFound) {
         searchFound.id = id;
-      }
+      }*/
+      state.splice(0, state.length);
     },
     deleteSearchTerm: (state, action) => {
       const searchFound = state.find(
