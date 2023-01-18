@@ -9,6 +9,8 @@ import fetchDatosComboBox, {
   fetchDatosComboBoxCiudades,
 } from "../services/apiPaises.js";
 import InputForm from "../InputForm/InputForm";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ContainerCheckoutLeftForm({
   setIsActiveForm,
@@ -39,8 +41,33 @@ function ContainerCheckoutLeftForm({
       .catch((error) => console.log(error));
   }, [selectRegion]);
 
+  function validateEmptyData(objectName) {
+    let values = Object.values(objectName);
+    for (let i = 0; i < values.length; i++) {
+      if (values[i] === "") {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
+
+  const isObjectEmpty = (objectName) => {
+    return (
+      objectName &&
+      Object.keys(objectName).length !== 0 &&
+      validateEmptyData(objectName)
+    );
+  };
+
   function onClickFormActive() {
-    return setIsActiveForm(!isActiveForm);
+    if (isObjectEmpty(buyerData)) {
+      setIsActiveForm(!isActiveForm);
+    } else {
+      toast.error("Falta diligenciar los datos", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
   }
 
   function handleSubmit(event) {
@@ -76,7 +103,6 @@ function ContainerCheckoutLeftForm({
     let newBuyerData = { ...buyerData };
     newBuyerData[nameInput] = value;
     setBuyerData(newBuyerData);
-    console.log(buyerData);
   }
 
   // Validacion FROM
@@ -180,7 +206,11 @@ function ContainerCheckoutLeftForm({
                 {selectRegion !== undefined
                   ? selectRegion.map((item) => {
                       return (
-                        <option name={item.region} value={item.region} key={item.region}>
+                        <option
+                          name={item.region}
+                          value={item.region}
+                          key={item.region}
+                        >
                           {item.region}
                         </option>
                       );
@@ -205,14 +235,17 @@ function ContainerCheckoutLeftForm({
                 {selectCiudad !== undefined
                   ? selectCiudad.map((item) => {
                       return (
-                        <option name={item.city} value={item.city} key={item.city}>
+                        <option
+                          name={item.city}
+                          value={item.city}
+                          key={item.city}
+                        >
                           {item.city}
                         </option>
                       );
                     })
                   : ""}
               </select>
-
               <InputForm
                 title="* Teléfono "
                 typeInput="text"
@@ -228,6 +261,7 @@ function ContainerCheckoutLeftForm({
             value="Submit"
             className="submit-mercado-pago"
           />
+          <ToastContainer />
         </form>
       </div>
     </div>

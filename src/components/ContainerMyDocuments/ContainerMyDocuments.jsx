@@ -35,6 +35,20 @@ function ContainerMyDocuments(props) {
   let searchTerm = useSelector((state) => state.searhStoreTerm);
   const dispatch = useDispatch();
 
+  const validationCheckBox = () => {
+    if (props.searchCheckBox !== undefined) {
+      let filterCombo = props.searchCheckBox.filter((checkBox) => {
+        return checkBox !== undefined;
+      });
+      if (filterCombo.length > 0) return true;
+      else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  };
+
   const alertaNotDocumentFound = (message) => {
     const resolveAfter3Sec = new Promise((resolve) =>
       setTimeout(resolve, 1000)
@@ -140,13 +154,8 @@ function ContainerMyDocuments(props) {
             }
           })
           .catch((error) => console.error("Error more docs", error));
-      } else if (
-        props.searchCheckBox !== "" &&
-        props.searchCheckBox !== undefined
-        // validacion del props.searchCheckBox
-        // cambiar la vista de los numeros de filtros
-      ) {
-        console.log("props.searchCheckBox", props.searchCheckBox);
+      } else if (props.searchCheckBox !== "" && validationCheckBox()) {
+        console.log("props.searchCheckBox my Documents", props.searchCheckBox);
         setLoading(true);
         setTimeout(() => {
           let arrayOptions = [];

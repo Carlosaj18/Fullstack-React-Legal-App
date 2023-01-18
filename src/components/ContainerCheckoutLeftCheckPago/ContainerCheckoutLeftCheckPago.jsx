@@ -6,8 +6,12 @@ import "./ContainerCheckoutLeftCheckPago.css";
 import logoMercado from "../../images/mercadoPago.svg";
 import ModalTerminosCondiciones from "../ModalTerminosCondiciones/ModalTerminoCondicionales";
 import { CartContext } from "../../Contexto/CartProviderContext";
-import { createBuyOrder_WithStockControl } from "../services/fireBase";
-import swal from "sweetalert";
+import {
+  createBuyOrder_WithStockControl,
+  updated_MyDocumentsControl,
+} from "../services/fireBase";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
 function ContainerCheckoutLeftCheckPago({ nombre, email, address, telefono }) {
@@ -15,9 +19,41 @@ function ContainerCheckoutLeftCheckPago({ nombre, email, address, telefono }) {
   const { cart, finalPriceCart, clearCart } = useContext(CartContext);
   const navigateTo = useNavigate();
 
+  const updatedDocumentStatus = () => {
+    const resolveAfter3Sec = new Promise((resolve) =>
+      setTimeout(resolve, 1000)
+    );
+    toast.promise(resolveAfter3Sec, {
+      pending: "Actualizando los documentos a /my-documents",
+      success: "Documentos Actualizados 👌",
+      error: "Promise rejected 🤯",
+    });
+  };
+
   function handleStateFormConditions() {
     setTerms(!terms);
   }
+
+  function validateEmptyData(objectName) {
+    let values = Object.values(objectName);
+    for (let i = 0; i < values.length; i++) {
+      if (values[i] === "") {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
+
+  const isObjectEmpty = (objectName) => {
+    return (
+      objectName &&
+      Object.keys(objectName).length !== 0 &&
+      validateEmptyData(objectName) &&
+      objectName.constructor === Object &&
+      cart.length > 0
+    );
+  };
 
   function handleCheckOut() {
     const order = {
@@ -32,17 +68,28 @@ function ContainerCheckoutLeftCheckPago({ nombre, email, address, telefono }) {
       date: new Date(),
     };
 
-    createBuyOrder_WithStockControl(order).then((id) =>
-      /** swal(
+    if (isObjectEmpty(order)) {
+      createBuyOrder_WithStockControl(order).then((id) =>
+        /** swal(
           "Gracias por tu compra",
           `Se genero la orden correctamente, tu numero de ticket es: ${id}`,
           "success"
         ), */
-      setTimeout(() => {
-        clearCart();
-        navigateTo(`/orderDetail/${id}`);
-      }, 1000)
-    );
+        setTimeout(() => {
+          clearCart();
+          navigateTo(`/orderDetail/${id}`);
+        }, 1000)
+      );
+      updated_MyDocumentsControl(order).then((response) => {
+        if (response) {
+          updatedDocumentStatus();
+        }
+      });
+    } else {
+      toast.error("No tienes ninguna orden", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
   }
 
   return (
@@ -52,8 +99,8 @@ function ContainerCheckoutLeftCheckPago({ nombre, email, address, telefono }) {
           <div className="login-description">
             ¿Ya tienes una cuenta?{" "}
             <p>
-              <Link> Inicia sesión </Link>{" "}
-            </p>{" "}
+              <Link> Inicia sesión </Link>
+            </p>
             para finalizar la compra más rápido.
           </div>
         </div>
@@ -73,19 +120,19 @@ function ContainerCheckoutLeftCheckPago({ nombre, email, address, telefono }) {
           <div className="container-info-user-pago">
             <div className="info-form-user">
               <FontAwesomeIcon icon={faCheck} />
-              {nombre !== " " ? nombre : "Carlos Jaramillo"}
+              {nombre}
             </div>
             <div className="info-form-user">
               <FontAwesomeIcon icon={faCheck} />
-              {email !== "" ? email : "cjaramilloportilla@gmail.com"}
+              {email}
             </div>
             <div className="info-form-user">
               <FontAwesomeIcon icon={faCheck} />
-              {address !== " " ? address : "12980 vista isles dr apt 327"}
+              {address}
             </div>
             <div className="info-form-user">
               <FontAwesomeIcon icon={faCheck} />
-              {telefono !== "" ? telefono : "7868017349"}
+              {telefono}
             </div>
           </div>
         </div>
@@ -124,8 +171,9 @@ function ContainerCheckoutLeftCheckPago({ nombre, email, address, telefono }) {
           onClick={() => handleCheckOut()}
           className="btn-realizar-compra"
         >
-          Realizar Compra{" "}
+          Realizar Compra
         </button>
+        <ToastContainer />
       </div>
       {terms ? (
         <ModalTerminosCondiciones terms={terms} setTerms={setTerms} />

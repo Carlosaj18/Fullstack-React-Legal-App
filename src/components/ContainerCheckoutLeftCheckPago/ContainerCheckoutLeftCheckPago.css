@@ -1,7 +1,7 @@
 .container-checkout-revio-pago-left {
     border: 3px solid #dfe0eb;
     grid-row-start: 4;
-    grid-column: 1/9;
+    grid-column: 1/6;
 }
 
 .left-login {
@@ -298,4 +298,18 @@
   #overlay.active {
     opacity: 1;
     pointer-events: all;
+  }
+
+  @media (min-width: 1500px) {
+    .container-checkout-revio-pago-left {
+      grid-row-start: 4;
+      grid-column: 1/7;
+    }
+  }
+  
+  @media (min-width: 1600px) {
+    .container-checkout-revio-pago-left {
+      grid-row-start: 4;
+      grid-column: 1/8;
+    }
   }

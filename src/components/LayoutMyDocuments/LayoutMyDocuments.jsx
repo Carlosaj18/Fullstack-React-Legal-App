@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import DocumentListContainer from "../DocumentListContainer/DocumentListContainer";
-import FilterListContainer from "../FilterListContainer/FilterListContainer";
+import FilterListContainerMyDoc from "../FilterListContainerMyDoc/FilterListContainerMyDoc";
 import ContainerMyDocuments from "../ContainerMyDocuments/ContainerMyDocuments";
 
 function LayoutMyDocuments(props) {
@@ -20,11 +20,7 @@ function LayoutMyDocuments(props) {
     setSearchCheckBox(childdata);
   };
 
-  const [moreDocuments, setMoreDocuments] = useState("");
-
-  const childToParentMoreElements = (childdata) => {
-    setMoreDocuments(childdata);
-  };
+  const [moreDocuments, setMoreDocuments] = useState();
 
   return (
     <>
@@ -40,7 +36,8 @@ function LayoutMyDocuments(props) {
         }
         documentTitle={props.documentTitle}
         subtitle="Mis Documentos"
-        childToParentMoreElements={childToParentMoreElements}
+        moreDocuments={moreDocuments}
+        setMoreDocuments={setMoreDocuments}
         containerMyDocument={
           <ContainerMyDocuments
             searchCheckBox={searchCheckBox}
@@ -50,8 +47,9 @@ function LayoutMyDocuments(props) {
             setMoreDocuments={setMoreDocuments}
           />
         }
+        
       />
-      <FilterListContainer childToParentCheckBox={childToParentCheckBox} />
+      <FilterListContainerMyDoc childToParentCheckBox={childToParentCheckBox} />
     </>
   );
 }

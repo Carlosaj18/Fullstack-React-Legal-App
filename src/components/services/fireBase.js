@@ -94,7 +94,7 @@ export async function APICallDocuments(setUltimo) {
 
 export async function APICallMyDocuments(setUltimo) {
   const collectionRef = query(collection(db, "documents"));
-  const q = query(collectionRef, where("myDocument", "==", true), limit(3));
+  const q = query(collectionRef, limit(5), where("myDocument", "==", true));
   const querySnapshot = await getDocs(q);
   let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
   setUltimo(lastVisible);
@@ -198,4 +198,22 @@ export async function createBuyOrder_WithStockControl(order) {
   await batch.commit();
   let newOrder = await addDoc(docOrderRef, order);
   return newOrder.id;
+}
+
+export async function updated_MyDocumentsControl(order) {
+  const docRef = collection(db, "documents");
+  let batch = writeBatch(db);
+
+  let arrayIds = order.items.map((itemInCart) => itemInCart.id);
+  const q = query(docRef, where(documentId(), "in", arrayIds));
+  let querySnapshot = await getDocs(q);
+
+  querySnapshot.docs.forEach((doc) => {
+    if (doc.data().myDocument === true) {
+      console.log("Documento ya esta en myDocument");
+    } else {
+      batch.update(doc.ref, { myDocument: true });
+    }
+  });
+  await batch.commit();
 }

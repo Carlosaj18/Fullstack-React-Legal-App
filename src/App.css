@@ -124,6 +124,17 @@ body #root .container main .order-detail-container {
   gap: 1em;
 }
 
+body #root .container main  .documents-related-orden-view {
+  display: grid;
+  grid-row-start: 5;
+  grid-column: 1/9;
+  grid-template-columns: 1fr; 
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  border-right: 3px solid #dfe0eb;
+  padding-right: 10px;
+  gap: 1em;
+}
+
 
 body #root .container main  .container-categoria-labels {
   display: grid;
@@ -171,8 +182,7 @@ body #root .container main .filter-section {
 
   body #root .container main .sidebar {
     display: grid;
-    grid-row-start: 5;
-    grid-row-end: -1;
+    grid-row: -1;
     grid-column: 1/-1;
   }
 
@@ -182,6 +192,17 @@ body #root .container main .filter-section {
 
   body {
     grid-template-columns: 1fr;
+  }
+
+  body #root .container main .order-detail-container {
+    grid-column: 1/-1;
+    grid-row: 3;
+    
+  }
+
+  body #root .container main  .documents-related-orden-view {
+    grid-column: 1/-1;
+    grid-row: 4;
   }
 
   body #root .container main .container-items {

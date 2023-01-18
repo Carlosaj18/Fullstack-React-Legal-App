@@ -113,7 +113,15 @@ function App() {
                   buttonFilter={buttonFilter}
                   element={<ItemCategoryContainer />}
                 />
-                <Route path="/orderDetail/:orderId" element={<OrderDetail />} />
+                <Route
+                  path="/orderDetail/:orderId"
+                  element={
+                    <OrderDetail
+                      documentTitle={filterText}
+                      buttonFilter={buttonFilter}
+                    />
+                  }
+                />
 
                 <Route
                   path="/shoping-cart"

@@ -22,10 +22,6 @@ function LayoutTemplates(props) {
 
   const [moreDocuments, setMoreDocuments] = useState("");
 
-  const childToParentMoreElements = (childdata) => {
-    setMoreDocuments(childdata);
-  };
-
   return (
     <>
       <DocumentListContainer
@@ -40,7 +36,8 @@ function LayoutTemplates(props) {
         }
         documentTitle={props.documentTitle}
         subtitle="Mis Documentos"
-        childToParentMoreElements={childToParentMoreElements}
+        moreDocuments={moreDocuments}
+        setMoreDocuments={setMoreDocuments}
         containerDocument={
           <ContainerDocuments
             searchCheckBox={searchCheckBox}

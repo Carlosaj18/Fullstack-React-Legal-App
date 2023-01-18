@@ -4,14 +4,13 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import "./ContainerOptionsTitles.css";
 
 function ContainerOptionsTitles(props) {
-
   return (
     <>
       <div className="container-option-items">
         <h3 className="subtitle">{props.subtitle}</h3>
         <button
           className="btn-more"
-          onClick={() => props.childToParentMoreElements(true)}
+          onClick={() => props.setMoreDocuments(true)}
         >
           <h3>Ver Más </h3>
           <i>

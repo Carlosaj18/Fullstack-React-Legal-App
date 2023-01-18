@@ -1,6 +1,6 @@
 .container-checkout-right {
     grid-row-start: 4;
-    grid-column: 9/-1;
+    grid-column: 7/-1;
 }
 
 .container-resumen {
@@ -207,4 +207,18 @@
 
 .total-checkout-cart strong {
     font-size: 1.8em;
+}
+
+@media (min-width: 1500px) {
+  .container-checkout-right {
+    grid-row-start: 4;
+    grid-column: 8/-1;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container-checkout-right {
+    grid-row-start: 4;
+    grid-column: 9/-1;
+  }
 }

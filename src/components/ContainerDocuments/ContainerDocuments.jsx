@@ -34,6 +34,20 @@ function ContainerDocuments(props) {
   let searchTerm = useSelector((state) => state.searhStoreTerm);
   const dispatch = useDispatch();
 
+  const validationCheckBox = () => {
+    if (props.searchCheckBox !== undefined) {
+      let filterCombo = props.searchCheckBox.filter((checkBox) => {
+        return checkBox !== undefined;
+      });
+      if (filterCombo.length > 0) return true;
+      else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  };
+
   const alertaNotDocumentFound = () => {
     const resolveAfter3Sec = new Promise((resolve) =>
       setTimeout(resolve, 1000)
@@ -44,6 +58,8 @@ function ContainerDocuments(props) {
       error: "Promise rejected 🤯",
     });
   };
+
+  console.log(props.moreDocuments);
 
   useEffect(() => {
     if (arrayAPI.length > 0) {
@@ -120,10 +136,10 @@ function ContainerDocuments(props) {
           setLoading(false);
           setDocument(documentFound);
         }
-      } else if (props.moreDocuments !== "" && props.moreDocuments !== false) {
+      } else if (props.moreDocuments) {
         // si le damos en more documents ya despues no aplica ningun filtro, y se queda en false
         console.log("props.moreDocuments", props.moreDocuments);
-        props.setMoreDocuments(!props.moreDocuments);
+        props.setMoreDocuments(false);
         setLoading(true);
         APICallDocumentsMore(ultimo, setUltimo)
           .then((response) => {
@@ -139,10 +155,7 @@ function ContainerDocuments(props) {
             }
           })
           .catch((error) => console.error("Error more docs", error));
-      } else if (
-        props.searchCheckBox !== "" &&
-        props.searchCheckBox !== undefined
-      ) {
+      } else if (props.searchCheckBox !== "" && validationCheckBox()) {
         console.log("props.searchCheckBox");
         setLoading(true);
         setTimeout(() => {

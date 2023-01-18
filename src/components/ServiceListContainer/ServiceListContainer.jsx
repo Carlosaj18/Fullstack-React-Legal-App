@@ -19,6 +19,7 @@ function ServiceListContainer(props) {
           <ContainerServices
             documentTitle={props.documentTitle}
             moreServices={moreServices}
+            styleCSS={props.styleCSS}
           />
         </ContainerOptionsTitles>
       </div>

@@ -5,6 +5,27 @@
     align-items: center;
 }
 
+.order-detail-flex-bk {
+    background-color:  #fff;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-detail-flex-bk a {
+    margin-left: 0,5em;
+}
+
 .order-detail-flex h1 {
     color: #234F1E;
+}
+
+@media (max-width: 800px){
+    .order-detail-flex-bk {
+      min-width: 482px;
+      flex-direction: column;
+    }
+
 }

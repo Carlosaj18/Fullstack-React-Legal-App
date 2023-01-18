@@ -3,7 +3,7 @@ import Service from "../OurService/Service";
 
 function serviceList(props) {
   return (
-    <div className="container-services">
+    <div className="container-services" style={props.styleCSS}>
       {props.service.map((item) => {
         return (
           <Service

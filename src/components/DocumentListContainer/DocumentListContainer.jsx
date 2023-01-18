@@ -10,8 +10,9 @@ function DocumentListContainer(props) {
       <div className="container-latest">
         <>{props.heading}</>
         <ContainerOptionsTitles
-          childToParentMoreElements={props.childToParentMoreElements}
           subtitle={props.subtitle}
+          moreDocuments={props.moreDocuments}
+          setMoreDocuments={props.setMoreDocuments}
         >
           <ContainerButtonFiltersDocuments buttonFilter={props.buttonFilter} />
           {props.containerDocument || props.containerMyDocument}

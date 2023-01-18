@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import "./DocumentInformation.css";
 import { CartContext } from "../../Contexto/CartProviderContext";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function DocumentInformation(props) {
   const { document } = props;
@@ -15,6 +17,9 @@ function DocumentInformation(props) {
   const onAdd = () => {
     // volver la cantidad global para acceder desde el preview
     addToCart(document, 1);
+    toast.success("Documento agregado al carrito", {
+      position: toast.POSITION.TOP_RIGHT,
+    });
   };
 
   function handleMoreClick() {
@@ -59,9 +64,13 @@ function DocumentInformation(props) {
       <div className="info-adicional-vista-detallada">
         Si tienes dudas sobre cómo usar este documento, por favor ponte en
         contacto con nuestro equipo de LegalApp. O usa el servicio de
-        diligenciamiento <Link to="/service/my-services">acompañado por un abogado.</Link>
+        diligenciamiento{" "}
+        <Link to="/service/my-services">acompañado por un abogado.</Link>
       </div>
-      <button className="button-vista-detallada" onClick={onAdd}>Agregar al carrito</button>
+      <button className="button-vista-detallada" onClick={onAdd}>
+        Agregar al carrito
+      </button>
+      <ToastContainer />
     </div>
   );
 }

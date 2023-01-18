@@ -50,7 +50,7 @@ function ContainerServices(props) {
 
   //console.log("Loading Container Service", loading);
 
-  return <>{loading ? <Loader /> : <ServiceList service={service} />}</>;
+  return <>{loading ? <Loader /> : <ServiceList service={service} styleCSS={props.styleCSS} />}</>;
 }
 
 export default ContainerServices;

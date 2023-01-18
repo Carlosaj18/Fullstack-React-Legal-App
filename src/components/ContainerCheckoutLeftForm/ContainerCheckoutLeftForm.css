@@ -1,7 +1,7 @@
 .container-checkout-left {
     border: 3px solid #dfe0eb;
     grid-row-start: 4;
-    grid-column: 1/9;
+    grid-column: 1/6;
 }
 
 .left-login {
@@ -141,3 +141,16 @@
     margin-top: 20px !important;
 }
 
+@media (min-width: 1500px) {
+    .container-checkout-left {
+      grid-row-start: 4;
+      grid-column: 1/7;
+    }
+  }
+  
+  @media (min-width: 1600px) {
+    .container-checkout-left {
+      grid-row-start: 4;
+      grid-column: 1/8;
+    }
+  }

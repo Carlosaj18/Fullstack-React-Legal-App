@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import SideBar from "../SideBar/SideBar";
 import DocumentListContainer from "../DocumentListContainer/DocumentListContainer";
 import ServiceListContainer from "../ServiceListContainer/ServiceListContainer";
@@ -17,11 +17,7 @@ function LayoutHome(props) {
     paddingBottom: "15px",
   };
 
-  const [moreDocuments, setMoreDocuments] = useState("");
-
-  const childToParentMoreElements = (childdata) => {
-    setMoreDocuments(childdata);
-  };
+  const [moreDocuments, setMoreDocuments] = useState(false);
 
   return (
     <>
@@ -29,7 +25,8 @@ function LayoutHome(props) {
         buttonFilter={props.buttonFilter}
         documentTitle={props.documentTitle}
         subtitle="Últimos Documentos"
-        childToParentMoreElements={childToParentMoreElements}
+        moreDocuments={moreDocuments}
+        setMoreDocuments={setMoreDocuments}
         containerDocument={
           <ContainerDocuments
             searchCheckBox={props.searchCheckBox}
