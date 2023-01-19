@@ -17,7 +17,7 @@ function LayoutHome(props) {
     paddingBottom: "15px",
   };
 
-  const [moreDocuments, setMoreDocuments] = useState(false);
+  const [moreDocuments, setMoreDocuments] = useState('');
 
   return (
     <>
@@ -34,6 +34,7 @@ function LayoutHome(props) {
             styleCSS={style}
             moreDocuments={moreDocuments}
             setMoreDocuments={setMoreDocuments}
+            template={true}
           />
         }
       />

@@ -1,0 +1,51 @@
+.container-information-my-documents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 40%;
+    padding: 10px;
+}
+
+.title-vista-detallada-my-documents {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.container-cards-info-my-documents {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.cards-my-documents button{
+    background-color: #fff;
+    width: 400px;
+    height: 100px;
+}
+
+.card-info-my-documents {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.card-info-my-documents-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.card-info-my-documents-total-number {
+    background-color: #234F1E;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    font-size: 1em;
+    padding: 6px;
+    display: flex;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+}

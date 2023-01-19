@@ -94,7 +94,7 @@ export async function APICallDocuments(setUltimo) {
 
 export async function APICallMyDocuments(setUltimo) {
   const collectionRef = query(collection(db, "documents"));
-  const q = query(collectionRef, limit(5), where("myDocument", "==", true));
+  const q = query(collectionRef, limit(3), where("myDocument", "==", true));
   const querySnapshot = await getDocs(q);
   let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
   setUltimo(lastVisible);
@@ -129,8 +129,8 @@ export async function APICallMyDocumentsMore(ultimo, setUltimo) {
     const next = query(
       collection(db, "documents"),
       where("myDocument", "==", true),
-      startAfter(ultimo),
-      limit(3)
+      limit(3),
+      startAfter(ultimo)
     );
     const querySnapshot = await getDocs(next);
     let lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];

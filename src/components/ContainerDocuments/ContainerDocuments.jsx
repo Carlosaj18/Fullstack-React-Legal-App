@@ -139,7 +139,6 @@ function ContainerDocuments(props) {
       } else if (props.moreDocuments) {
         // si le damos en more documents ya despues no aplica ningun filtro, y se queda en false
         console.log("props.moreDocuments", props.moreDocuments);
-        props.setMoreDocuments(false);
         setLoading(true);
         APICallDocumentsMore(ultimo, setUltimo)
           .then((response) => {
@@ -155,6 +154,7 @@ function ContainerDocuments(props) {
             }
           })
           .catch((error) => console.error("Error more docs", error));
+        props.setMoreDocuments(false);
       } else if (props.searchCheckBox !== "" && validationCheckBox()) {
         console.log("props.searchCheckBox");
         setLoading(true);
@@ -263,6 +263,7 @@ function ContainerDocuments(props) {
             latestDocuments={contratos}
             date={date}
             styleCSS={props.styleCSS}
+            template={props.template}
           />
         )
       )}
@@ -275,6 +276,7 @@ function ContainerDocuments(props) {
             latestDocuments={acuerdos}
             date={date}
             styleCSS={props.styleCSS}
+            template={props.template}
           />
         )
       )}
@@ -287,6 +289,7 @@ function ContainerDocuments(props) {
             latestDocuments={templates}
             date={date}
             styleCSS={props.styleCSS}
+            template={props.template}
           />
         )
       )}

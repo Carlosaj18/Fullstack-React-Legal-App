@@ -18,6 +18,7 @@ import ContainerCheckout from "./components/ContainerCheckout/ContainerCheckout"
 import OrderDetail from "./components/OrderDetail/OrderDetail";
 import PreviewCart from "./components/PreviewCart/PreviewCart";
 import userImg from "./images/userimg.jpg";
+import DocumentMyDocumentsDetailContainer from "./components/DocumentMyDocumentsDetailContainer/DocumentMyDocumentsDetailContainer"
 import "./App.css";
 
 function App() {
@@ -92,6 +93,10 @@ function App() {
                 <Route
                   path="/document/detail/:id"
                   element={<DocumentDetailContainer />}
+                />
+                <Route
+                  path="/my-document/detail/:id"
+                  element={<DocumentMyDocumentsDetailContainer />}
                 />
                 <Route
                   path="/document/category/detail/:id"

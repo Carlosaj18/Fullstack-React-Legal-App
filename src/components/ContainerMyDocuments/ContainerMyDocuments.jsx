@@ -153,9 +153,11 @@ function ContainerMyDocuments(props) {
               }, 10000);
             }
           })
-          .catch((error) => console.error("Error more docs", error));
+          .catch((error) =>
+            console.error("Error more docs in MyDocuments", error)
+          );
       } else if (props.searchCheckBox !== "" && validationCheckBox()) {
-        console.log("props.searchCheckBox my Documents", props.searchCheckBox);
+        console.log("props.searchCheckBox my Documents");
         setLoading(true);
         setTimeout(() => {
           let arrayOptions = [];

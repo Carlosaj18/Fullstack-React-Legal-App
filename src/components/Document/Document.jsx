@@ -8,7 +8,7 @@ import { Link, useParams } from "react-router-dom";
 function Document(props) {
   let urlDetail = `/document/detail/${props.id}`;
   //let urlDetailCategory = `/document/category/1/detail/${props.id}`
-  let url = useParams();
+  let urlMyDocumentDetail = `/my-document/detail/${props.id}`;
 
   return (
     <div className="card">
@@ -20,9 +20,15 @@ function Document(props) {
       </div>
       <div className="info-card">
         <i className="icon-document">
-          <Link to={urlDetail}>
-            <FontAwesomeIcon icon={faFileSignature} />
-          </Link>
+          {props.template ? (
+            <Link to={urlDetail}>
+              <FontAwesomeIcon icon={faFileSignature} />
+            </Link>
+          ) : (
+            <Link to={urlMyDocumentDetail}>
+              <FontAwesomeIcon icon={faFileSignature} />
+            </Link>
+          )}
         </i>
         <div className="info-description">
           <h3>{props.title}</h3>

@@ -2,13 +2,12 @@ import React, { useContext, useState, useEffect } from "react";
 import { APICallSingleDocuments } from "../services/fireBase";
 import DocumentDetail from "../DocumentDetail/DocumentDetail";
 import { useParams } from "react-router-dom";
-import DocumentInformation from "../DocumentInformation/DocumentInformation";
+import DocumentInformationMyDocs from "../DocumentInformationMyDocs/DocumentInformationMyDocs";
 import Loader from "../Loader/Loader";
 import { ArrayDataContext } from "../../Contexto/ArrayDataProviderContext";
-import "./DocumentDetailContainer.css";
-import data from "../data/documents";
+import "./DocumentMyDocumentsDetailContainer.css";
 
-function DocumentDetailContainer() {
+function DocumentMyDocumentsDetailContainer() {
   const { arrayAPI, APICallContextFireBase } = useContext(ArrayDataContext);
   const [document, setDocument] = useState([]);
   const [index, setIndex] = useState(-1);
@@ -16,10 +15,6 @@ function DocumentDetailContainer() {
   const [loading, setLoading] = useState(true);
   let { id } = useParams();
   let idDocument = index;
-
-  function handleNextClick() {
-    if (index < data.length) setIndex(index + 1);
-  }
 
   useEffect(() => {
     if (id !== undefined && idDocument !== -1) {
@@ -66,16 +61,8 @@ function DocumentDetailContainer() {
               date={date}
               setIndex={setIndex}
               index={index}
-              button={
-                <button
-                  className="btn-ver-next-document"
-                  onClick={handleNextClick}
-                >
-                  Ver Siguiente
-                </button>
-              }
             />
-            <DocumentInformation document={document} />
+            <DocumentInformationMyDocs document={document} />
           </div>
         </div>
       )}
@@ -83,4 +70,4 @@ function DocumentDetailContainer() {
   );
 }
 
-export default DocumentDetailContainer;
+export default DocumentMyDocumentsDetailContainer;

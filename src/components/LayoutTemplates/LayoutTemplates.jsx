@@ -20,7 +20,7 @@ function LayoutTemplates(props) {
     setSearchCheckBox(childdata);
   };
 
-  const [moreDocuments, setMoreDocuments] = useState("");
+  const [moreDocuments, setMoreDocuments] = useState(false);
 
   return (
     <>
@@ -45,6 +45,7 @@ function LayoutTemplates(props) {
             styleCSS={style}
             moreDocuments={moreDocuments}
             setMoreDocuments={setMoreDocuments}
+            template={true} // Manejar vista detallada para home y templates vs. documents
           />
         }
       />

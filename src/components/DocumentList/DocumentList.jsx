@@ -13,6 +13,7 @@ function DocumentList(props) {
             signatures={item.signatures}
             image={item.image}
             key={item.id}
+            template={props.template}
           />
         );
       })}
