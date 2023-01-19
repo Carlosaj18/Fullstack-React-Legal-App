@@ -10,37 +10,51 @@
 .title-vista-detallada-my-documents {
     text-align: center;
     font-size: 2.5em;
+    width: 100%;
 }
 
 .container-cards-info-my-documents {
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    height: auto;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
 }
 
 .cards-my-documents button{
     background-color: #fff;
-    width: 400px;
+    width: 100%;
     height: 100px;
+    border: none !important;
 }
 
 .card-info-my-documents {
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
 }
 
 .card-info-my-documents-flex {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5em;
+    gap: 1em;
+}
+
+.card-info-title-my-document-flex {
+    font-size: 1.5em;
 }
 
 .card-info-my-documents-total-number {
     background-color: #234F1E;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     color: #fff;
     font-size: 1em;
     padding: 6px;
@@ -48,4 +62,107 @@
     border-radius: 15px;
     justify-content: center;
     align-items: center;
+}
+
+.icon-display-doc-my-documents {
+    transition: all 0.20s ease-in;
+    transform: rotate(0deg);
+    font-size: 1.5em;
+}
+
+.icon-display-doc-my-documents-rotate {
+    transition: all 0.20s ease-in;
+    transform: rotate(180deg);
+    font-size: 1.5em;
+}
+
+.container-flex-cards-my-documents {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+
+.container-none-cards-my-documents {
+    display: none;
+}
+
+.card-my-document:focus {
+    box-shadow: 0 0 0 3px rgba(51, 65, 85, 0.1);
+
+}
+
+.card-my-document {
+    width: 420px;
+    height: 122px;
+    box-shadow: 0 0 2px rgba(151, 62, 220, 0.35), 6px 8px 16px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    margin-bottom: 1em;
+    overflow: visible;
+    padding: 15px;
+}
+
+.card-my-document-background button {
+    background-color: #234F1E;
+    color: #fff;
+    width: 420px;
+    height: 150px;
+    margin-bottom: 1em;
+    overflow: visible;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    gap: 1em;
+}
+
+.card-my-document-background button .header-flex-row-my-documents {
+    color: #fff;
+}
+
+.card-my-document-background button .header-flex-color-alert {
+    color: yellowgreen !important;
+}
+
+
+.card-my-document:hover {
+    border: 1px solid #234F1E;
+}
+
+.header-flex-row-my-documents {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    font-size: 1.1em;;
+    color: #00000099;
+}
+
+.header-flex-color-alert {
+    background-color: #234F1E;
+    width: 2px;
+    height: 2px;
+    padding: 6px;
+    display: flex;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-content-flex-my-documents {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 1.2em;;
+
+}
+
+.icon-check-radicacion {
+    font-size: 2em;
+    color: #234F1E;
 }
