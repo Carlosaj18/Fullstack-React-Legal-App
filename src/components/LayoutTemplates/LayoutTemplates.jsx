@@ -14,13 +14,16 @@ function LayoutTemplates(props) {
     justifyContent: "center",
   };
 
-  const [searchCheckBox, setSearchCheckBox] = useState("");
+  const [searchCheckBox, setSearchCheckBox] = useState();
+  const [moreDocuments, setMoreDocuments] = useState(false);
 
   const childToParentCheckBox = (childdata) => {
     setSearchCheckBox(childdata);
   };
 
-  const [moreDocuments, setMoreDocuments] = useState(false);
+  const childToParentMoreElements = (childdata) => {
+    setMoreDocuments(childdata);
+  };
 
   return (
     <>
@@ -38,6 +41,7 @@ function LayoutTemplates(props) {
         subtitle="Mis Documentos"
         moreDocuments={moreDocuments}
         setMoreDocuments={setMoreDocuments}
+        childToParentMoreElements={childToParentMoreElements}
         containerDocument={
           <ContainerDocuments
             searchCheckBox={searchCheckBox}

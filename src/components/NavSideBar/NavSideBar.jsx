@@ -15,6 +15,7 @@ import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import NavItem from "../NavItem/NavItem";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+//import { createCollection } from "../services/fireBase";
 
 function SideBar() {
   const lanzarAlerta = () => {
@@ -58,8 +59,8 @@ function SideBar() {
           />
           <NavItem
             icon={<FontAwesomeIcon icon={faCloudArrowUp} />}
-            link="/document/category"
-            name="Categorias"
+            link="/"
+            name="Crear Documento"
           />
           {/** 
            <NavItem
@@ -94,8 +95,7 @@ function SideBar() {
             pauseOnHover
             theme="light"
           />
-          {/** 
-           <NavItem
+          {/** <NavItem
             icon={<FontAwesomeIcon icon={faCloudArrowUp} />}
             name="Export Data"
             handleEvent={createCollection}

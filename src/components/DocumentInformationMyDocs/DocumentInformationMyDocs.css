@@ -5,6 +5,7 @@
     align-items: start;
     width: 40%;
     padding: 10px;
+    border-radius: 15px;
 }
 
 .title-vista-detallada-my-documents {
@@ -166,3 +167,13 @@
     font-size: 2em;
     color: #234F1E;
 }
+
+
+@media (max-width: 1378px){
+
+    .container-information-my-documents {
+        width: 80%;
+        padding: 20px;
+    }
+}
+

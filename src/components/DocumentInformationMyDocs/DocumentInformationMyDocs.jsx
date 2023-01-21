@@ -50,7 +50,7 @@ function DocumentInformationMyDocs(props) {
                       </div>
                     </div>
                     <div className="info-card-my-documents">
-                    Lorem Ipsum is simply dummy text of the printing and
+                      Lorem Ipsum is simply dummy text of the printing and
                       typesetting industry. Lorem Ipsum has been the industry's
                       standard dummy text ever since the 1500s.
                     </div>
@@ -102,15 +102,13 @@ function DocumentInformationMyDocs(props) {
                   <div className="header-card-my-documents">
                     <div className="header-flex-row-my-documents">
                       <div className="header-flex-color-alert"></div>
-                      <div>
-                        Valentina Martinez
-                      </div>
+                      <div>Valentina Martinez</div>
                     </div>
                   </div>
                   <div className="info-card-my-documents">
-                  Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s
                   </div>
                 </div>
               </button>
@@ -135,46 +133,46 @@ function DocumentInformationMyDocs(props) {
                   <div className="header-card-my-documents">
                     <div className="header-flex-row-my-documents">
                       <div className="header-flex-color-alert"></div>
-                      <div>
-                        Carlos Alberto Jaramillo Portilla
-                      </div>
+                      <div>Carlos Alberto Jaramillo Portilla</div>
                     </div>
                   </div>
                   <div className="info-card-my-documents">
-                  Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s
                   </div>
                 </div>
               </button>
             </div>
           </div>
         </div>
-        <div className="cards-my-documents">
-          <button onClick={() => handleClick(active1, setActive1)}>
-            <div className="card-info-my-documents">
-              <div className="card-info-my-documents-flex">
-                <div className="card-info-title-my-document-flex">
-                  Clausulas
+        {document.clausulas !== undefined ? (
+          <div className="cards-my-documents">
+            <button onClick={() => handleClick(active1, setActive1)}>
+              <div className="card-info-my-documents">
+                <div className="card-info-my-documents-flex">
+                  <div className="card-info-title-my-document-flex">
+                    Clausulas
+                  </div>
+                  <span className="card-info-my-documents-total-number">
+                    {document.clausulas !== undefined
+                      ? document.clausulas.length
+                      : 0}
+                  </span>
                 </div>
-                <span className="card-info-my-documents-total-number">
-                  {document.clausulas !== undefined
-                    ? document.clausulas.length
-                    : 0}
-                </span>
+                <FontAwesomeIcon
+                  icon={faAngleDown}
+                  className={
+                    active1
+                      ? "icon-display-doc-my-documents-rotate"
+                      : "icon-display-doc-my-documents "
+                  }
+                />
               </div>
-              <FontAwesomeIcon
-                icon={faAngleDown}
-                className={
-                  active1
-                    ? "icon-display-doc-my-documents-rotate"
-                    : "icon-display-doc-my-documents "
-                }
-              />
-            </div>
-          </button>
-          {active1 && dataClausulas}
-        </div>
+            </button>
+            {active1 && dataClausulas}
+          </div>
+        ) : null}
         <div className="cards-my-documents">
           <button onClick={() => handleClick(active3, setActive3)}>
             <div className="card-info-my-documents">
@@ -220,9 +218,9 @@ function DocumentInformationMyDocs(props) {
                     </div>
                   </div>
                   <div className="info-card-my-documents">
-                  Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s
                   </div>
                 </div>
               </button>
@@ -276,9 +274,9 @@ function DocumentInformationMyDocs(props) {
                     </div>
                   </div>
                   <div className="info-card-my-documents">
-                  Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s
                   </div>
                 </div>
               </button>

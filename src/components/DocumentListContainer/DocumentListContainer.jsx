@@ -11,8 +11,7 @@ function DocumentListContainer(props) {
         <>{props.heading}</>
         <ContainerOptionsTitles
           subtitle={props.subtitle}
-          moreDocuments={props.moreDocuments}
-          setMoreDocuments={props.setMoreDocuments}
+          childToParentMoreElements={props.childToParentMoreElements}
         >
           <ContainerButtonFiltersDocuments buttonFilter={props.buttonFilter} />
           {props.containerDocument || props.containerMyDocument}

@@ -15,6 +15,8 @@ function ServiceListContainer(props) {
         <ContainerOptionsTitles
           childToParentMoreElements={childToParentMoreElements}
           subtitle="Nuestros Servicios"
+          moreServices={moreServices}
+          setMoreServices={setMoreServices}
         >
           <ContainerServices
             documentTitle={props.documentTitle}

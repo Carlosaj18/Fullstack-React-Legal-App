@@ -55,7 +55,7 @@ function DocumentMyDocumentsDetailContainer() {
         <Loader />
       ) : (
         <div className="container-detail-document">
-          <div className="container-detail-document-flex">
+          <div className="container-detail-document-flex-my-doc">
             <DocumentDetail
               document={document}
               date={date}

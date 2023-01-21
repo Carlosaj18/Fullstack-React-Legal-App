@@ -12,7 +12,6 @@ import {
   orderBy,
   limit,
   addDoc,
-  startAt,
   startAfter,
   writeBatch,
   documentId,
@@ -22,13 +21,21 @@ import documents from "../data/documents";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAswY9EWLSfT-2YuzD6zBMqWzvaMn_SEPY",
-  authDomain: "legalapp-b8d09.firebaseapp.com",
-  projectId: "legalapp-b8d09",
-  storageBucket: "legalapp-b8d09.appspot.com",
-  messagingSenderId: "924633660919",
-  appId: "1:924633660919:web:1b5ffcc346a6873f8542f2",
+  apiKey: "AIzaSyApsrE8imumIQd-6tS30jS7xc3OGxOrqME",
+  authDomain: "lawyers-42999.firebaseapp.com",
+  projectId: "lawyers-42999",
+  storageBucket: "lawyers-42999.appspot.com",
+  messagingSenderId: "864342280404",
+  appId: "1:864342280404:web:643432e91f7d3241941341",
+  measurementId: "G-V3FLS074K8"
 };
 
 // Initialize Firebase
@@ -159,7 +166,6 @@ export async function createCollection() {
   for (let item of documents) {
     let newItem = await addDoc(docRef, item);
     console.log("Items creados", newItem);
-
     /** addDoc(docRef, item).then((collection) =>
       console.log("Items creados", collection)
     );*/

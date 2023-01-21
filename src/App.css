@@ -73,6 +73,7 @@ body #root .container main .container-detail-document {
   border: 3px solid #dfe0eb;
 }
 
+
 body #root .container main  .container-detail-service {
   display: grid;
   grid-row-start: 3/-1;

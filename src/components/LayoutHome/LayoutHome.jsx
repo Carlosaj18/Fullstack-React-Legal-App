@@ -17,7 +17,11 @@ function LayoutHome(props) {
     paddingBottom: "15px",
   };
 
-  const [moreDocuments, setMoreDocuments] = useState('');
+  const [moreDocuments, setMoreDocuments] = useState(false);
+
+  const childToParentMoreElements = (childdata) => {
+    setMoreDocuments(childdata);
+  };
 
   return (
     <>
@@ -25,8 +29,7 @@ function LayoutHome(props) {
         buttonFilter={props.buttonFilter}
         documentTitle={props.documentTitle}
         subtitle="Últimos Documentos"
-        moreDocuments={moreDocuments}
-        setMoreDocuments={setMoreDocuments}
+        childToParentMoreElements={childToParentMoreElements}
         containerDocument={
           <ContainerDocuments
             searchCheckBox={props.searchCheckBox}
