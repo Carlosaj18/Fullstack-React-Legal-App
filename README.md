@@ -61,7 +61,7 @@
 
 
 
-[![Product Name Screen Shot][product-screenshot]](https://user-images.githubusercontent.com/62365628/213933933-376cf361-be21-481e-a876-93f794866c4c.jpg)
+[![Product Name Screen Shot][https://user-images.githubusercontent.com/62365628/213933933-376cf361-be21-481e-a876-93f794866c4c.jpg]]
 
 It is a project that seeks to generate a centralization of legal documents at hand. Where you can download our templates, and have your documents organized.
 
@@ -146,7 +146,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Project Link: [https://github.com/your_username/repo_name]([https://github.com/your_username/repo_name](https://github.com/Carlosaj18/React-project))
+Project Link: [https://github.com/your_username/repo_name](https://github.com/Carlosaj18/React-project]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
