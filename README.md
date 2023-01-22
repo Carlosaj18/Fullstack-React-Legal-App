@@ -58,7 +58,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://vercel.com/carlosaj18/react-project/FSfmYVgUJcfMV1V1DcesbUQx7woq)
 
 It is a project that seeks to generate a centralization of legal documents at hand. Where you can download our templates, and have your documents organized.
 
