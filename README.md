@@ -161,7 +161,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/Ca
 [issues-url]: https://github.com/Carlosaj18/React-project/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/carlos-jaramillo-full-stack-developer/
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: images/screenshot.png](https://user-images.githubusercontent.com/62365628/213933933-376cf361-be21-481e-a876-93f794866c4c.jpg
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
