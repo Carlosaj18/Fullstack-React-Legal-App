@@ -32,10 +32,10 @@
     <img src="https://user-images.githubusercontent.com/62365628/214876004-be858914-bb6b-4b6e-8c40-b49112ff0d30.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Best App for Legal Documents </h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    An awesome App for your Legal Documents needs!
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
