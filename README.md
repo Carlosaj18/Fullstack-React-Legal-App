@@ -79,6 +79,8 @@
 ## About The Project!
 
 ![Product Name Screen Shot][product-screenshot]
+![Product Name Screen Shot][product-screenshot2]
+
 
 It is a project that seeks to generate a centralization of legal documents at hand. Where you can download our templates, and use right after. You will have all your documents organized.
 
@@ -185,6 +187,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/Ca
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/carlos-jaramillo-full-stack-developer/
 [product-screenshot]: https://user-images.githubusercontent.com/62365628/213933933-376cf361-be21-481e-a876-93f794866c4c.jpg
+[product-screenshot2]: https://user-images.githubusercontent.com/62365628/214895567-c305eda7-4195-48f6-ad85-2212b550ee9a.jpeg
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React-url]: https://reactjs.org/
