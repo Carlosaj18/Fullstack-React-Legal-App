@@ -64,7 +64,7 @@
 It is a project that seeks to generate a centralization of legal documents at hand. Where you can download our templates, and have your documents organized.
 
 Here's why:
-* We value your time. Your time should be focused on creating something amazing. We will handle your legal needs.
+* We value your time. Your time should be focused on creating something amazing. We will handle your legal documents needs.
 * You shouldn't be doing the same tasks over and over like creating legal documents from scratch
 * You should implement DRY principles to the rest of your life :smile:
 
@@ -74,6 +74,7 @@ Here's why:
 ### Built With
 
 * [![React][React.js]][React-url]
+<a href="https://github.com/Carlosaj18" target="_blank" rel="noopener noreferrer"> <img src="https://github.com/devicons/devicon/blob/master/icons/networkx/networkx-original.svg" alt="Python" height="40" style="vertical-align:top; margin:4px"> </a>
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 
