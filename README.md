@@ -166,7 +166,6 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/Ca
 [product-screenshot]: images/screenshot.png](https://user-images.githubusercontent.com/62365628/213933933-376cf361-be21-481e-a876-93f794866c4c.jpg
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
-[React.js]: https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg
 [React-url]: https://reactjs.org/
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Vue-url]: https://vuejs.org/
