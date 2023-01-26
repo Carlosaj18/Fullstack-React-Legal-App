@@ -25,7 +25,7 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
-![image](https://user-images.githubusercontent.com/62365628/214876004-be858914-bb6b-4b6e-8c40-b49112ff0d30.png)
+<p align:center>![image](https://user-images.githubusercontent.com/62365628/214876004-be858914-bb6b-4b6e-8c40-b49112ff0d30.png)</p>
 
 
 <!-- PROJECT LOGO -->
