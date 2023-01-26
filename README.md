@@ -73,11 +73,11 @@ Here's why:
 
 ### Built With
 
-* [![React][React.js]][React-url]
-
-<div> <a href="https://github.com/Carlosaj18" target="_blank" rel="noopener noreferrer"> <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" alt="Python" height="40" style="vertical-align:top; margin:4px"> </a> </div>
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+<p align="center">
+ <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer"> <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" alt="React" height="40" style="vertical-align:top; margin:4px"> </a>
+ <a href="https://www.linkedin.com/in/carlos-jaramillo-full-stack-developer/" target="_blank" rel="noopener noreferrer"> <img src="https://github.com/devicons/devicon/blob/master/icons/linkedin/linkedin-original.svg" alt="Python" height="40" style="vertical-align:top; margin:4px"></a>
+ <a href="mailto:cjaramilloportilla@gmail.com"> <img src="https://github.com/devicons/devicon/blob/master/icons/google/google-original.svg" alt="Python" height="40" style="vertical-align:top; margin:4px"></a>
+</p
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
