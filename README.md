@@ -74,7 +74,8 @@ Here's why:
 ### Built With
 
 * [![React][React.js]][React-url]
-<a href="https://github.com/Carlosaj18" target="_blank" rel="noopener noreferrer"> <img src="https://github.com/devicons/devicon/blob/master/icons/networkx/networkx-original.svg" alt="Python" height="40" style="vertical-align:top; margin:4px"> </a>
+
+<div> <a href="https://github.com/Carlosaj18" target="_blank" rel="noopener noreferrer"> <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" alt="Python" height="40" style="vertical-align:top; margin:4px"> </a> </div>
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 
