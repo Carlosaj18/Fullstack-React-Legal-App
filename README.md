@@ -167,7 +167,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/Carlosaj18/React-project]
+Project Link: [https://github.com/your_username/repo_name](https://github.com/Carlosaj18/Legal-App]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
