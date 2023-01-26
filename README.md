@@ -74,9 +74,9 @@ Here's why:
 ### Built With
 
 <p align="center">
- <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer"> <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" alt="React" height="40" style="vertical-align:top; margin:4px"> </a>
- <a href="https://www.linkedin.com/in/carlos-jaramillo-full-stack-developer/" target="_blank" rel="noopener noreferrer"> <img src="https://github.com/devicons/devicon/blob/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/firebase/firebase-plain-wordmark.svg" alt="Firebase" height="40" style="vertical-align:top; margin:4px"></a>
- <a href="mailto:cjaramilloportilla@gmail.com"> <img src="https://github.com/devicons/devicon/blob/master/icons/google/google-original.svg" alt="Python" height="40" style="vertical-align:top; margin:4px"></a>
+ <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer"> <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" alt="React" height="40" </a>
+ <a href="https://www.linkedin.com/in/carlos-jaramillo-full-stack-developer/" target="_blank" rel="noopener noreferrer"> <img src="https://github.com/devicons/devicon/blob/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/firebase/firebase-plain-wordmark.svg" alt="Firebase" height="40" ></a>
+ <a href="mailto:cjaramilloportilla@gmail.com"> <img src="https://github.com/devicons/devicon/blob/master/icons/google/google-original.svg" alt="Python" height="40" ></a>
 </p
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
