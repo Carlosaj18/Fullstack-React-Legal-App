@@ -30,6 +30,7 @@
 <div align="center">
   <a>
     <img src="https://user-images.githubusercontent.com/62365628/214876004-be858914-bb6b-4b6e-8c40-b49112ff0d30.png)" alt="Logo" width="80" height="80">
+    ![image](https://user-images.githubusercontent.com/62365628/214876004-be858914-bb6b-4b6e-8c40-b49112ff0d30.png)
   </a>
 
   <h3 align="center">Best-README-Template</h3>
