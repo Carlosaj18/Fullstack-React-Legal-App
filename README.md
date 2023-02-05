@@ -78,8 +78,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project!
 
-![Product Name Screen Shot][product-screenshot]
-![Product Name Screen Shot][product-screenshot2]
 
 
 It is a project that seeks to generate a centralization of legal documents at hand. Where you can download our templates, and use right after. You will have all your documents organized.
