@@ -40,7 +40,7 @@
     <a href="https://github.com/Carlosaj18/Legal-App"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Carlosaj18/Legal-App">View Demo</a>
+    <a href="https://user-images.githubusercontent.com/62365628/216801631-60796360-c249-4d48-8c90-4b21520415bf.mp4">View Demo</a>
     ·
     <a href="https://github.com/Carlosaj18/Legal-App/issues">Report Bug</a>
     ·
@@ -78,13 +78,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project!
 
-
-
+It is a project that seeks to generate a centralization of legal documents at hand. Where you can download our templates, and use right after. You will have all your documents organized.
 
 https://user-images.githubusercontent.com/62365628/216801631-60796360-c249-4d48-8c90-4b21520415bf.mp4
 
-
-It is a project that seeks to generate a centralization of legal documents at hand. Where you can download our templates, and use right after. You will have all your documents organized.
+## Usage
+<p id="Usage"><p>
 
 Here's why:
 * We value your time. Your time should be focused on creating something amazing. We will handle your legal documents needs.
@@ -114,25 +113,47 @@ Here's why:
 
 ### Prerequisites
 
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+`**Note**`: This app requires API key from <a href="hhttps://firebase.google.com/" >Firebase Service Account Key</a> 
 
-### Installation
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/Carlosaj18/Legal-App-.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-3. Start the Project
-   ```sh
-   npm start
-   ```
+### 1. Download Node.js and `npm` (follow instructions [here](https://nodejs.org/en/))
+
+### 2. Git clone and cd into the repo folder:
+
+```bash
+https://github.com/Carlosaj18/Fullstack-React-Legal-App.git && cd legal-app-clone
+```
+
+### 3. Install all dependencies
+
+```bash
+npm install
+```
+
+### 4. In root service folder, updated the firebaseConfig
+
+```bash
+const firebaseConfig = {
+  apiKey: "AIzaSyApsrE8imumIQd-6tS30jS7xc3OGxOrqME",
+  authDomain: "lawyers-42999.firebaseapp.com",
+  projectId: "lawyers-42999",
+  storageBucket: "lawyers-42999.appspot.com",
+  messagingSenderId: "864342280404",
+  appId: "1:864342280404:web:643432e91f7d3241941341",
+  measurementId: "G-V3FLS074K8"
+};
+```
+### 5. Run the client
+
+```bash
+npm start
+#for deployed version
+
+npm run dev
+#for deployed version
+```
+
+### 6. Access the project in your browser at [`http://localhost:3000`](http://localhost:3000)
    
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -168,10 +189,22 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Live Site 
+
+<p id="live-site"><p>
+
+<a href="">![Live Site](https://res.cloudinary.com/dn1e07eul/image/upload/v1659389947/Readme%20Headers/inter-live-site_ngkqcf.png)</a>
+
+• **[Legal App]()** is a responsive web app can be viewed on any device.
+
+<br>
+
 <!-- CONTACT -->
 ## Contact
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/Carlosaj18/Legal-App]
+<a href=#lets-connect>![Let's Connect!](https://res.cloudinary.com/dn1e07eul/image/upload/v1659314257/Readme%20Headers/inter-lets-connect_bv3kcd.png)</a>
+
+<p><a href="https://twitter.com/"><img src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" height=30 width=90 alt="Twitter badge"></a> <a href="https://www.linkedin.com/in/carlos-jaramillo-full-stack-developer/"><img src="https://img.shields.io/badge/linkedin-%230064e7.svg?&style=for-the-badge&logo=linkedin&logoColor=white" height=30 width=90 alt="Linkedin badge"></a> <a href="mailto:cjaramilloportilla@gmail.com"><img src="https://img.shields.io/badge/gmail-%23fd1745.svg?&style=for-the-badge&logo=gmail&logoColor=white" height=30 width=90 alt="Gmail badge"></a> <a href="https://github.com/Carlosaj18"><img src="https://img.shields.io/badge/github-%23ff8e44.svg?&style=for-the-badge&logo=github&logoColor=white" height=30 width=90 alt="Github badge"></a></p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
