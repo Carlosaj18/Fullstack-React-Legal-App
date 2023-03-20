@@ -113,7 +113,7 @@ Here's why:
 
 ### Prerequisites
 
-`**Note**`: This app requires API key from <a href="hhttps://firebase.google.com/" >Firebase Service Account Key</a> 
+`**Note**`: This app requires API key from <a href="hhttps://firebase.google.com/">Firebase Service Account Key</a>, and API Key from <a href="https://geo-battuta.net/" >GEO Battuta</a>
 
 
 ### 1. Download Node.js and `npm` (follow instructions [here](https://nodejs.org/en/))
@@ -133,6 +133,8 @@ npm install
 ### 4. In root service folder, updated the firebaseConfig
 
 ```bash
+Updated with your information
+
 const firebaseConfig = {
   apiKey: "AIzaSyApsrE8imumIQd-6tS30jS7xc3OGxOrqME",
   authDomain: "lawyers-42999.firebaseapp.com",
@@ -143,6 +145,23 @@ const firebaseConfig = {
   measurementId: "G-V3FLS074K8"
 };
 ```
+
+### 5. Inject the data
+
+```
+Call the function createCollection() in the App.js from src/components/services/firebase.js only one time. 
+
+```
+
+### 6. Updated API Key from GEO Battuta
+
+```
+Updated the file from src/components/services/apiPaises.js
+
+BATTUTA_KEY = YOUR_BATTUTA_KEY
+
+```
+
 ### 5. Run the client
 
 ```bash
