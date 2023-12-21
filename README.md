@@ -49,51 +49,15 @@
 </div>
 
 <br />
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
-
-
 
 <!-- ABOUT THE PROJECT -->
-## About The Project!
+## :star2: About the Project
 
-It is a project that seeks to generate a centralization of legal documents at hand. Where you can download our templates, and use right after. You will have all your documents organized.
+<div align="justify">It is a project that seeks to generate a centralization of legal documents at hand. Where you can download our templates, and use right after. You will have all your documents organized.
+ <br><br>
+</div>
 
-https://user-images.githubusercontent.com/62365628/216801631-60796360-c249-4d48-8c90-4b21520415bf.mp4
-
-## Usage
-<p id="Usage"><p>
-
-Here's why:
-* We value your time. Your time should be focused on creating something amazing. We will handle your legal documents needs.
-* You shouldn't be doing the same tasks over and over like creating legal documents from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-### Built With
+## Project Technological Stack:
 
 <p align="center">
   <a target="_blank" rel="noopener noreferrer"> <img src="https://github.com/devicons/devicon/blob/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/figma/figma-original.svg" alt="Figma" height="40" style="vertical-align:top; margin:4px"></a>
@@ -105,8 +69,7 @@ Here's why:
    <a> <img src="https://github.com/devicons/devicon/blob/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/git/git-original-wordmark.svg" alt="MaterialUi" height="40" style="vertical-align:top; margin:10px"></a>
 </p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+## Features:
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -174,39 +137,12 @@ npm run dev
 
 ### 6. Access the project in your browser at [`http://localhost:3000`](http://localhost:3000)
    
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Demo & Showcasing:
 
+### :camera: Screenshots
 
-<!-- ROADMAP -->
-## Roadmap
+https://user-images.githubusercontent.com/62365628/216801631-60796360-c249-4d48-8c90-4b21520415bf.mp4
 
-- [x] Search for your document
-- [x] Add it to your templates 
-- [ ] Download the document 
-- [ ] Use the document based on your needs
-- [ ] All your documents will be save in your central repository
-
-See the [open issues](https://github.com/Carlosaj18/Legal-App-/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Live Site 
 
