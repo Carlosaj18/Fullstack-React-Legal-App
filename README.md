@@ -59,6 +59,11 @@
 
 ## Project Technological Stack:
 
+* React: Frontend library for building interactive and dynamic user interfaces.
+* Redux: State management library ensuring consistent and scalable application state.
+* Figma: Design tool for creating and prototyping user interfaces and experiences.
+* Firebase: Platform for app development that provides various tools, including hosting, authentication, and database management.
+
 <p align="center">
   <a target="_blank" rel="noopener noreferrer"> <img src="https://github.com/devicons/devicon/blob/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/figma/figma-original.svg" alt="Figma" height="40" style="vertical-align:top; margin:4px"></a>
   <a target="_blank" rel="noopener noreferrer"> <img src="https://github.com/devicons/devicon/blob/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/firebase/firebase-plain-wordmark.svg" alt="Firebase" height="40" style="vertical-align:top; margin:4px"></a>
@@ -70,6 +75,13 @@
 </p>
 
 ## Features:
+
+*     Google Authentication: Utilize Google Authentication for secure user logins.
+*     Search Bar: Implement a search feature for easy document retrieval.
+*     Filtering Options: Provide filtering options to organize and access documents efficiently.
+*     Document Repository: Create a centralized repository for storing legal documents.
+*     Data Storage: Utilize Firebase's storage capabilities for efficient data management.
+*     Custom Document Creation: Implement functionality to create personalized documents within the app.
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -100,8 +112,8 @@ Updated with your information
 
 const firebaseConfig = {
   apiKey: "AIzaSyApsrE8imumIQd-6tS30jS7xc3OGxOrqME",
-  authDomain: "lawyers-42999.firebaseapp.com",
-  projectId: "lawyers-42999",
+  authDomain: "lawyers-test.firebaseapp.com",
+  projectId: "lawyers-test",
   storageBucket: "lawyers-42999.appspot.com",
   messagingSenderId: "864342280404",
   appId: "1:864342280404:web:643432e91f7d3241941341",
